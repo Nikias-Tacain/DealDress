@@ -1,0 +1,15 @@
+.footerHub{
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 15px;
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.footerHub > section > article{
+    padding: 12px;
+}
+.footerHub > section > article > p{
+    padding: 10px;
+}

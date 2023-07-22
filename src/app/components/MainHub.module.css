@@ -1,0 +1,31 @@
+.sobreNosotros{
+    padding-top: 60px;
+}
+.sobreNosotros > h2{
+    text-align: center;
+}
+.sobreNosotros > div > section >article > img{
+    max-width: 150px;
+    object-fit: cover;
+    border: 2.5px solid;
+    padding: 0.5rem;
+
+}
+.sobreNosotros > section{
+    padding-top: 40px;
+    text-align: center;
+}
+.sobreNosotros > div > section > article{
+    display: flex;
+    flex-wrap: wrap;
+}
+.sobreNosotros > div{
+    display: flex;
+    align-items: center;
+    padding-left: 3%;
+    font-size: 20px;
+    text-align: center;
+}
+.sobreNosotros__info > button {
+    cursor: pointer;
+}
