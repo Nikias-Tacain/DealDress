@@ -9,10 +9,11 @@
     object-fit: cover;
     border: 2.5px solid;
     padding: 0.5rem;
-
+}
+.sobreNosotros > div > section {
+    margin-top: 60px;
 }
 .sobreNosotros > section{
-    padding-top: 40px;
     text-align: center;
 }
 .sobreNosotros > div > section > article{
@@ -26,6 +27,18 @@
     font-size: 20px;
     text-align: center;
 }
-.sobreNosotros__info > button {
+.sobreNosotros__info > article {
+    border: 1px solid;
+    width: 14%;
+    border-radius: 16px;
+    padding: 5px;
+    margin: auto;
+    margin-top: 12px;
+    margin-bottom: 12px;
     cursor: pointer;
+}
+@media screen and (min-width: 300px) {
+    .sobreNosotros__info > article {
+        width: 50%;
+    }
 }

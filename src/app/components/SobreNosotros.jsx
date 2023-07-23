@@ -1,4 +1,5 @@
 import styles from './MainHub.module.css'
+import Link from 'next/link'
 export default function SobreNosotros() {
     return(
         <div className={styles.sobreNosotros}>
@@ -25,7 +26,11 @@ export default function SobreNosotros() {
                 <fieldset className={styles.sobreNosotros__info}>
                     <legend>Deal Dress</legend>
                     <p>Somos una empresa dedicada a la indumentaria deportiva, el proyecto nacio a partir de la necesidad que vimos en la gente de vestir prendas a buen precio  a la hora de realizar actividad fisica, nos destacamos por la comodidad y la variedad.</p>
-                    <button>Ingreso a la tienda</button>
+                    <article>
+                        <Link href='/tienda'>
+                            <p>Ingresar a la tienda</p>
+                        </Link>
+                    </article>
                 </fieldset>
             </div>
         </div>
