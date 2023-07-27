@@ -1,0 +1,12 @@
+.navBar{
+    padding-top: 35px;
+    height: 70px;
+    display: flex;
+    justify-content: flex-end;
+}
+.navBar__section{
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

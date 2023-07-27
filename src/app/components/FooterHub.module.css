@@ -13,9 +13,7 @@
 .footerHub > section > article > p{
     padding: 10px;
 }
-.linkSocialMedia{
-    color: #2727f1;
-}
-.linkSocialMedia:hover{
-    text-decoration:underline;
+.linkSocialMedia > img{
+    width: 3%;
+    margin: 20px;
 }

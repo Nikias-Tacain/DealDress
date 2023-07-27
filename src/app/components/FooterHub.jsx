@@ -10,8 +10,10 @@ export default function FooterHub() {
                     <span>©COPYRIGHT DealDress™ - 2023</span>
                 </article>
                 <article>
-                    <p>Redes:</p>
-                    <a className={styles.linkSocialMedia} href="https://www.instagram.com/dealdress.tiendaonline/" target='_blank'>Instagram</a>
+                    <p>Nos podes encontrar en:</p>
+                    <a   className={styles.linkSocialMedia} href="https://www.instagram.com/dealdress.tiendaonline/" target='_blank'><img src="/instagram.svg" alt="Estamos en Instagram" /></a>
+                    <a   className={styles.linkSocialMedia} href="https://www.tiktok.com/@dealdressropa" target='_blank'><img src="/tiktok.svg" alt="Estamos en TikTok"/></a>
+                    <a   className={styles.linkSocialMedia} href="https://www.facebook.com/people/dealdresstiendaonline/100063642266774/" target='_blank'><img src="/facebook.svg" alt="Estamos en Facebook"/></a>
                 </article>
                 <article>
                     <p>Contacto:</p>

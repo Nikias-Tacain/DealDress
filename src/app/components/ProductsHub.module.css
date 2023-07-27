@@ -1,0 +1,29 @@
+.productsHub{
+    display: flex;
+    flex-direction: column;
+    margin-top: 5rem;
+}
+.productsHub > h2 {
+    display: flex;
+    justify-content: center;
+}
+.productsHub > article {
+    padding: 20px;
+    border: 1px solid;
+    width: 60%;
+    margin: auto;
+    margin-top: 20px;
+}
+.productsHub > article > div{
+    display: flex;
+    justify-content: space-between;
+}
+.productsHub > article > div > article:hover{
+    color: rgb(40, 40, 255);
+    border-style:inset;
+}
+.productsHub__accesoDirectoTienda{
+    background-color: grey;
+    height: 400px;
+    margin-top: 20px;
+}

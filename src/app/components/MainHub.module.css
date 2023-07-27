@@ -27,6 +27,10 @@
     font-size: 20px;
     text-align: center;
 }
+.sobreNosotros__info{
+    margin-left: 15rem;
+    padding: 15px;
+}
 .sobreNosotros__info > article {
     border: 1px solid;
     width: 14%;
@@ -36,6 +40,10 @@
     margin-top: 12px;
     margin-bottom: 12px;
     cursor: pointer;
+}
+.sobreNosotros__info > article:hover {
+    color: rgb(40, 40, 255);
+    border-style:inset;
 }
 @media screen and (min-width: 300px) {
     .sobreNosotros__info > article {

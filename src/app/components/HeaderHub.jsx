@@ -4,7 +4,7 @@ export default function HeaderHub() {
     return(
         <header className={styles.headerHub}>
             <Link href='/'>
-                <img src="/apple-touch-icon.png" alt="Logo Deal Dress" />
+                <img src="/favicon.png" alt="Logo Deal Dress" />
             </Link>
         </header>
     )

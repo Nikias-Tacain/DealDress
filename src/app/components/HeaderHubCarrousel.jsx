@@ -5,7 +5,10 @@ export default function HeaderHubCarrousel() {
             <article className={styles.headerHubCarrousel}>
 
             </article>
-            <marquee behavior="" direction="" className={styles.HeaderHubCarrouselMarquee}>ENVIOS GRATIS A ROSARIO,SANTA FE !!!</marquee>
+            <marquee behavior="scroll" direction="left" className={styles.headerHubCarrouselMarquee}>
+                ENVIOS GRATIS EN ROSARIO !!! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                ENVIAMOS A TODO EL PAIS A DOMICILIO CON ADREANI 🚛 !!! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </marquee>
         </section>
     )
 }

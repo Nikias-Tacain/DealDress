@@ -24,8 +24,8 @@ export default function SobreNosotros() {
                     </article>
                 </section>
                 <fieldset className={styles.sobreNosotros__info}>
-                    <legend>Deal Dress</legend>
-                    <p>Somos una empresa dedicada a la indumentaria deportiva, el proyecto nacio a partir de la necesidad que vimos en la gente de vestir prendas a buen precio  a la hora de realizar actividad fisica, nos destacamos por la comodidad y la variedad.</p>
+                    <legend>Deal Dress Tienda Online</legend>
+                    <p>Nos destacamos por la amplia variedad de indumentaria y calzados.</p>
                     <article>
                         <Link href='/tienda'>
                             <p>Ingresar a la tienda</p>
