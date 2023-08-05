@@ -2,7 +2,11 @@ html{
   scroll-behavior: smooth;
 }
 body{
-  padding: 20px;
+  font-family: Arial, sans-serif;
+  color: #ffff;
+  background-image: url(/fondoPage.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 * {
   box-sizing: border-box;

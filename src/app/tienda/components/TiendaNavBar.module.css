@@ -1,12 +1,16 @@
 .navBar{
     padding-top: 35px;
     height: 70px;
-    display: flex;
-    justify-content: flex-end;
+    width: 40%;
+    margin-left: 50%;
 }
 .navBar__section{
-    width: 25%;
     display: flex;
     align-items: center;
+    width: 100%;
     justify-content: space-between;
+}
+.bannerTienda{
+    display: flex;
+    justify-content: center;
 }

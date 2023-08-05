@@ -14,12 +14,13 @@ export default function FooterHub() {
                     <a   className={styles.linkSocialMedia} href="https://www.instagram.com/dealdress.tiendaonline/" target='_blank'><img src="/instagram.svg" alt="Estamos en Instagram" /></a>
                     <a   className={styles.linkSocialMedia} href="https://www.tiktok.com/@dealdressropa" target='_blank'><img src="/tiktok.svg" alt="Estamos en TikTok"/></a>
                     <a   className={styles.linkSocialMedia} href="https://www.facebook.com/people/dealdresstiendaonline/100063642266774/" target='_blank'><img src="/facebook.svg" alt="Estamos en Facebook"/></a>
+                    <a   className={styles.linkSocialMedia} href="https://api.whatsapp.com/send/?phone=5493415075439&text&type=phone_number&app_absent=0" target='_blank'><img src="/whatsapp.svg" alt="Estamos en WhatsApp"/></a>
                 </article>
                 <article>
                     <p>Contacto:</p>
+                    <p><FontAwesomeIcon icon={faPhone}/> 3415075439</p>
                     <p><FontAwesomeIcon icon={faHouse} /> Donado 1500</p>
                     <p><FontAwesomeIcon icon={faEnvelope} /> dealdress.ropa@gmail.com</p>
-                    <p><FontAwesomeIcon icon={faPhone}/> 3415075439</p>
                 </article>
                 <article>
                     <img src="/MetodosdePago.webp" alt="Paga con cualquier metodo de pago" />

@@ -14,7 +14,7 @@ export default function ProductsHub() {
                     </article>
                 </div>
                 <div className={styles.productsHub__accesoDirectoTienda}>
-
+                    <p>no se encontraron productos en estos momentos...</p>
                 </div>
             </article>
             <article>
@@ -27,7 +27,7 @@ export default function ProductsHub() {
                     </article>
                 </div>
                 <div className={styles.productsHub__accesoDirectoTienda}>
-                    
+                    <p>no se encontraron productos en estos momentos...</p>
                 </div>
             </article>
         </section>

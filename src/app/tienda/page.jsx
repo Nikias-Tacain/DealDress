@@ -1,9 +1,18 @@
+'use client'
 import TiendaNavBar from "./components/TiendaNavBar";
+import ProductList from "./components/allProducts";
+import styles from './components/CardTienda.module.css'
+import CarrouselImgs from "./components/CarrouselImgs";
 
-export default function page() {
+function page() {
     return(
         <>
+            <CarrouselImgs />
             <TiendaNavBar />
+            <div className={styles.card}>
+                <ProductList/>
+            </div>
         </>
     )
 }
+export default page;

@@ -1,0 +1,30 @@
+.categoriesButton {
+    background-color: #3498db;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+  
+.categoriesPanel {
+    padding: 20px;
+    background-color: grey;
+    position: absolute; 
+    border: 1px solid #ddd;
+}
+  
+.categoryList {
+    list-style: none;
+    padding: 0;
+}
+.categoryList div{
+    display: flex;
+}
+  
+.categoryList li {
+    padding: 1rem;
+}
+.categoryList li:hover{
+    color: red;
+}

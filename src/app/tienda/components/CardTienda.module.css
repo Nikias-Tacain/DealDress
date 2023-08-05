@@ -1,0 +1,24 @@
+.card{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 7%;
+    gap: 2rem;
+    padding: 2rem;
+}
+.cardProduct{
+    width: 500px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 1rem;
+}
+.cardProduct article div{
+    margin: 2rem;
+}
+.cardProduct article div button{
+    cursor: pointer;
+}
+.cardProduct__link{
+    display: flex;
+    flex-direction: column;
+}
