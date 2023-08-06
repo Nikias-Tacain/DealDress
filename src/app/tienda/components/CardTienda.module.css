@@ -22,3 +22,47 @@
     display: flex;
     flex-direction: column;
 }
+
+
+/*Button categories */ 
+.categoriesButtonClick{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.categoriesButtonClick button {
+    margin-left: 20px;
+}
+.categoriesButton {
+    background-color: #0b4f6c;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+}
+  
+.categoriesPanel {
+    padding: 20px;
+    background-color: grey;
+    position: absolute; 
+    border: 1px solid #ddd;
+    margin-top: 25%;
+}
+  
+.categoryList {
+    list-style: none;
+    padding: 0;
+}
+.categoryList div{
+    display: flex;
+}
+  
+.categoryList li {
+    padding: 1rem;
+    border: 1px solid;
+    cursor: pointer;
+}
+.categoryList li:hover{
+    color: red;
+}

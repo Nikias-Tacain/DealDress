@@ -9,7 +9,7 @@ function page() {
         <>
             <CarrouselImgs />
             <TiendaNavBar />
-            <div className={styles.card}>
+            <div>
                 <ProductList/>
             </div>
         </>
