@@ -7,6 +7,7 @@ import { initializeApp } from 'firebase/app';
 import styles from './CardTienda.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRotateRight } from '@fortawesome/free-solid-svg-icons';
+import { faPlus } from '@fortawesome/free-solid-svg-icons';
 const firebaseConfig = {
     apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
     authDomain: "dealdress-90f47.firebaseapp.com",
@@ -40,17 +41,23 @@ const ProductList = () => {
 
     const renderProducts = () => (
         filteredProducts.map(item => (
-           <section className={styles.cardProduct} key={item.id}>
-               <article>
-                   <div>
-                       <img src={item.image}/>
-                        <h2>{item.nombre}</h2>
-                        <p>$ {item.precio}</p>
+            <section className={styles.cardProduct} key={item.id}>
+                <Link href={`/tienda/${item.id}`}>
+                    <article>
+                        <img src={item.image}/>
+                    </article>
+                </Link>
+                <article className={styles.cardProductDiv}>
+                    <div>
+                        <article>
+                            <h2>{item.nombre}</h2>
+                            <p>$ {item.precio}</p>
+                            <p>Modelo: {item.modelo}</p>
+                        </article>
                     </div>
                     <div className={styles.cardProduct__link}>
-                        <button>Agregar al carrito</button>
-                       <Link href={`/tienda/${item.id}`}>👁Ver mas detalles</Link>
-                   </div>
+                        <button><FontAwesomeIcon icon={faPlus} /></button>
+                    </div>
                 </article>
             </section>
         ))
@@ -92,6 +99,7 @@ const ProductList = () => {
                     <li onClick={() => setSelectedCategory('jeansHombreUrbano')}>Jeans</li>
                     <li onClick={() => setSelectedCategory('remerasHombreUrbano')}>Remeras</li>
                     <li onClick={() => setSelectedCategory('buzosHombreUrbano')}>Buzos</li>
+                    <li onClick={() => setSelectedCategory('camperasHombreUrbano')}>Camperas</li>
                 </div>
                 <div>
                     <big>Deportivo</big>
@@ -104,6 +112,11 @@ const ProductList = () => {
                 <em>Calzado</em>
                 <div>
                     <big>Urbano</big>
+                    <li onClick={() => setSelectedCategory('botasUrbanas')}>Botas</li>
+                </div>
+                <div>
+                    <big>Deportivas</big>
+                    <li onClick={() => setSelectedCategory('botasDeportivas')}>Botas</li>
                 </div>
                 </ul>
             </div>

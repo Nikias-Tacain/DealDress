@@ -5,25 +5,41 @@
     margin-top: 7%;
     gap: 2rem;
     padding: 2rem;
+    color: black;
 }
 .cardProduct{
-    width: 500px;
-    text-align: center;
-    border: 1px solid #ccc;
+    border: 1px solid;
+    border-radius: 16px;
     padding: 1rem;
+    background-color: #fff;
+    text-align: center;
 }
-.cardProduct article div{
-    margin: 2rem;
-}
-.cardProduct article div button{
+.cardProduct__link button{
+    border-radius: 100%;
+    background-color: #fff;
     cursor: pointer;
-}
-.cardProduct__link{
+    font-size: 28px;
+    padding: 10px;
+    border: none;
     display: flex;
-    flex-direction: column;
 }
-
-
+.cardProductDiv{
+    display: flex;
+    background-color: rgb(71, 71, 216);
+    padding: 12px;
+    justify-content: space-around;
+    border-radius: 24px;
+    width: 500px;
+}
+.cardProductDiv div article h2{
+    color: #fff;
+}
+.cardProductDiv div article p{
+    font-size: 1.5rem;
+}
+.cardProduct img{
+    width: 50%;
+}
 /*Button categories */ 
 .categoriesButtonClick{
     display: flex;
@@ -34,7 +50,7 @@
     margin-left: 20px;
 }
 .categoriesButton {
-    background-color: #0b4f6c;
+    background-color: rgb(71, 71, 216);
     color: white;
     padding: 10px 20px;
     border-radius: 5px;
@@ -47,7 +63,12 @@
     background-color: grey;
     position: absolute; 
     border: 1px solid #ddd;
-    margin-top: 25%;
+    margin-top: 35%;
+}
+.categoriesPanel div big{
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
 }
   
 .categoryList {
@@ -56,12 +77,14 @@
 }
 .categoryList div{
     display: flex;
+    padding-top: 12px;
 }
   
 .categoryList li {
     padding: 1rem;
     border: 1px solid;
     cursor: pointer;
+    border-radius: 12px;
 }
 .categoryList li:hover{
     color: red;

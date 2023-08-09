@@ -1,0 +1,48 @@
+.infoProduct{
+    display: flex;
+    justify-content: center;
+    border: 1px solid;
+    width: 50%;
+    margin: auto;
+    border-radius: 20px;
+}
+.infoProduct p {
+    display: flex;
+    flex-direction: column;
+}
+.infoProduct img{
+    padding: 10px;
+    border-right: 1px solid;
+}
+.historyProductInfo{
+    color: white;
+    margin-top: 6%;
+    text-align: center;
+    width: 65%;
+}
+.historyProductInfo span:hover {
+    color: blue;
+    text-decoration:underline;
+}
+.intInfoProduct{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+}
+.intInfoProduct p{
+    padding-top: 20px;
+    font-size: 25px;
+}
+.intInfoProduct div a {
+    color: red;
+}
+.intInfoProduct div a:hover {
+    color: blue;
+    text-decoration:underline;
+}
+.tallesInfoProduct{
+    margin-right: 80%;
+    font-size: 20px;
+}

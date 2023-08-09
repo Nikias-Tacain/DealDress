@@ -18,7 +18,7 @@
     height: 60px;
     width: 300px;
     border-radius: 20px;
-    background-color: #0b4f6c;
+    background-color: rgb(71, 71, 216);
     color: #fff;
     border: none;
     display: flex;
@@ -28,37 +28,31 @@
 .headerHubNavBarList > li:hover{
     transform: translateY(6px);
 }
-.headerHubCarrousel{
-    width: 80%;
-    height: 600px;
-    background-repeat: no-repeat;
-    background-size: cover;
-    animation: carrousel 12s infinite;
-    margin: auto;
-}
-@keyframes carrousel {
-    0%{
-        background-image: url(/CarrouselImg1.png);
-    }
-    25%{
-        background-image: url(/CarrouselImg1.png);
-    }
-    50%{
-        background-image: url(/CarrouselImg2.webp);
-    }
-    85%{
-        background-image: url(/CarrouselImg3.webp);
-    }
-    100%{
-        background-image: url(/CarrouselImg1.png);
-    }
-}
 .headerHubCarrouselMarquee{
     width: 35%;
     margin-left: 37%;
     padding-top: 2%;
     font-size: 18px;
 }
+.carousel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.slide {
+    max-width: 100%;
+    height: auto;
+}
+  
+.navButton {
+    font-size: 24px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0 10px;
+}
+  
 @media screen and (max-width: 900px) {
     .headerHubCarrouselMarquee{
         width: 100%;

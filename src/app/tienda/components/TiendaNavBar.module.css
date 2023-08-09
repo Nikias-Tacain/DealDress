@@ -1,6 +1,6 @@
 .navBar{
-    padding-top: 35px;
-    height: 70px;
+    padding-top: 5%;
+    height: 140px;
     width: 40%;
     margin-left: 50%;
 }
@@ -13,4 +13,9 @@
 .bannerTienda{
     display: flex;
     justify-content: center;
+    max-width: 100%;
+}
+.bannerTienda img{
+    width: 100%;
+    height: auto;
 }
