@@ -37,12 +37,15 @@ const Product = () => {
     <div className={styles.sectionProductInfo}>
       <div className={styles.historyProductInfo}>
         <Link href='/tienda'>
-          <span>TIENDA - </span>
+          <span>TIENDA</span>
+          <span> - </span>
         </Link>
         <span>{product.nombre}</span>
       </div>
       <div className={styles.infoProduct}>
-        <img src={product?.image}/>
+        <div className={styles.infoProductDiv}>
+          <img src={product?.image}/>
+        </div>
         <div className={styles.intInfoProduct}>
           <h1>{product?.nombre}</h1>
           <p>$ {product?.precio}</p>
@@ -55,13 +58,13 @@ const Product = () => {
           </div>
           <br />
           <br />
-          <div>
-            <button>agregar al carrito</button>
+          <div className={styles.botonCarrito}>
+            <p>agregar al carrito</p>
           </div>
           <br />
           <br />
           <br />
-          <span>Vas a poder sumar y restar cantidades en el carrito.</span>
+          <span>*Vas a poder sumar y restar cantidades en el carrito.</span>
         </div>
       </div>
     </div>

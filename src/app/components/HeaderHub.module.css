@@ -34,14 +34,13 @@
     padding-top: 2%;
     font-size: 18px;
 }
-.carousel {
+
+.carrouselImg{
     display: flex;
-    align-items: center;
     justify-content: center;
 }
-  
-.slide {
-    max-width: 100%;
+.carrouselImg img{
+    width: 80%;
     height: auto;
 }
   

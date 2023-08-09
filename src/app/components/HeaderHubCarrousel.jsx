@@ -2,8 +2,8 @@ import styles from './HeaderHub.module.css'
 export default function HeaderHubCarrousel() {
     return(
         <section>
-            <div>
-                
+            <div  className={styles.carrouselImg}>
+                <img src="/CarrouselImg1.png" alt="" />
             </div>
             <marquee behavior="scroll" direction="left" className={styles.headerHubCarrouselMarquee}>
                 ENVIOS GRATIS EN ROSARIO !!! &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

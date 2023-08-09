@@ -47,8 +47,9 @@
 .sobreNosotros__info > article:hover {
     transform: translateY(6px);
 }
-@media screen and (min-width: 300px) {
+@media screen and (max-width: 600px) {
     .sobreNosotros__info > article {
-        width: 50%;
+        width: 100%;
+        font-size: 12px;
     }
 }

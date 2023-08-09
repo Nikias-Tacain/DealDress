@@ -5,14 +5,21 @@
     width: 50%;
     margin: auto;
     border-radius: 20px;
+    text-align: center;
 }
 .infoProduct p {
     display: flex;
     flex-direction: column;
 }
-.infoProduct img{
+.infoProductDiv{
     padding: 10px;
     border-right: 1px solid;
+    max-width: 100%;
+    overflow: hidden;
+}
+.infoProductDiv img{
+    width: 100%;
+    display: block;
 }
 .historyProductInfo{
     color: white;
@@ -45,4 +52,17 @@
 .tallesInfoProduct{
     margin-right: 80%;
     font-size: 20px;
+}
+.botonCarrito{
+    font-size: 2rem;
+    height: 60px;
+    width: 300px;
+    border-radius: 20px;
+    background-color: rgb(71, 71, 216);
+    color: #fff;
+    border: none;
+    cursor: pointer;
+}
+.botonCarrito:hover{
+    transform: translateY(6px);
 }
