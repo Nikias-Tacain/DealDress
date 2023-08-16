@@ -23,7 +23,7 @@
 }
 .historyProductInfo{
     color: white;
-    margin-top: 6%;
+    margin-top: 2.5%;
     text-align: center;
     width: 65%;
 }
@@ -65,4 +65,22 @@
 }
 .botonCarrito:hover{
     transform: translateY(6px);
+}
+.sectionProductInfoCarrito{
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 50px;
+    margin-right: 30px;
+}
+@media screen and (max-width: 1300px) {
+    .botonCarrito{
+        width: 100%;
+    }
+    .historyProductInfo{
+        margin: auto;
+        margin-top: 12%;
+    }
+    .infoProduct{
+        width: 100%;
+    }
 }

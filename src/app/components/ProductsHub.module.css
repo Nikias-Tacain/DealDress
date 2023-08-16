@@ -35,3 +35,8 @@
 .productsHub > article > div > article:hover{
     transform: translateY(6px);
 }
+@media screen and (max-width: 570px) {
+    .productsHub > article > div > article{
+        width: auto;
+    }
+}

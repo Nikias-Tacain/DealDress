@@ -16,7 +16,7 @@
 .headerHubNavBarList > li p{
     font-size: 2rem;
     height: 60px;
-    width: 300px;
+    width: 260px;
     border-radius: 20px;
     background-color: rgb(71, 71, 216);
     color: #fff;
@@ -56,5 +56,10 @@
     .headerHubCarrouselMarquee{
         width: 100%;
         margin: auto;
+    }
+}
+@media screen and (max-width: 570px) {
+    .headerHubNavBarList > li p{
+        width: auto;
     }
 }

@@ -91,4 +91,7 @@
     .categoriesPanel {
         margin-top: 700px;
     }
+    .cardProductDiv{
+        width: 100%;
+    }
 }

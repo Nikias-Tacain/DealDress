@@ -47,9 +47,12 @@
 .sobreNosotros__info > article:hover {
     transform: translateY(6px);
 }
-@media screen and (max-width: 600px) {
-    .sobreNosotros__info > article {
-        width: 100%;
-        font-size: 12px;
+@media screen and (max-width: 930px) {
+    .sobreNosotros div{
+        display: flex;
+        flex-direction: column;
+    }
+    .sobreNosotros__info{
+        margin: auto;
     }
 }

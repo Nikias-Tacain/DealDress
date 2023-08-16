@@ -8,6 +8,8 @@ import Link from 'next/link';
 import styles from './InfoProduct.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTruckMoving } from '@fortawesome/free-solid-svg-icons';
+import ShoppingCartModal from '../components/ShoppingCart';
+import { carrito } from '../components/carrito';
 const firebaseConfig = {
   apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
   authDomain: "dealdress-90f47.firebaseapp.com",
@@ -33,8 +35,14 @@ const Product = () => {
       setLoading(false);
     },1000)  
   })
+  let handleButtonClick = (itemId) => {
+    carrito.push(itemId);
+  };
   const renderProducts = () => (
     <div className={styles.sectionProductInfo}>
+      <div className={styles.sectionProductInfoCarrito}>
+        <ShoppingCartModal />
+      </div>
       <div className={styles.historyProductInfo}>
         <Link href='/tienda'>
           <span>TIENDA</span>
@@ -59,7 +67,7 @@ const Product = () => {
           <br />
           <br />
           <div className={styles.botonCarrito}>
-            <p>agregar al carrito</p>
+            <p onClick={() => handleButtonClick(product)}>agregar al carrito</p>
           </div>
           <br />
           <br />

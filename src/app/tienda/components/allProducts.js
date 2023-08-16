@@ -8,6 +8,7 @@ import styles from './CardTienda.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRotateRight } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { carrito } from './carrito';
 const firebaseConfig = {
     apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
     authDomain: "dealdress-90f47.firebaseapp.com",
@@ -33,12 +34,11 @@ const ProductList = () => {
       },1000)  
     })
     const [selectedCategory, setSelectedCategory] = useState(null);
-
-  // Filtrar productos por categoría seleccionada
   const filteredProducts = selectedCategory
-    ? products.filter(product => product.categoria === selectedCategory)
-    : products;
-
+    ? products.filter(product => product.categoria === selectedCategory) : products;
+    let handleButtonClick = (itemId) => {
+        carrito.push(itemId);
+    };
     const renderProducts = () => (
         filteredProducts.map(item => (
             <section className={styles.cardProduct} key={item.id}>
@@ -56,7 +56,7 @@ const ProductList = () => {
                         </article>
                     </div>
                     <div className={styles.cardProduct__link}>
-                        <button><FontAwesomeIcon icon={faPlus} /></button>
+                        <button onClick={() => handleButtonClick(item)}><FontAwesomeIcon icon={faPlus} /></button>
                     </div>
                 </article>
             </section>

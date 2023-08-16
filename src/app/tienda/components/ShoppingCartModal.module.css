@@ -1,40 +1,87 @@
-/* Estilos para el botón de abrir el modal */
 .openButton {
-    background-color: rgb(71, 71, 216);
-    color: white;
-    border: none;
-    border-radius: 12px;
-    padding: 10px 20px;
-    cursor: pointer;
-  }
+  background-color: rgb(71, 71, 216);
+  color: white;
+  border: none;
+  border-radius: 12px;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+.modalOverlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
   
-  /* Estilos para el modal y su contenido */
-  .modalOverlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.modalContent {
+  background-color: grey;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  width: 40%;
+}
+
+.closeButton {
+  margin-top: 10px;
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 12px;
+}
+
+.carritoInt{
+  border: 1px solid;
+  padding: 12px;
+  border-radius: 12px;
+  margin-top: 12px;
+  height: auto;
+}
+.carritoIntProduct img{
+  width: 10%;
+}
+.carritoIntProduct{
+  display: flex;
+  border-top: 1px solid;
+  padding-top: 12px;
+}
+.carritoIntSection{
+  display: flex;
+  flex-direction: column;
+  padding: 12px;
+  justify-content: space-around;
+  text-align: center;
+}
+.carritoIntTotal{
+  border-top: 1px solid;
+}
+.buttons{
+  display: flex;
+  justify-content: flex-end;
+}
+.buyButton{
+  margin-top: 10px;
+  background-color: #06f04c;
+  color: black;
+  border: none;
+  padding: 5px 10px;
+  cursor: pointer;
+  margin: 12px;
+}
+@media screen and (max-width: 1400px) {
+  .modalContent{
+    width: 80%;
   }
-  
-  .modalContent {
-    background-color: grey;
-    padding: 20px;
-    border-radius: 5px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+@media screen and (max-width: 500px) {
+  .carritoIntProduct img{
+    display: none;
   }
-  
-  /* Estilos para el botón de cerrar el modal */
-  .closeButton {
-    margin-top: 10px;
-    background-color: #dc3545;
-    color: white;
-    border: none;
-    padding: 5px 10px;
-    cursor: pointer;
-  }
-  
+}
