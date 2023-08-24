@@ -29,8 +29,8 @@ const ShoppingCartModal = () => {
                   </div>
                 </div>
               ))}
-              <div className={styles.carritoIntTotal}>
-                  
+              <div className={styles.carritoIntTotal}>  
+                
               </div>
             </div>
             <div className={styles.buttons}>

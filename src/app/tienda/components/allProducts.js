@@ -44,7 +44,7 @@ const ProductList = () => {
             <section className={styles.cardProduct} key={item.id}>
                 <Link href={`/tienda/${item.id}`}>
                     <article>
-                        <img src={item.image}/>
+                        <img src={item.image} alt={item.nombre}/>
                     </article>
                 </Link>
                 <article className={styles.cardProductDiv}>
@@ -63,15 +63,19 @@ const ProductList = () => {
         ))
     )
     const [isPanelVisible, setPanelVisible] = useState(false);
+    const [showPanel, setShowPanel] = useState(false);
+    const [buttonText, setButtonText] = useState('Mostrar Categorías');
 
     const togglePanel = () => {
         setPanelVisible(!isPanelVisible);
+        setShowPanel(!showPanel);
+        setButtonText(showPanel ? 'Mostrar Categorías' : 'Ocultar Categorías');
     };
     return(
        <>   
             <div className={styles.categoriesButtonClick}>
                 <button className={styles.categoriesButton} onClick={togglePanel}>
-                    Categorías ↓
+                    {buttonText}
                 </button>
                 {isPanelVisible && (
                 <div className={styles.categoriesPanel}>

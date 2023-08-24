@@ -4,9 +4,6 @@
     align-items: center;
     background-color: #d6d9e2;
 }
-.headerHub > img {
-    width: 7%;
-}
 .headerHubNavBarList{
     display: flex;
     justify-content: space-around;

@@ -13,12 +13,40 @@
     width: 60%;
     margin: auto;
     margin-top: 20px;
+    height: 500px;
 }
-.productsHub > article > div{
+.productsHub__div{
     display: flex;
     justify-content: space-between;
     align-items: center;
     height: 75px;
+}
+.productsHub__accesoDirectoTienda{
+    display: flex;
+    height: auto;
+    gap: 1rem;
+}
+.productsHub__accesoDirectoTienda section {
+    width: 25%;
+}
+.productsHub__accesoDirectoTienda > section > div{
+    display: flex;
+    height: 160px;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    background-color: #fff;
+    color: #000;
+    gap: 1rem;
+}
+.productsHub__accesoDirectoTienda > section > div img{
+    width: 37%;
+    height: auto;
+}
+.productsHub__accesoDirectoTienda > section{
+    border: 1px solid black;
+    border-radius: 12px;
 }
 .productsHub > article > div > article{
     font-size: 1.5rem;
@@ -38,5 +66,24 @@
 @media screen and (max-width: 570px) {
     .productsHub > article > div > article{
         width: auto;
+    }
+}
+@media screen and (max-width: 1100px) {
+    .productsHub > article{
+        width: 100%;
+    }
+    .productsHub__accesoDirectoTienda{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 800px) {
+    .productsHub__accesoDirectoTienda > section > div img{
+        width: 60%;
+    }
+    .productsHub__accesoDirectoTienda > section > div > h2{
+        font-size: 1rem;
+    }
+    .productsHub__accesoDirectoTienda > section > div > p{
+        font-size: 1rem;
     }
 }

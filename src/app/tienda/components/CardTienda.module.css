@@ -38,7 +38,8 @@
     font-size: 1.5rem;
 }
 .cardProduct img{
-    width: 50%;
+    width: 30%;
+    height: auto;
 }
 /*Button categories */ 
 .categoriesButtonClick{

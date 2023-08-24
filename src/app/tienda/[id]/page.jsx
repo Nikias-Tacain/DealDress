@@ -10,6 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTruckMoving } from '@fortawesome/free-solid-svg-icons';
 import ShoppingCartModal from '../components/ShoppingCart';
 import { carrito } from '../components/carrito';
+import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
 const firebaseConfig = {
   apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
   authDomain: "dealdress-90f47.firebaseapp.com",
@@ -80,6 +81,7 @@ const Product = () => {
   return(
     <>
       {loading ? <h2>Cargando item...</h2> : renderProducts()}
+      <FloatingWhatsAppButton />
     </>
 )
 }

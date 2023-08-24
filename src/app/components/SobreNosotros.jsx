@@ -3,8 +3,7 @@ import Link from 'next/link'
 export default function SobreNosotros() {
     return(
         <div className={styles.sobreNosotros}>
-            <h2 id='quienesSomos'>¿QUIENES SOMOS?</h2>
-            <div>
+            <div id='quienesSomos'>
                 <section>
                     <article>
                         <img src="/ComboEverlast.webp" alt="Combo Everlast" />
