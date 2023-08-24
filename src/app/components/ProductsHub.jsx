@@ -39,7 +39,7 @@ const ProductsHub = () => {
                 </div>
                 <div className={styles.productsHub__accesoDirectoTienda}>
                     {deportivoProducts.map((item) =>(
-                        <section>
+                        <section key={item.id}>
                             <div>
                                 <Link href={`/tienda/${item.id}`}>
                                     <img src={item.image} alt={item.nombre} />
@@ -64,7 +64,7 @@ const ProductsHub = () => {
                 </div>
                 <div className={styles.productsHub__accesoDirectoTienda}>
                     {urbanoProducts.map((item) =>(
-                        <section>
+                        <section key={item.id}>
                             <div>
                                 <Link href={`/tienda/${item.id}`}>
                                     <img src={item.image} alt={item.nombre} />
