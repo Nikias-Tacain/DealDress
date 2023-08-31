@@ -13,7 +13,7 @@
     width: 60%;
     margin: auto;
     margin-top: 20px;
-    height: 500px;
+    height: 440px;
 }
 .productsHub__div{
     display: flex;
@@ -85,5 +85,10 @@
     }
     .productsHub__accesoDirectoTienda > section > div > p{
         font-size: 1rem;
+    }
+}
+@media screen and (max-width: 500px) {
+    .productsHub__accesoDirectoTienda > section > div img{
+        width: 60%;
     }
 }

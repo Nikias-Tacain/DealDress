@@ -9,8 +9,8 @@ import styles from './InfoProduct.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTruckMoving } from '@fortawesome/free-solid-svg-icons';
 import ShoppingCartModal from '../components/ShoppingCart';
-import { carrito } from '../components/carrito';
 import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
+import { handleButtonClick } from '../components/ShoppingCart';
 const firebaseConfig = {
   apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
   authDomain: "dealdress-90f47.firebaseapp.com",
@@ -36,9 +36,6 @@ const Product = () => {
       setLoading(false);
     },1000)  
   })
-  let handleButtonClick = (itemId) => {
-    carrito.push(itemId);
-  };
   const renderProducts = () => (
     <div className={styles.sectionProductInfo}>
       <div className={styles.sectionProductInfoCarrito}>

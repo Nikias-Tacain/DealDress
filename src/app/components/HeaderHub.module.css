@@ -2,13 +2,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #d6d9e2;
 }
 .headerHubNavBarList{
     display: flex;
     justify-content: space-around;
     padding: 0.5rem;
-    background-color: #d6d9e2;
 }
 .headerHubNavBarList > li p{
     font-size: 2rem;
@@ -37,7 +35,7 @@
     justify-content: center;
 }
 .carrouselImg img{
-    width: 80%;
+    width: 95%;
     height: auto;
 }
   

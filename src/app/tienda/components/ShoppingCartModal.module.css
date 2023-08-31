@@ -24,7 +24,7 @@
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
-  width: 40%;
+  width: 50%;
 }
 
 .closeButton {
@@ -51,6 +51,14 @@
   display: flex;
   border-top: 1px solid;
   padding-top: 12px;
+  align-items: center;
+  justify-content: space-between;
+}
+.contentButtons button{
+  font-size: 30px;
+  padding: 7px;
+  margin: 12px;
+  cursor: pointer;
 }
 .carritoIntSection{
   display: flex;
@@ -75,13 +83,32 @@
   cursor: pointer;
   margin: 12px;
 }
+.buttonBorrarCarrito{
+  padding: 12px;
+  border-radius: 12px;
+  margin: 12px;
+  cursor: pointer;
+}
 @media screen and (max-width: 1400px) {
   .modalContent{
     width: 80%;
   }
 }
-@media screen and (max-width: 500px) {
+@media screen and (max-width: 900px) {
+  .buttons button {
+    width: 50%;
+  }
+}
+@media screen and (max-width: 600px) {
   .carritoIntProduct img{
     display: none;
+  }
+  .buttons button {
+    width: 30%;
+  }
+  .buttons {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
