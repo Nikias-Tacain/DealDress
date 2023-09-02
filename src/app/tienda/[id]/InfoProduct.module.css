@@ -22,10 +22,12 @@
     display: block;
 }
 .historyProductInfo{
-    color: white;
+    color: black;
     margin-top: 2.5%;
     text-align: center;
-    width: 65%;
+    width: 20%;
+    background-color: #fff;
+    margin: auto;
 }
 .historyProductInfo span:hover {
     color: blue;

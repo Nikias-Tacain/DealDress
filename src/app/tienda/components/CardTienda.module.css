@@ -13,6 +13,9 @@
     padding: 1rem;
     background-color: #fff;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
 }
 .cardProduct__link button{
     border-radius: 100%;
@@ -29,7 +32,7 @@
     padding: 12px;
     justify-content: space-around;
     border-radius: 24px;
-    width: 500px;
+    width: 100%;
 }
 .cardProductDiv div article h2{
     color: #fff;
@@ -46,6 +49,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
+}
+.categoriesButtonClick em{
+    font-size: 25px;
 }
 .categoriesButtonClick button {
     margin-left: 20px;

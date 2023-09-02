@@ -29,7 +29,7 @@
 
 .closeButton {
   margin-top: 10px;
-  background-color: #dc3545;
+  background-color: red;
   color: white;
   border: none;
   padding: 5px 10px;
@@ -43,6 +43,7 @@
   border-radius: 12px;
   margin-top: 12px;
   height: auto;
+  font-size: 22px;
 }
 .carritoIntProduct img{
   width: 10%;
@@ -54,11 +55,13 @@
   align-items: center;
   justify-content: space-between;
 }
-.contentButtons button{
+.contentButtons{
   font-size: 30px;
   padding: 7px;
   margin: 12px;
   cursor: pointer;
+  border: 1px solid;
+  border-radius: 12px;
 }
 .carritoIntSection{
   display: flex;
@@ -88,6 +91,20 @@
   border-radius: 12px;
   margin: 12px;
   cursor: pointer;
+}
+.sectionControlls{
+  display: flex;
+  margin: auto;
+  font-size: 25px;
+  gap: 15px;
+  align-items: center;
+}
+.sectionControlls span{
+  font-size: 25px;
+  border: 1px solid;
+  cursor: pointer;
+  padding: 7px;
+  border-radius: 7px;
 }
 @media screen and (max-width: 1400px) {
   .modalContent{

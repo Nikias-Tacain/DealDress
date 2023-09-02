@@ -1,30 +1,54 @@
+'use client'
 import styles from './MainHub.module.css'
 import Link from 'next/link'
+import { getFirestore } from 'firebase/firestore';
+import React, { useState, useEffect } from 'react';
+import { getAllPhotos } from '../tienda/components/productsQuery';
+import { initializeApp } from 'firebase/app';
+const firebaseConfig = {
+    apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
+    authDomain: "dealdress-90f47.firebaseapp.com",
+    projectId: "dealdress-90f47",
+    storageBucket: "dealdress-90f47.appspot.com",
+    messagingSenderId: "377143023164",
+    appId: "1:377143023164:web:7647ff34278d9248ce1539"
+};
+initializeApp(firebaseConfig);
 export default function SobreNosotros() {
+    const [products, setProducts] = useState([]);
+    useEffect(() => {
+        const db= getFirestore();
+        getAllPhotos(db)
+            .then((item) =>{
+                setProducts(item)
+            })
+    },[])
+    const photosProducts1 = products.filter(item => item.categoriaVisual === 'fila1');
+    const photosProducts2 = products.filter(item => item.categoriaVisual === 'fila2');
     return(
         <div className={styles.sobreNosotros}>
             <div id='quienesSomos'>
                 <section>
-                    <article>
-                        <img src="/ComboEverlast.webp" alt="Combo Everlast" />
-                        <img src="/RemeraVenom.webp" alt="Remera Venom" />
-                        <img src="/ConjuntoDeportivo.webp" alt="Conjunto Deportivo" />
-                        <img src="/BotasEverlast.webp" alt="Botas Everlast Negras" />
-                        <img src="/BotasEverlastRosas.webp" alt="Botas Everlast Rosas y Amarillas" />
-                        <img src="/BoxerHombre.webp" alt="Boxer de Hombre" />
-                    </article>
-                    <article>
-                        <img src="/RemeraEverlast.webp" alt="Remera Everlast" />
-                        <img src="/JordanBotas.webp" alt="Jordan Botas" />
-                        <img src="/Joggin.webp" alt="Joggins" />
-                        <img src="/CamperaEverlast.webp" alt="Campera Everlast" />
-                        <img src="/ConjuntoMujer.webp" alt="Conjunto de Mujer" />
-                        <img src="/BolsoMujer.webp" alt="Bolsos de Mujer" />
-                    </article>
+                    <section>
+                        {photosProducts1.map((item =>(
+                            <article key={item.id}>
+                                <img src={item.image} alt={item.nombre} />
+                            </article>
+                        )))}
+                    </section>
+                    <section>
+                        {photosProducts2.map((item =>(
+                            <article key={item.id}>
+                                <img src={item.image} alt={item.nombre} />
+                            </article>
+                        )))}
+                    </section>
                 </section>
                 <fieldset className={styles.sobreNosotros__info}>
                     <legend>Deal Dress Tienda Online</legend>
-                    <p>Nos destacamos por la amplia variedad de indumentaria y calzados.</p>
+                    {products.map((item =>(
+                        <p>{item.textHome}</p>
+                    )))}
                     <article>
                         <Link href='/tienda'>
                             <p>Ingresar a la tienda</p>

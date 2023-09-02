@@ -3,6 +3,9 @@
     justify-content: center;
     align-items: center;
 }
+.headerHub img {
+    width: 108%;
+}
 .headerHubNavBarList{
     display: flex;
     justify-content: space-around;
@@ -35,7 +38,7 @@
     justify-content: center;
 }
 .carrouselImg img{
-    width: 95%;
+    width: 80%;
     height: auto;
 }
   

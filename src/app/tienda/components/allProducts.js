@@ -8,7 +8,7 @@ import styles from './CardTienda.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faRotateRight } from '@fortawesome/free-solid-svg-icons';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
-import { handleButtonClick } from './ShoppingCart';
+import { useCarrito } from './CarritoContext';
 const firebaseConfig = {
     apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
     authDomain: "dealdress-90f47.firebaseapp.com",
@@ -19,6 +19,7 @@ const firebaseConfig = {
 };
 initializeApp(firebaseConfig);
 const ProductList = () => {
+    const { carrito, handleButtonClick } = useCarrito();
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -34,6 +35,7 @@ const ProductList = () => {
       },1000)  
     })
     const [selectedCategory, setSelectedCategory] = useState(null);
+    console.log(products);
   const filteredProducts = selectedCategory
     ? products.filter(product => product.categoria === selectedCategory) : products;
     const renderProducts = () => (
@@ -77,7 +79,7 @@ const ProductList = () => {
                 {isPanelVisible && (
                 <div className={styles.categoriesPanel}>
                     <ul className={styles.categoryList}>
-                        <em>Mujer</em>
+                        <em style={{textDecoration: 'underline'}}>Mujer</em>
                         <br />
                         <div>
                     <big>Urbano</big>
@@ -93,7 +95,7 @@ const ProductList = () => {
                 </div>
                 <br />
                 <br />
-                <em>Hombre</em>
+                <em style={{textDecoration: 'underline'}}>Hombre</em>
                 <br />
                 <div>
                     <big>Urbano</big>
@@ -110,7 +112,7 @@ const ProductList = () => {
                 </div>
                 <br/>
                 <br/>
-                <em>Calzado</em>
+                <em style={{textDecoration: 'underline'}}>Calzado</em>
                 <div>
                     <big>Urbano</big>
                     <li onClick={() => setSelectedCategory('botasUrbanas')}>Botas</li>

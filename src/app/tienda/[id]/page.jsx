@@ -10,7 +10,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTruckMoving } from '@fortawesome/free-solid-svg-icons';
 import ShoppingCartModal from '../components/ShoppingCart';
 import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
-import { handleButtonClick } from '../components/ShoppingCart';
+import { useCarrito } from '../components/CarritoContext';
 const firebaseConfig = {
   apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
   authDomain: "dealdress-90f47.firebaseapp.com",
@@ -21,6 +21,7 @@ const firebaseConfig = {
 };
 initializeApp(firebaseConfig);
 const Product = () => {
+  const { carrito, handleButtonClick } = useCarrito();
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -57,10 +58,13 @@ const Product = () => {
           <p>$ {product?.precio}</p>
           <p>Modelo: {product?.modelo}</p>
           <div>
-            <p>ENVIOS POR <a href="https://www.andreani.com/#!/personas">ANDREANI</a><FontAwesomeIcon icon={faTruckMoving} /></p>
+            <p>ENVIOS POR <a href="#">ANDREANI</a><FontAwesomeIcon icon={faTruckMoving} /></p>
           </div>
           <div className={styles.tallesInfoProduct}>
             <label htmlFor="">Talle:</label>
+            <div>
+              <button>{product?.talles}</button>
+            </div>
           </div>
           <br />
           <br />
@@ -74,7 +78,7 @@ const Product = () => {
         </div>
       </div>
     </div>
-)
+  )
   return(
     <>
       {loading ? <h2>Cargando item...</h2> : renderProducts()}

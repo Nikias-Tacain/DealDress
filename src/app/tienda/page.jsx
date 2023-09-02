@@ -1,7 +1,6 @@
 'use client'
 import TiendaNavBar from "./components/TiendaNavBar";
 import ProductList from "./components/allProducts";
-import styles from './components/CardTienda.module.css'
 import CarrouselImgs from "./components/CarrouselImgs";
 import FloatingWhatsAppButton from "./components/FloatingWhatsAppButton";
 
