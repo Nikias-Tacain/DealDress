@@ -1,4 +1,3 @@
-'use client'
 import FooterHub from './components/FooterHub';
 import HeaderHub from './components/HeaderHub';
 import React from 'react';
