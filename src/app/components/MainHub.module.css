@@ -10,6 +10,7 @@
     display: flex;
     flex: 1;
     gap: 30px;
+    padding: 12px;
 }
 .sobreNosotros div section article{
     border: 1px solid;

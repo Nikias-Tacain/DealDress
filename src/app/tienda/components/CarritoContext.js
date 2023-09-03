@@ -79,8 +79,6 @@ export function CarritoProvider({ children }) {
         cantidad: product.cantidad,
       },
     ]);
-
-    
   }
 };
 const clearCarrito = () => {
@@ -101,7 +99,7 @@ const clearCarrito = () => {
             'success'
           )
         }
-      })
+    } )
   };
   const borrarItem = (productId) => {
     const updatedCarrito = carrito.filter((product) => product.id != productId);
