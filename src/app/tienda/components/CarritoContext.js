@@ -47,7 +47,7 @@ export function CarritoProvider({ children }) {
       })
       
       Toast.fire({
-        icon: 'success',
+        icon: 'info',
         title: 'El producto se encuentra agregado. Se suma su cantidad.'
     })
   } else {

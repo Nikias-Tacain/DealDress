@@ -19,7 +19,7 @@ const firebaseConfig = {
 };
 initializeApp(firebaseConfig);
 const ProductList = () => {
-    const { carrito, handleButtonClick } = useCarrito();
+    const { handleButtonClick } = useCarrito();
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -35,7 +35,6 @@ const ProductList = () => {
       },1000)  
     })
     const [selectedCategory, setSelectedCategory] = useState(null);
-    console.log(products);
   const filteredProducts = selectedCategory
     ? products.filter(product => product.categoria === selectedCategory) : products;
     const renderProducts = () => (
@@ -73,7 +72,7 @@ const ProductList = () => {
     return(
        <>   
             <div className={styles.categoriesButtonClick}>
-                <button className={styles.categoriesButton} onClick={togglePanel}>
+                <button className={styles.categoriesButton} onClick={togglePanel} type='button'>
                     {buttonText}
                 </button>
                 {isPanelVisible && (

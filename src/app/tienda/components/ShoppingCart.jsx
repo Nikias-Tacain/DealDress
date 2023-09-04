@@ -1,12 +1,11 @@
 'use client'
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import styles from './ShoppingCartModal.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { useCarrito } from './CarritoContext';
-
-
+import Link from 'next/link';
 const ShoppingCartModal = () => {
   const { carrito, clearCarrito, borrarItem, increaseQuantity, decreaseQuantity } = useCarrito();
   const [isOpen, setIsOpen] = useState(false);
@@ -61,9 +60,11 @@ const ShoppingCartModal = () => {
               </div>
             }
             <div className={styles.buttons}>
-              <button className={styles.buttonBorrarCarrito} style={{ display: carrito.length === 0 ? 'none' : 'block' }} onClick={clearCarrito}><FontAwesomeIcon icon={faTrashCan} /></button>
+              <button className={styles.buttonBorrarCarrito} style={{ display: carrito.length === 0 ? 'none' : 'block'}} onClick={clearCarrito}><FontAwesomeIcon icon={faTrashCan} /></button>
               <button className={styles.closeButton} onClick={toggleModal}>Cerrar</button>
-              <button className={styles.buyButton} style={{ display: carrito.length === 0 ? 'none' : 'block' }}>Confirmar</button>
+              <Link href='/tienda/order'>
+                <button className={styles.buyButton} style={{ display: carrito.length === 0 ? 'none' : 'block'}}>Confirmar</button>
+              </Link>
             </div>
           </div>
         </div>

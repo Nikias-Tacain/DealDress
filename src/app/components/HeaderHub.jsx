@@ -1,10 +1,11 @@
 import styles from './HeaderHub.module.css'
-import Link from 'next/link'
+import Link from 'next/link';
+import Image from 'next/image';
 export default function HeaderHub() {
     return(
         <header className={styles.headerHub}>
             <Link href='/'>
-                <img src="/favicon.png" alt="Logo Deal Dress" />
+                <Image src="/favicon.png" alt="Logo Deal Dress" width={300} height={220}/>
             </Link>
         </header>
     )

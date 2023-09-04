@@ -15,11 +15,8 @@
     padding: 10px;
 }
 .linkSocialMedia > img{
-    width: 3%;
+    width: 7%;
     margin: 20px;
-}
-.footerMetodoPago img {
-    width: 25%;
 }
 @media screen and (max-width: 930px) {
     .footerHub > section > article > a img{

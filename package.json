@@ -23,6 +23,7 @@
     "sweetalert2": "^11.7.27"
   },
   "devDependencies": {
-    "react-router-dom": "^6.14.2"
+    "react-router-dom": "^6.14.2",
+    "standard": "^17.1.0"
   }
 }

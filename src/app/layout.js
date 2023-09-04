@@ -21,14 +21,14 @@ export const metadata = {
 }
 export default function RootLayout({ children }) {
   return (
-    <CarritoProvider>
-      <html lang="es">
-        <body>
-          <HeaderHub />
-          {children}
-          <FooterHub />
-        </body>
-      </html>
-    </CarritoProvider>
+    <html lang="es">
+    <body>
+      <CarritoProvider>
+        <HeaderHub />
+        {children}
+        <FooterHub />
+      </CarritoProvider>
+    </body>
+  </html>
   )
 }

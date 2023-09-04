@@ -21,7 +21,7 @@ const firebaseConfig = {
 };
 initializeApp(firebaseConfig);
 const Product = () => {
-  const { carrito, handleButtonClick } = useCarrito();
+  const { handleButtonClick } = useCarrito();
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
@@ -51,7 +51,7 @@ const Product = () => {
       </div>
       <div className={styles.infoProduct}>
         <div className={styles.infoProductDiv}>
-          <img src={product?.image}/>
+          <img src={product?.image} alt={product?.nombre}/>
         </div>
         <div className={styles.intInfoProduct}>
           <h1>{product?.nombre}</h1>

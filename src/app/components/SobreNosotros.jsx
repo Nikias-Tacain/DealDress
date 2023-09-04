@@ -47,7 +47,7 @@ export default function SobreNosotros() {
                 <fieldset className={styles.sobreNosotros__info}>
                     <legend>Deal Dress Tienda Online</legend>
                     {products.map((item =>(
-                        <p>{item.textHome}</p>
+                        <p key={item.id}>{item.textHome}</p>
                     )))}
                     <article>
                         <Link href='/tienda'>
