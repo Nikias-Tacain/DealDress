@@ -113,15 +113,18 @@
   }
 }
 @media screen and (max-width: 900px) {
-  .buttons button {
+  .buttons > button {
     width: 50%;
+  }
+  .buyButton{
+    width: 150px;
   }
 }
 @media screen and (max-width: 600px) {
   .carritoIntProduct img{
     display: none;
   }
-  .buttons button {
+  .buttons > button {
     width: 30%;
   }
   .buttons {

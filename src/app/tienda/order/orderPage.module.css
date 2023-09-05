@@ -1,0 +1,70 @@
+.modalContent {
+    background-color: grey;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    width: 50%;
+    margin: auto;
+}
+.carritoInt{
+    border: 1px solid;
+    padding: 12px;
+    border-radius: 12px;
+    margin-top: 12px;
+    height: auto;
+    font-size: 22px;
+}
+.carritoIntProduct{
+    display: flex;
+    border-top: 1px solid;
+    padding-top: 12px;
+    align-items: center;
+    justify-content: space-between;
+}
+.carritoIntProduct > img{
+    width: 10%;
+}
+.sectionControlls{
+    display: flex;
+    margin: auto;
+    font-size: 25px;
+    gap: 15px;
+    align-items: center;
+}
+.sectionControlls span{
+    font-size: 25px;
+    border: 1px solid;
+    cursor: pointer;
+    padding: 7px;
+    border-radius: 7px;
+}
+.contentButtons{
+    font-size: 30px;
+    padding: 7px;
+    margin: 12px;
+    cursor: pointer;
+    border: 1px solid;
+    border-radius: 12px;
+}
+.closeButton {
+    margin-top: 10px;
+    background-color: red;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.buyButton{
+    margin-top: 10px;
+    background-color: #06f04c;
+    color: black;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+.buttonsCarrito{
+    width: 50%;
+    display: flex;
+    justify-content: space-around;
+    margin: auto;
+}
