@@ -79,7 +79,7 @@ export default function OrderCart () {
               ))}
               <div>
                 <p>Total: $ {totalPrecio}</p>
-                <h6>Una vez que le das a 'PAGAR' el carrito se borra y pasamos a la fase final.</h6>
+                <h6>Una vez que le das a PAGAR el carrito se borra y pasamos a la fase final.</h6>
                 <div className={styles.buttonsCarrito}>
                   <Link href='/tienda'>
                     <button className={styles.closeButton}>Seguir comprando</button>
