@@ -23,6 +23,7 @@
 }
 .carritoIntProduct > img{
     width: 10%;
+    height: auto;
 }
 .sectionControlls{
     display: flex;
@@ -67,4 +68,30 @@
     display: flex;
     justify-content: space-around;
     margin: auto;
+}
+@media screen and (max-width: 1400px) {
+    .modalContent{
+      width: 80%;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .buttons > button {
+      width: 50%;
+    }
+    .buyButton{
+      width: 150px;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .carritoIntProduct img{
+      display: none;
+    }
+    .buttonsCarrito > button {
+      width: 30%;
+    }
+    .buttonsCarrito {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
 }
