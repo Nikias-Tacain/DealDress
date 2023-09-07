@@ -51,7 +51,6 @@
     .sobreNosotros div{
         display: flex;
         flex-direction: column;
-        color: black;
     }
 }
 @media screen and (max-width: 930px) {

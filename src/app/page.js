@@ -6,14 +6,15 @@ import { config } from '@fortawesome/fontawesome-svg-core';
 import ProductsHub from './components/ProductsHub';
 import FloatingWhatsAppButton from './tienda/components/FloatingWhatsAppButton';
 config.autoAddCss = false;
+import styles from './pageHome.module.css';
 export default function page() {
     return(
-        <>
+        <section className={styles.pageHome}>
             <HeaderHubNavBar />
             <HeaderHubCarrousel />
             <ProductsHub />
             <SobreNosotros />
             <FloatingWhatsAppButton />
-        </>
+        </section>
     )
 }
