@@ -3,6 +3,7 @@ import FooterHub from './components/FooterHub';
 import { CarritoProvider } from './tienda/components/CarritoContext';
 import HeaderHub from './components/HeaderHub';
 import './globals.css';
+
 export const metadata = {
   title: 'Deal Dress',
   description: 'Tienda web donde se venden productos deportivos. Ropa, herramientas, pesas, etc.',

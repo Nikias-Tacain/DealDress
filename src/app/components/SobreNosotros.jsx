@@ -51,7 +51,7 @@ export default function SobreNosotros() {
                     )))}
                     <article>
                         <Link href='/tienda'>
-                            <p>Ingresar a la tienda</p>
+                            <p>INGRESAR A LA TIENDA</p>
                         </Link>
                     </article>
                 </fieldset>

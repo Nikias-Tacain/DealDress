@@ -30,10 +30,10 @@ const ProductsHub = () => {
             <h2>LO MAS VENDIDO</h2>
             <article>
                 <div className={styles.productsHub__div}>
-                    <h3>Deportivo</h3>
+                    <h3>DEPORTIVO</h3>
                     <article>
                         <Link href='/tienda'>
-                            <p>Ir a la tienda</p>
+                            <p>IR A LA TIENDA</p>
                         </Link>
                     </article>
                 </div>
@@ -55,10 +55,10 @@ const ProductsHub = () => {
             </article>
             <article>
                 <div className={styles.productsHub__div}>
-                    <h3>Urbano</h3>
+                    <h3>URBANO</h3>
                     <article>
                         <Link href='/tienda'>
-                            <p>Ir a la tienda</p>
+                            <p>IR A LA TIENDA</p>
                         </Link>
                     </article>
                 </div>
