@@ -24,7 +24,7 @@
 }
 .sobreNosotros  fieldset p{
     text-align: center;
-    font-size: 30px;
+    font-size: 23px;
 }
 .sobreNosotros__info{
     margin-left: 15rem;
@@ -48,13 +48,13 @@
 .sobreNosotros__info > article:hover {
     transform: translateY(6px);
 }
-@media screen and (max-width: 1150px) {
-    .sobreNosotros div{
-        display: flex;
-        flex-direction: column;
+@media screen and (min-width: 1300px) {
+    .sobreNosotrosEdit{
+        width: 60%;
     }
+    
 }
-@media screen and (max-width: 930px) {
+@media screen and (max-width: 1150px) {
     .sobreNosotros div{
         display: flex;
         flex-direction: column;

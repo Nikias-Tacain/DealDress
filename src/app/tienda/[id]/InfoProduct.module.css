@@ -2,7 +2,7 @@
     display: flex;
     justify-content: center;
     border: 1px solid;
-    width: 50%;
+    width: 40%;
     margin: auto;
     border-radius: 20px;
     text-align: center;
@@ -14,7 +14,8 @@
 .infoProductDiv{
     padding: 10px;
     border-right: 1px solid;
-    max-width: 100%;
+    width: 50%;
+    margin: auto;
     overflow: hidden;
 }
 .infoProductDiv img{

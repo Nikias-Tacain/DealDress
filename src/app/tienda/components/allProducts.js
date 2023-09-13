@@ -40,11 +40,13 @@ const ProductList = () => {
     const renderProducts = () => (
         filteredProducts.map(item => (
             <section className={styles.cardProduct} key={item.id}>
-                <Link href={`/tienda/${item.id}`}>
-                    <article>
-                        <img src={item.image} alt={item.nombre}/>
-                    </article>
-                </Link>
+                <div className={styles.divProductImg}>
+                    <Link href={`/tienda/${item.id}`}>
+                        <article className={styles.imgProduct}>
+                            <img src={item.image} alt={item.nombre}/>
+                        </article>
+                    </Link>
+                </div>
                 <article className={styles.cardProductDiv}>
                     <div>
                         <article>

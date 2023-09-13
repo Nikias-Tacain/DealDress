@@ -28,7 +28,7 @@ export default function SobreNosotros() {
     return(
         <div className={styles.sobreNosotros}>
             <div id='quienesSomos'>
-                <section>
+                <section className={styles.sobreNosotrosEdit}>
                     <section>
                         {photosProducts1.map((item =>(
                             <article key={item.id}>
@@ -47,7 +47,10 @@ export default function SobreNosotros() {
                 <fieldset className={styles.sobreNosotros__info}>
                     <legend>Deal Dress Tienda Online</legend>
                     {products.map((item =>(
-                        <p key={item.id}>{item.textHome}</p>
+                        <section>
+                            <p key={item.id}>{item.textHome}</p>
+                            <p key={item.id}>{item.textHome2}</p>
+                        </section>
                     )))}
                     <article>
                         <Link href='/tienda'>
