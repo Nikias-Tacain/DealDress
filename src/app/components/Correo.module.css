@@ -1,0 +1,35 @@
+.correoSection{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    margin-top: 7%;
+    font-size: 35px;
+    border-top: solid 1px;
+}
+.subscribeButton{
+    background-color: #007BFF;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+    margin-left: 25px;
+}
+.subscribeButton:hover{
+    background-color: #0056b3;
+}
+.subscribeInput {
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+.subscribeInput::placeholder {
+    color: #999;
+}
+.subscribeInput:focus {
+    border-color: #007BFF;
+    outline: none;
+}

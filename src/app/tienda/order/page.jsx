@@ -1,20 +1,10 @@
 'use client'
-import { useState } from "react";
 import { useCarrito } from "../components/CarritoContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import styles from './orderPage.module.css';
 import Link from "next/link";
-import Swal from 'sweetalert2';
-import { useTalla } from "../components/tallaContext";
-import { initMercadoPago, Wallet } from '@mercadopago/sdk-react'
-import axios from "axios";
 export default function OrderCart () {
-    const [preferenceId, setPreferenceId] = useState();
-
-    initMercadoPago('TEST-af0d2a74-5544-47e2-901b-2a4654d4b79a');
-
-    
 
     const { carrito, borrarItem, increaseQuantity, decreaseQuantity } = useCarrito();
     const handleRemoveClick = (productId) => {
@@ -30,33 +20,12 @@ export default function OrderCart () {
     const totalPrecio = carrito.reduce((acumulador, producto) => {
         return acumulador + (producto.precio * producto.cantidad);
       }, 0);
-      const { tallaSeleccionada } = useTalla();
-      const createPreference = async () => {
-        try{
-          const response = await axios.post("http://localhost:8080/create_preference",{
-            description: "Carrito de compras",
-            price: totalPrecio,
-            quantity: 1,
-          });
-          const { id } = response.data;
-          return id;
-        }catch (error) {
-          console.log(error);
-        }
-      };
-      const handleBuy = async () =>{
-        localStorage.clear();
-        const id = await createPreference();
-        if (id) {
-          setPreferenceId(id);
-        }
-      }
       const redirigirAWhatsAppConMensaje = () => {
         // Mensaje que deseas enviar en WhatsApp
         localStorage.clear();
         const carritoTexto = `Mi carrito de compras:
         \n${carrito.map(item => {
-          return `${item.nombre}, talla ${tallaSeleccionada}, Precio: $${item.precio}, Cantidad: ${item.cantidad}, Modelo: ${item.modelo}`;
+          return `${item.nombre}, Precio: $${item.precio}, Cantidad: ${item.cantidad}, Modelo: ${item.modelo}`;
         }).join('\n')}
           
         TOTAL: $ ${totalPrecio}
@@ -114,12 +83,12 @@ export default function OrderCart () {
                 </div>
                 <div className={styles.buttonsPago}>
                   <button onClick={redirigirAWhatsAppConMensaje} className={styles.buyButton}>Transferencia</button>
-                  <button onClick={handleBuy} className={styles.buyButtonMercadoPago}>MercadoPago</button>
+                  <Link href='/tienda/order/mercadoPago'>
+                    <button className={styles.buyButtonMercadoPago}>MercadoPago</button>
+                  </Link>
                 </div>
               </div>
-              {preferenceId && <Wallet initialization={{ preferenceId}} />}
           </div>
-          
         }
         </section>
       </>

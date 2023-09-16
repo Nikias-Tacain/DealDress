@@ -5,7 +5,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { useCarrito } from './CarritoContext';
-import { useTalla } from './tallaContext';
 import Link from 'next/link';
 const ShoppingCartModal = () => {
   const { carrito, clearCarrito, borrarItem, increaseQuantity, decreaseQuantity } = useCarrito();
@@ -26,7 +25,6 @@ const ShoppingCartModal = () => {
   const totalPrecio = carrito.reduce((acumulador, producto) => {
     return acumulador + (producto.precio * producto.cantidad);
   }, 0);
-  const { tallaSeleccionada } = useTalla();
   return (
     <div>
       <button className={styles.openButton} onClick={toggleModal}>
@@ -43,7 +41,6 @@ const ShoppingCartModal = () => {
                   <img src={student.image} alt={student.nombre} />
                   <div className={styles.carritoIntSection}>
                     <h2>{student.nombre}</h2>
-                    <span>({tallaSeleccionada})</span>
                     <p>$ {student.precio}</p>
                     <p>{student.modelo}</p>
                     <div className={styles.sectionControlls}>

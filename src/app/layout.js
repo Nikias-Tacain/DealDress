@@ -3,7 +3,6 @@ import FooterHub from './components/FooterHub';
 import { CarritoProvider } from './tienda/components/CarritoContext';
 import HeaderHub from './components/HeaderHub';
 import './globals.css';
-import { TallaProvider } from './tienda/components/tallaContext';
 const mercadoPago = require ('mercadopago');
 
 mercadoPago.configure({
@@ -31,11 +30,9 @@ export default function RootLayout({ children }) {
     <html lang="es">
     <body>
       <CarritoProvider>
-        <TallaProvider>
-          <HeaderHub />
-          {children}
-          <FooterHub />
-        </TallaProvider>
+        <HeaderHub />
+        {children}
+        <FooterHub />
       </CarritoProvider>
     </body>
   </html>

@@ -11,7 +11,6 @@ import { faTruckMoving } from '@fortawesome/free-solid-svg-icons';
 import ShoppingCartModal from '../components/ShoppingCart';
 import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
 import { useCarrito } from '../components/CarritoContext';
-import { useTalla } from '../components/tallaContext';
 const firebaseConfig = {
   apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
   authDomain: "dealdress-90f47.firebaseapp.com",
@@ -38,11 +37,6 @@ const Product = () => {
       setLoading(false);
     },1000)  
   })
-  const { actualizarTalla } = useTalla();
-
-  const handleButtonClickTalla = (selectedTalla) => {
-    actualizarTalla(selectedTalla); // Actualizar el valor de la talla en el contexto
-  };
   const renderProducts = () => (
     <div className={styles.sectionProductInfo}>
       <div className={styles.sectionProductInfoCarrito}>
@@ -69,8 +63,7 @@ const Product = () => {
           <div className={styles.tallesInfoProduct}>
             <label htmlFor="">Talle:</label>
             <div>
-              {product.talles.map((talla) => (
-              <button key={talla} onClick={() => handleButtonClickTalla(talla)}>{talla}</button>))}
+
             </div>
           </div>
           <br />
