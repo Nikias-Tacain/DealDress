@@ -51,58 +51,70 @@
     height: 150px;
 }
 /*Button categories */ 
-.categoriesButtonClick{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.categoriesButtonClick em{
-    font-size: 25px;
-}
-.categoriesButtonClick button {
-    margin-left: 20px;
-}
-.categoriesButton {
-    background-color: rgb(71, 71, 216);
-    color: white;
-    padding: 10px 20px;
-    border-radius: 5px;
-    border: none;
-    cursor: pointer;
-}
+/* styles.css o styles.module.css */
+
 .categoriesPanel {
-    padding: 20px;
-    background-color: grey;
-    position: absolute; 
-    border: 1px solid #ddd;
-    margin-top: 35%;
-}
-.categoriesPanel div big{
-    display: flex;
-    align-items: center;
-    margin-right: 12px;
+    position: fixed;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    background-color: #333;
+    color: #fff;
+    transition: left 0.3s ease-in-out;
 }
   
+/* styles.module.css */
+.buttonCategories {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    margin-left: 45%;
+}
 .categoryList {
     list-style: none;
     padding: 0;
+    margin: 0;
 }
-.categoryList div{
+  
+.categorySection {
+    margin-bottom: 20px;
+}
+  
+.categoryTitle {
+    font-weight: bold;
+    text-decoration: underline;
+    font-size: 20px;
+}
+  
+.subcategories {
     display: flex;
-    padding-top: 12px;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    text-align: center;
 }
-.categoryList li {
-    padding: 1rem;
-    border: 1px solid;
+  
+.subcategory {
+    margin-right: 20px;
+    margin-bottom: 10px;
+}
+.subcategory li{
     cursor: pointer;
-    border-radius: 12px;
+    border: 1px solid;
+    padding: 12px;
+    margin-top: 12px;
 }
-.categoryList li:hover{
-    color: red;
-}
+  
 @media screen and (max-width: 1600px) {
-    .categoriesPanel {
-        margin-top: 700px;
+    .cardProductDiv{
+        width: 100%;
+    }
+}
+@media screen and (max-width: 900px) {
+    .categoriesPanel{
+        width: 40%;
     }
     .cardProductDiv{
         width: 100%;

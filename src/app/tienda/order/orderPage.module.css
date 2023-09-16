@@ -95,6 +95,11 @@
     .buyButton{
       width: 150px;
     }
+    .buttonsPago{
+      display: flex;
+      justify-content: space-between;
+      width: 100%;
+    }
   }
   @media screen and (max-width: 600px) {
     .carritoIntProduct img{

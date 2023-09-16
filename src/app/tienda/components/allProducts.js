@@ -74,58 +74,67 @@ const ProductList = () => {
     return(
        <>   
             <div className={styles.categoriesButtonClick}>
-                <button className={styles.categoriesButton} onClick={togglePanel} type='button'>
+                <button className={styles.buttonCategories} onClick={togglePanel} type='button'>
                     {buttonText}
                 </button>
                 {isPanelVisible && (
                 <div className={styles.categoriesPanel}>
                     <ul className={styles.categoryList}>
-                        <em style={{textDecoration: 'underline'}}>Mujer</em>
-                        <br />
-                        <div>
-                    <big>Urbano</big>
-                    <li onClick={() => setSelectedCategory('jeansMujerUrbano')}>Jeans</li>
-                    <li onClick={() => setSelectedCategory('remerasMujerUrbano')}>Remeras</li>
-                    <li onClick={() => setSelectedCategory('buzosMujerUrbano')}>Buzos</li>
+  <li className={styles.categorySection}>
+    <em className={styles.categoryTitle}>Mujer</em>
+    <div className={styles.subcategories}>
+      <div className={styles.subcategory}>
+        <big>Urbano</big>
+        <li onClick={() => setSelectedCategory('jeansMujerUrbano')}>Jeans</li>
+        <li onClick={() => setSelectedCategory('remerasMujerUrbano')}>Remeras</li>
+        <li onClick={() => setSelectedCategory('buzosMujerUrbano')}>Buzos</li>
+      </div>
+      <div className={styles.subcategory}>
+        <big>Deportivo</big>
+        <li onClick={() => setSelectedCategory('remerasMujerDeportivo')}>Remeras</li>
+        <li onClick={() => setSelectedCategory('calzasMujerDeportivo')}>Calzas</li>
+        <li onClick={() => setSelectedCategory('camperasMujerDeportivo')}>Camperas</li>
+      </div>
+    </div>
+  </li>
+
+  <li className={styles.categorySection}>
+    <em className={styles.categoryTitle}>Hombre</em>
+    <div className={styles.subcategories}>
+      <div className={styles.subcategory}>
+        <big>Urbano</big>
+        <li onClick={() => setSelectedCategory('jeansHombreUrbano')}>Jeans</li>
+        <li onClick={() => setSelectedCategory('remerasHombreUrbano')}>Remeras</li>
+        <li onClick={() => setSelectedCategory('buzosHombreUrbano')}>Buzos</li>
+        <li onClick={() => setSelectedCategory('camperasHombreUrbano')}>Camperas</li>
+      </div>
+      <div className={styles.subcategory}>
+        <big>Deportivo</big>
+        <li onClick={() => setSelectedCategory('remerasHombreDeportivo')}>Remeras</li>
+        <li onClick={() => setSelectedCategory('calzasHombreDeportivo')}>Calzas</li>
+        <li onClick={() => setSelectedCategory('camperasHombreDeportivo')}>Camperas</li>
+      </div>
+    </div>
+  </li>
+
+  <li className={styles.categorySection}>
+    <em className={styles.categoryTitle}>Calzado</em>
+    <div className={styles.subcategories}>
+      <div className={styles.subcategory}>
+        <big>Urbano</big>
+        <li onClick={() => setSelectedCategory('botasUrbanas')}>Botas</li>
+      </div>
+      <div className={styles.subcategory}>
+        <big>Deportivas</big>
+        <li onClick={() => setSelectedCategory('botasDeportivas')}>Botas</li>
+      </div>
+    </div>
+  </li>
+</ul>
+
                 </div>
-                <div>
-                    <big>Deportivo</big>
-                    <li onClick={() => setSelectedCategory('remerasMujerDeportivo')}>Remeras</li>
-                    <li onClick={() => setSelectedCategory('calzasMujerDeportivo')}>Calzas</li>
-                    <li onClick={() => setSelectedCategory('camperasMujerDeportivo')}>Camperas</li>
-                </div>
-                <br />
-                <br />
-                <em style={{textDecoration: 'underline'}}>Hombre</em>
-                <br />
-                <div>
-                    <big>Urbano</big>
-                    <li onClick={() => setSelectedCategory('jeansHombreUrbano')}>Jeans</li>
-                    <li onClick={() => setSelectedCategory('remerasHombreUrbano')}>Remeras</li>
-                    <li onClick={() => setSelectedCategory('buzosHombreUrbano')}>Buzos</li>
-                    <li onClick={() => setSelectedCategory('camperasHombreUrbano')}>Camperas</li>
-                </div>
-                <div>
-                    <big>Deportivo</big>
-                    <li onClick={() => setSelectedCategory('remerasHombreDeportivo')}>Remeras</li>
-                    <li onClick={() => setSelectedCategory('calzasHombreDeportivo')}>Calzas</li>
-                    <li onClick={() => setSelectedCategory('camperasHombreDeportivo')}>Camperas</li>
-                </div>
-                <br/>
-                <br/>
-                <em style={{textDecoration: 'underline'}}>Calzado</em>
-                <div>
-                    <big>Urbano</big>
-                    <li onClick={() => setSelectedCategory('botasUrbanas')}>Botas</li>
-                </div>
-                <div>
-                    <big>Deportivas</big>
-                    <li onClick={() => setSelectedCategory('botasDeportivas')}>Botas</li>
-                </div>
-                </ul>
-            </div>
-            )}
-            <button onClick={() => setSelectedCategory(null)}><FontAwesomeIcon icon={faRotateRight} /></button>
+                )}
+                <button onClick={() => setSelectedCategory(null)}><FontAwesomeIcon icon={faRotateRight} /></button>
             </div>
             <div className={styles.card}>
                 {loading ? <h2>Cargando productos...</h2> : renderProducts()}

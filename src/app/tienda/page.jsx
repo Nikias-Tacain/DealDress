@@ -1,4 +1,3 @@
-'use client'
 import TiendaNavBar from "./components/TiendaNavBar";
 import ProductList from "./components/allProducts";
 import CarrouselImgs from "./components/CarrouselImgs";

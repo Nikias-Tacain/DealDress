@@ -1,0 +1,81 @@
+.completeOrden{
+    text-align: center;
+    margin-top: 2%;
+}
+.mercadoPagoOrden{
+    padding: 12px;
+    width: 50%;
+    margin: auto;
+    font-size: 20px;
+    text-align: center;
+}
+.divOrden{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    border: 1px solid;
+    margin: auto;
+    padding: 5px;
+}
+.divOrden img{
+    width: 10%;
+}
+/* Estilos para el contenedor principal */
+.formulario{
+    padding-top: 20px;
+    margin: auto;
+    width: 30%;
+}
+.facturacion-container {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+  
+  /* Estilos para las etiquetas y campos de entrada */
+.form-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+  
+.form-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+  
+  /* Estilos para el botón */
+.submit-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+  
+.submit-button:hover {
+    background-color: #0056b3;
+}
+@media screen and (max-width: 1200px) {
+    .divOrden{
+        max-width: 50%;
+    }
+    .divOrden img{
+        display: none;
+    }
+}
+@media screen and (max-width: 600px) {
+    .divOrden{
+        max-width: 100%;
+    }
+    
+}
+
+  
