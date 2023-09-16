@@ -1,10 +1,10 @@
 'use client'
-import { useState } from "react";
+import React, { useState} from 'react';
 import { useCarrito } from "../../components/CarritoContext";
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
 import styles from '../orderPage.module.css';
 import axios from "axios";
-export default function mercadoPago () {
+export default function MercadoPago () {
     const [preferenceId, setPreferenceId] = useState();
     const { carrito } = useCarrito();
     initMercadoPago('APP_USR-5e06b7fc-5e06-4627-b504-fa7f833a133b');
@@ -22,7 +22,7 @@ export default function mercadoPago () {
         }
       };
       const handleBuy = async () =>{
-        
+
         const id = await createPreference();
         if (id) {
           setPreferenceId(id);
