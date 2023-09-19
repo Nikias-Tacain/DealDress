@@ -24,13 +24,13 @@ app.post("/create_preference", (req, res) =>{
           },
         ],
         back_urls: {
-          success: 'localhost:3000',
-          failure: 'localhost:3000',
-          pending: 'localhost:3000',
+          success: 'https://deal-dress.vercel.app/',
+          failure: 'https://deal-dress.vercel.app/tienda',
+          pending: 'https://deal-dress.vercel.app/tienda',
         },
         auto_return: 'approved', // Configura uno de los valores permitidos
       };
-      
+
       mercadopago.preferences.create(preference)
         .then((response) => {
           res.json({
@@ -43,5 +43,5 @@ app.post("/create_preference", (req, res) =>{
 });
 
 app.listen(8080, () =>{
-    console.log('Server abierto en puerto 8080');
+  console.log('Server abierto en puerto 8080');
 })

@@ -24,10 +24,12 @@
     transform: translateY(6px);
 }
 .headerHubCarrouselMarquee{
-    width: 35%;
-    margin-left: 37%;
     padding-top: 2%;
-    font-size: 18px;
+    font-size: 20px;
+    margin-left: 10%;
+}
+.headerHubCarrouselMarquee marquee{
+    width: 89%;
 }
 
 .carrouselImg{

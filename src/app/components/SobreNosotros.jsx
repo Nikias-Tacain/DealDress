@@ -44,20 +44,6 @@ export default function SobreNosotros() {
                         )))}
                     </section>
                 </section>
-                <fieldset className={styles.sobreNosotros__info}>
-                    <legend>Deal Dress Tienda Online</legend>
-                    {products.map((item =>(
-                        <section key={item.id}>
-                            <p key={item.id}>{item.textHome}</p>
-                            <p key={item.id}>{item.textHome2}</p>
-                        </section>
-                    )))}
-                    <article>
-                        <Link href='/tienda'>
-                            <p>INGRESAR A LA TIENDA</p>
-                        </Link>
-                    </article>
-                </fieldset>
             </div>
         </div>
     )

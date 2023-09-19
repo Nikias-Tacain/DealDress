@@ -4,11 +4,13 @@ export default function HeaderHubCarrousel() {
     return(
         <section>
             <div  className={styles.carrouselImg}>
-                <Image src="/headerHome.webp" alt="Imagen portada" width={1000} height={500}/>
+                <Image src="/headerHome.png" alt="Imagen portada" width={1000} height={500}/>
             </div>
-            <marquee behavior="scroll" direction="left" className={styles.headerHubCarrouselMarquee}>
+            <div className={styles.headerHubCarrouselMarquee}>
+            <marquee behavior="scroll" direction="left">
                 ENVIAMOS A TODO EL PAIS A DOMICILIO CON ANDREANI !!! 🚛🚛🚛 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </marquee>
+            </div>
         </section>
     )
 }

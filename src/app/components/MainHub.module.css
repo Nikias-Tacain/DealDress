@@ -22,44 +22,15 @@
     height: 100%;
     object-fit: cover;
 }
-.sobreNosotros  fieldset p{
-    text-align: center;
-    font-size: 23px;
-}
-.sobreNosotros__info{
-    margin-left: 15rem;
-    padding: 15px;
-    text-align: center;
-    margin: auto;
-}
-.sobreNosotros__info > article {
-    font-size: 1rem;
-    height: 70px;
-    width: 300px;
-    border-radius: 20px;
-    background-color: red;
-    color: #fff;
-    border: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 12px auto;
-}
-.sobreNosotros__info > article:hover {
-    transform: translateY(6px);
-}
 @media screen and (min-width: 1300px) {
     .sobreNosotrosEdit{
         width: 60%;
+        margin: auto;
     }
-    
 }
 @media screen and (max-width: 1150px) {
     .sobreNosotros div{
         display: flex;
         flex-direction: column;
-    }
-    .sobreNosotros__info{
-        margin: auto;
     }
 }
