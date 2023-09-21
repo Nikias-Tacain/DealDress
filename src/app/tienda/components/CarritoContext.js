@@ -28,7 +28,7 @@ export function CarritoProvider({ children }) {
   const handleButtonClick = (product) => {
     const existingProductIndex = carrito.findIndex((p) => p.id === product.id);
 
-  if (existingProductIndex !== -1) {
+    if (existingProductIndex !== -1) {
     // Si el producto ya existe en el carrito (por ID), aumentar la cantidad
     const updatedCarrito = [...carrito];
     updatedCarrito[existingProductIndex].cantidad += 1;

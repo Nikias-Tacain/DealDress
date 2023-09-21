@@ -21,8 +21,6 @@
     height: auto;
 }
 .headerHubCarrouselMarquee{
-    width: 35%;
-    margin-left: 37%;
-    padding-top: 1%;
-    font-size: 18px;
+    font-size: 20px;
+    width: 100%;
 }

@@ -90,6 +90,12 @@ const ProductList = () => {
                 <div className={styles.categoriesPanel}>
                   <ul className={styles.categoryList}>
                     <button className={styles.closeButton} onClick={closePanel}>X</button>
+                    <div style={{ margin: '5%' }}>
+                      <Link href='tienda/guiaCompra'>
+                        <button style={{ cursor: 'pointer' }}>¿COMO COMPRAR?</button>
+                      </Link>
+                    </div>
+
                     <li className={styles.categorySection}>
                       <em
                                 className={styles.categoryTitle}
@@ -158,7 +164,7 @@ const ProductList = () => {
 
                 </div>
                 )}
-                <button onClick={() => setSelectedCategory(null)}><FontAwesomeIcon icon={faRotateRight} /></button>
+                <button onClick={() => setSelectedCategory(null)} className={styles.refilCategories}><FontAwesomeIcon icon={faRotateRight} /></button>
             </div>
             <div className={styles.card}>
                 {loading ? <h2>Cargando productos...</h2> : renderProducts()}

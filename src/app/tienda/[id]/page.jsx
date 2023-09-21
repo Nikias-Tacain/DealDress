@@ -1,6 +1,6 @@
 'use client'
-import { getFirestore } from 'firebase/firestore';
 import {React, useEffect, useState } from 'react';
+import { getFirestore } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 import { useParams } from 'next/navigation'
 import { getProductById } from '../components/productsQuery';
@@ -11,20 +11,24 @@ import { faTruckMoving } from '@fortawesome/free-solid-svg-icons';
 import ShoppingCartModal from '../components/ShoppingCart';
 import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
 import { useCarrito } from '../components/CarritoContext';
-const firebaseConfig = {
-  apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
-  authDomain: "dealdress-90f47.firebaseapp.com",
-  projectId: "dealdress-90f47",
-  storageBucket: "dealdress-90f47.appspot.com",
-  messagingSenderId: "377143023164",
-  appId: "1:377143023164:web:7647ff34278d9248ce1539"
-};
-initializeApp(firebaseConfig);
+
+
 const Product = () => {
-  const { handleButtonClick, carrito } = useCarrito();
+  const firebaseConfig = {
+    apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
+    authDomain: "dealdress-90f47.firebaseapp.com",
+    projectId: "dealdress-90f47",
+    storageBucket: "dealdress-90f47.appspot.com",
+    messagingSenderId: "377143023164",
+    appId: "1:377143023164:web:7647ff34278d9248ce1539"
+  };
+  initializeApp(firebaseConfig);
+  const { handleButtonClick } = useCarrito();
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
   useEffect(() => {
     const db = getFirestore();
     getProductById(db, id)
@@ -63,7 +67,14 @@ const Product = () => {
           <div className={styles.tallesInfoProduct}>
             <label htmlFor="">Talle:</label>
             <div>
-
+              <ul>
+                {product.talles.map((size) => (
+                  <li key={size}>
+                    <input type="checkbox" name="" id="" onClick={() => console.log(size)}/>
+                    <span> {size}</span>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
           <br />
@@ -74,7 +85,7 @@ const Product = () => {
           <br />
           <br />
           <br />
-          <span>*Vas a poder sumar y restar cantidades en el carrito.</span>
+          <span>*Contactanos por WhatSapp si compras la misma prenda distinto talle.</span>
         </div>
       </div>
     </div>

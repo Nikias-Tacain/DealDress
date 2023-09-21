@@ -4,9 +4,11 @@ export default function CarrouselImgs() {
     return(
         <section className={styles.bannerTienda}>
             <Image src="/headerTienda.png" alt="banner tienda" width={2000} height={300}/>
-            <marquee behavior="scroll" direction="left" className={styles.headerHubCarrouselMarquee}>
-                PEDIDOS MAYORISTAS - CONTACTAR POR WHATSAPP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-            </marquee>
+            <div className={styles.headerHubCarrouselMarquee}>
+                <marquee behavior="scroll" direction="left">
+                    PEDIDOS MAYORISTAS - CONTACTAR POR WHATSAPP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                </marquee>
+            </div>
         </section>
     )
 }

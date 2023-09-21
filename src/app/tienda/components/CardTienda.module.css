@@ -87,6 +87,7 @@
     margin-top: 30%;
 }
 .closeButton{
+    cursor: pointer;
     font-size: 30px;
     border-radius: 7px;
 }
@@ -119,7 +120,10 @@
 .subcategory li:hover{
     color: red;
 }
-  
+.refilCategories{
+    font-size: 20px;
+    margin: 5px;
+}
 @media screen and (max-width: 1600px) {
     .cardProductDiv{
         width: 100%;
