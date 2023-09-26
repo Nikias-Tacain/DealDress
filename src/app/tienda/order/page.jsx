@@ -25,7 +25,7 @@ export default function OrderCart () {
         localStorage.clear();
         const carritoTexto = `Mi carrito de compras:
         \n${carrito.map(item => {
-          return `${item.nombre}, Precio: $${item.precio}, Cantidad: ${item.cantidad}, Modelo: ${item.modelo}`;
+          return `${item.nombre}, Precio: $${item.precio}, Cantidad: ${item.cantidad}, Modelo: ${item.modelo}, Talle: `;
         }).join('\n')}
           
         TOTAL: $ ${totalPrecio}

@@ -1,6 +1,7 @@
 import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
 const PRODUCT_COLLECTION = 'products';
 const IMAGES_COLLECTION = 'imagesHome';
+const GUIACOMPRA_COLLECTION = 'guiaCompra';
 export const getAllProducts = (db) => {
     const colecctionRef = collection(db, PRODUCT_COLLECTION);
     return getDocs(colecctionRef)
@@ -20,6 +21,23 @@ export const getAllProducts = (db) => {
 }
 export const getAllPhotos = (db) => {
     const colecctionRefPhotos = collection(db, IMAGES_COLLECTION);
+    return getDocs(colecctionRefPhotos)
+        .then((snapshot) => {
+            const products = [];
+            snapshot.docs.forEach((item) => {
+                products.push({
+                    id: item.id,
+                    ...item.data()
+                })
+            })
+            return products;
+        })
+        .catch((error) => {
+            return error;
+        })
+}
+export const getAllGuiaCompra = (db) => {
+    const colecctionRefPhotos = collection(db, GUIACOMPRA_COLLECTION);
     return getDocs(colecctionRefPhotos)
         .then((snapshot) => {
             const products = [];

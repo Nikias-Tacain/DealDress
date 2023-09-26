@@ -27,6 +27,12 @@ const Product = () => {
   const { id } = useParams();
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [valorSeleccionado, setValorSeleccionado] = useState(null);
+
+  const handleButtonClickTalla = (valor) => {
+    setValorSeleccionado(valor);
+
+  };
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
   useEffect(() => {
@@ -41,6 +47,7 @@ const Product = () => {
       setLoading(false);
     },1000)  
   })
+  
   const renderProducts = () => (
     <div className={styles.sectionProductInfo}>
       <div className={styles.sectionProductInfoCarrito}>
@@ -61,32 +68,42 @@ const Product = () => {
           <h1>{product?.nombre}</h1>
           <p>$ {product?.precio}</p>
           <p>Modelo: {product?.modelo}</p>
+          <div className={styles.talles}>
+            {Object.keys(product.talles).map((talle, index) => (
+              <ul key={index}>
+                <button onClick={() => handleButtonClickTalla(product.talles[talle])} style={{
+              backgroundColor: valorSeleccionado === product.talles[talle] ? "blue" : "",
+              fontWeight: "bold",
+            }}>
+                  {product.talles[talle]}
+                </button>
+              </ul>
+            ))}
+          </div>
+          {valorSeleccionado && (
+              <p>Valor seleccionado: {valorSeleccionado}</p>
+            )}
           <div>
             <p>ENVIOS POR <a href="#">ANDREANI</a><FontAwesomeIcon icon={faTruckMoving} /></p>
           </div>
-          <div className={styles.tallesInfoProduct}>
-            <label htmlFor="">Talle:</label>
-            <div>
-              <ul>
-                {product.talles.map((size) => (
-                  <li key={size}>
-                    <input type="checkbox" name="" id="" onClick={() => console.log(size)}/>
-                    <span> {size}</span>
-                  </li>
-                ))}
-              </ul>
-            </div>
+          <div>
+            
           </div>
-          <br />
-          <br />
           <div className={styles.botonCarrito}>
             <p onClick={() => handleButtonClick(product)}>agregar al carrito</p>
           </div>
           <br />
           <br />
           <br />
-          <span>*Contactanos por WhatSapp si compras la misma prenda distinto talle.</span>
+          <span>*Al finalizar la compra te contactaremos al medio de contacto que nos proporcionaste para que nos indiques que talles de prendas deseas segun tu carrito.</span>
         </div>
+      </div>
+      <div className={styles.guiaTalles}>
+        <h2 id='talles'>TABLA DE TALLES</h2>
+        <div>
+          <img src={product?.tablaTalles} alt='Tabla talles' />
+        </div>
+      
       </div>
     </div>
   )

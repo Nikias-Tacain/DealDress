@@ -38,6 +38,7 @@ export default function MercadoPago () {
       }, 0);
       const [nombre, setNombre] = useState('');
   const [correo, setCorreo] = useState('');
+  const [tel, setTel] = useState('');
   const [direccion, setDireccion] = useState('');
   const [codigoPostal, setCodigoPostal] = useState('');
 
@@ -55,6 +56,7 @@ export default function MercadoPago () {
         totalPrecio,
         nombre,
         correo,
+        tel,
         direccion,
         codigoPostal,
       });
@@ -62,6 +64,7 @@ export default function MercadoPago () {
       // Limpia el formulario después de guardar los datos
       setNombre('');
       setCorreo('');
+      setTel('');
       setDireccion('');
       setCodigoPostal('');
       const Toast = Swal.mixin({
@@ -135,6 +138,16 @@ export default function MercadoPago () {
           required
         /><br />
 
+        <label htmlFor="tel" className={styles['form-label']}>Numero de telefono:</label>
+        <input
+          type='tel'
+          id="tel"
+          value={tel}
+          onChange={(e) => setTel(e.target.value)}
+          className={styles['form-input']}
+          placeholder='INGRESA EL NUMERO SOLAMENTE CON CODIGO DE AREA + NUM'
+        /><br />
+
         <label htmlFor="direccion" className={styles['form-label']}>Dirección:</label>
         <input
           type="text"
@@ -154,7 +167,7 @@ export default function MercadoPago () {
           className={styles['form-input']}
           required
         /><br />
-
+        <p>*Recomendamos ingresar numero de telefono donde recibiran informacion sobre su pedido y preguntaremos que talles desean de cada prenda adquirida.</p>
         <button type="submit" className={styles['submit-button']}>Guardar Datos</button>
       </form>
             </div>
