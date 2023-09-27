@@ -167,7 +167,6 @@ export default function MercadoPago () {
           className={styles['form-input']}
           required
         /><br />
-        <p>*Recomendamos ingresar numero de telefono donde recibiran informacion sobre su pedido y preguntaremos que talles desean de cada prenda adquirida.</p>
         <button type="submit" className={styles['submit-button']}>Guardar Datos</button>
       </form>
             </div>

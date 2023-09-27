@@ -34,18 +34,18 @@ const GuiaCompra = ()=>{
             <div>
                 <h3>⚪PASO 1</h3>
                 {products.map(item =>(
-                <div>
+                <div key={item.id}>
                     <p>{item.paso1Texto1}</p>
                     <br />
                     <p>{item.paso1Texto2}</p>
                     <article>
-                        <Image src="/imgTiendaGuia.png" alt="guiaImagen1" width={1100} height={520}/>
+                        <Image src="/imgTiendaGuiaCompra.png" alt="guiaImagen1" width={1100} height={520}/>
                     </article>
                 </div>
                 ))}
                 <h3>⚪EXTRA</h3>
                 {products.map(item =>(
-                <div>
+                <div key={item.id}>
                 <p>{item.extra}</p>
                 <article>
                     <Image src="/imgTiendaGuiaCategorias.png" alt="guiaImagen2" width={1100} height={520}/>
@@ -54,7 +54,7 @@ const GuiaCompra = ()=>{
                 ))}
                 <h3>⚪PASO 2</h3>
                 {products.map(item=>(
-                    <div>
+                    <div key={item.id}>
                     <p>{item.paso2}</p>
                     <article>
                         <Image src="/imgTiendaGuiaOrder.png" alt="guiaImagen3" width={1100} height={520}/>
@@ -63,7 +63,7 @@ const GuiaCompra = ()=>{
                 ))}
                 <h3>⚪PASO 3</h3>
                 {products.map(item=>(
-                    <div>
+                    <div key={item.id}>
                     <p>{item.paso3}</p>
                     <article>
                         <Image src="/imgTiendaGuiaOrderPago.png" alt="guiaImagen4" width={1100} height={520}/>

@@ -6,8 +6,7 @@ import { getAllProducts } from './productsQuery';
 import { initializeApp } from 'firebase/app';
 import styles from './CardTienda.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faRotateRight } from '@fortawesome/free-solid-svg-icons';
-import { faPlus } from '@fortawesome/free-solid-svg-icons';
+import { faEye, faRotateRight } from '@fortawesome/free-solid-svg-icons';
 import { useCarrito } from './CarritoContext';
 const firebaseConfig = {
     apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
@@ -56,7 +55,9 @@ const ProductList = () => {
                         </article>
                     </div>
                     <div className={styles.cardProduct__link}>
-                        <button onClick={() => handleButtonClick(item)}><FontAwesomeIcon icon={faPlus} /></button>
+                      <Link href={`/tienda/${item.id}`}>
+                        <button><FontAwesomeIcon icon={faEye} /></button>
+                      </Link>
                     </div>
                 </article>
             </section>

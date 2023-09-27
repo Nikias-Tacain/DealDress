@@ -44,9 +44,9 @@ const ShoppingCartModal = () => {
                     <p>$ {student.precio}</p>
                     <p>{student.modelo}</p>
                     <div className={styles.sectionControlls}>
-                      <span onClick={() => handleIncreaseClick(student.id)}>+</span>
-                      <p>{student.cantidad}</p>
                       <span onClick={() => handleDecreaseClick(student.id)}>-</span>
+                      <p>{student.cantidad}</p>
+                      <span onClick={() => handleIncreaseClick(student.id)}>+</span>
                     </div>
                   </div>
                   <div className={styles.contentButtons}>

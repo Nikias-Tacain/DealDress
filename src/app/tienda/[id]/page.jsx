@@ -92,10 +92,6 @@ const Product = () => {
           <div className={styles.botonCarrito}>
             <p onClick={() => handleButtonClick(product)}>agregar al carrito</p>
           </div>
-          <br />
-          <br />
-          <br />
-          <span>*Al finalizar la compra te contactaremos al medio de contacto que nos proporcionaste para que nos indiques que talles de prendas deseas segun tu carrito.</span>
         </div>
       </div>
       <div className={styles.guiaTalles}>
