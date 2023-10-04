@@ -4,7 +4,7 @@ export default function HeaderHubCarrousel() {
     return(
         <section>
             <div  className={styles.carrouselImg}>
-                <Image src="/headerHome.png" alt="Imagen portada" width={1000} height={500}/>
+                <Image src="/headerHom.png" alt="Imagen portada" width={1000} height={500}/>
             </div>
             <div className={styles.headerHubCarrouselMarquee}>
             <marquee behavior="scroll" direction="left">

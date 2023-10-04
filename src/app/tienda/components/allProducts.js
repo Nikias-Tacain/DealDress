@@ -51,7 +51,6 @@ const ProductList = () => {
                         <article>
                             <h2>{item.nombre}</h2>
                             <p>$ {item.precio}</p>
-                            <p>Modelo: {item.modelo}</p>
                         </article>
                     </div>
                     <div className={styles.cardProduct__link}>
@@ -65,13 +64,13 @@ const ProductList = () => {
     )
     const [isPanelVisible, setPanelVisible] = useState(false);
     const [showPanel, setShowPanel] = useState(false);
-    const [buttonText, setButtonText] = useState('Mostrar Categorías');
+    const [buttonText, setButtonText] = useState('MOSTRAR CATEGORIAS');
     const [activeCategory, setActiveCategory] = useState(null);
 
     const togglePanel = () => {
         setPanelVisible(!isPanelVisible);
         setShowPanel(!showPanel);
-        setButtonText(showPanel ? 'Mostrar Categorías' : 'Ocultar Categorías');
+        setButtonText(showPanel ? 'MOSTRAR CATEGORIAS' : 'OCULTAR CATEGORIAS');
     };
     const toggleSubcategories = (category) => {
       setActiveCategory(category === activeCategory ? null : category);
@@ -79,7 +78,7 @@ const ProductList = () => {
     const closePanel = () => {
       setPanelVisible(false);
       setShowPanel(false);
-      setButtonText('Mostrar Categorías');
+      setButtonText('MOSTRAR CATEGORIAS');
     };
     return(
        <>   
@@ -91,9 +90,9 @@ const ProductList = () => {
                 <div className={styles.categoriesPanel}>
                   <ul className={styles.categoryList}>
                     <button className={styles.closeButton} onClick={closePanel}>X</button>
-                    <div style={{ margin: '5%' }}>
+                    <div style={{ margin: '5%'}}>
                       <Link href='tienda/guiaCompra'>
-                        <button style={{ cursor: 'pointer' }}>¿COMO COMPRAR?</button>
+                        <button style={{ cursor: 'pointer', fontSize: '20px' }}>¿COMO COMPRAR?</button>
                       </Link>
                     </div>
 
@@ -102,17 +101,17 @@ const ProductList = () => {
                                 className={styles.categoryTitle}
                                 onClick={() => toggleSubcategories('Mujer')}
                             >
-                                Mujer
+                                MUJER
                       </em>
                       <div className={styles.subcategories}>
                       {activeCategory === 'Mujer' && (
                                     <div className={styles.subcategory}>
-                                        <li onClick={() => setSelectedCategory('jeansMujerUrbano')}>Jeans</li>
-                                        <li onClick={() => setSelectedCategory('remerasMujerUrbano')}>Remeras</li>
-                                        <li onClick={() => setSelectedCategory('buzosMujerUrbano')}>Buzos</li>
-                                        <li onClick={() => setSelectedCategory('remerasMujerDeportivo')}>Remeras</li>
-                                        <li onClick={() => setSelectedCategory('calzasMujerDeportivo')}>Calzas</li>
-                                        <li onClick={() => setSelectedCategory('camperasMujerDeportivo')}>Camperas</li>
+                                        <li onClick={() => setSelectedCategory('jeansMujerUrbano')}>JEANS</li>
+                                        <li onClick={() => setSelectedCategory('remerasMujerUrbano')}>REMERAS</li>
+                                        <li onClick={() => setSelectedCategory('buzosMujerUrbano')}>BUZOS</li>
+                                        <li onClick={() => setSelectedCategory('remerasMujerDeportivo')}>REMERAS</li>
+                                        <li onClick={() => setSelectedCategory('calzasMujerDeportivo')}>CALZAS</li>
+                                        <li onClick={() => setSelectedCategory('camperasMujerDeportivo')}>CAMPERAS</li>
                                     </div>
                                 )}
                       </div>
@@ -123,17 +122,17 @@ const ProductList = () => {
                                 className={styles.categoryTitle}
                                 onClick={() => toggleSubcategories('Hombre')}
                             >
-                                Hombre
+                                HOMBRE
                       </em>
                       <div className={styles.subcategories}>
                         <div className={styles.subcategory}>
                         {activeCategory === 'Hombre' && (
                                     <div className={styles.subcategory}>
-                                        <li onClick={() => setSelectedCategory('jeansHombreUrbano')}>Jeans</li>
-                                        <li onClick={() => setSelectedCategory('remerasHombreUrbano')}>Remeras</li>
-                                        <li onClick={() => setSelectedCategory('buzosHombreUrbano')}>Buzos</li>
-                                        <li onClick={() => setSelectedCategory('camperasHombreUrbano')}>Camperas</li>
-                                        <li onClick={() => setSelectedCategory('calzasHombreDeportivo')}>Calzas</li>
+                                        <li onClick={() => setSelectedCategory('jeansHombreUrbano')}>JEANS</li>
+                                        <li onClick={() => setSelectedCategory('remerasHombreUrbano')}>REMERAS</li>
+                                        <li onClick={() => setSelectedCategory('buzosHombreUrbano')}>BUZOS</li>
+                                        <li onClick={() => setSelectedCategory('camperasHombreUrbano')}>CAMPERAS</li>
+                                        <li onClick={() => setSelectedCategory('calzasHombreDeportivo')}>CALZAS</li>
                                     </div>
                         )}
                         </div>
@@ -144,18 +143,18 @@ const ProductList = () => {
                                 className={styles.categoryTitle}
                                 onClick={() => toggleSubcategories('Calzado')}
                             >
-                                Calzado
+                                CALZADO
                       </em>
                       <div className={styles.subcategories}>
                       {activeCategory === 'Calzado' && (
                                     <div className={styles.subcategory}>
                                         <article>
-                                          <big>Urbano</big>
-                                          <li onClick={() => setSelectedCategory('botasUrbanas')}>Botas</li>
+                                          <big>URBANO</big>
+                                          <li onClick={() => setSelectedCategory('botasUrbanas')}>BOTAS</li>
                                         </article>
                                         <article>
-                                          <big>Deportivas</big>
-                                          <li onClick={() => setSelectedCategory('botasDeportivas')}>Botas</li>
+                                          <big>DEPORTIVO</big>
+                                          <li onClick={() => setSelectedCategory('botasDeportivas')}>BOTAS</li>
                                         </article>
                                     </div>
                         )}

@@ -1,6 +1,7 @@
 import React from 'react';
 import FooterHub from './components/FooterHub';
 import { CarritoProvider } from './tienda/components/CarritoContext';
+import { DescuentoProvider } from './tienda/components/descuentoContext';
 import HeaderHub from './components/HeaderHub';
 import './globals.css';
 
@@ -25,9 +26,11 @@ export default function RootLayout({ children }) {
     <html lang="es">
     <body>
       <CarritoProvider>
-        <HeaderHub />
-        {children}
-        <FooterHub />
+        <DescuentoProvider>
+          <HeaderHub />
+            {children}
+          <FooterHub />
+        </DescuentoProvider>
       </CarritoProvider>
     </body>
   </html>

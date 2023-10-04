@@ -81,7 +81,7 @@ const Product = () => {
             ))}
           </div>
           {valorSeleccionado && (
-              <p>Valor seleccionado: {valorSeleccionado}</p>
+              <p>Talla seleccionada: {valorSeleccionado}</p>
             )}
           <div>
             <p>ENVIOS POR <a href="#">ANDREANI</a><FontAwesomeIcon icon={faTruckMoving} /></p>

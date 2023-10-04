@@ -3,11 +3,13 @@ import React, { useState} from 'react';
 import { getFirestore, addDoc, collection } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 import { useCarrito } from "../../components/CarritoContext";
+import { useDescuento } from '../../components/descuentoContext';
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
 import styles from './ordenMercadoPago.module.css';
 import axios from "axios";
 import Swal from 'sweetalert2';
 export default function MercadoPago () {
+  const { descuentoAplicado } = useDescuento(); // Utiliza el contexto de descuento
   const firebaseConfig = {
     apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
     authDomain: "dealdress-90f47.firebaseapp.com",
@@ -33,9 +35,14 @@ export default function MercadoPago () {
           console.log(error);
         }
       };
-      const totalPrecio = carrito.reduce((acumulador, producto) => {
+      let totalPrecio = carrito.reduce((acumulador, producto) => {
         return acumulador + (producto.precio * producto.cantidad);
       }, 0);
+    
+      // Aplicar el descuento si está activado
+      if (descuentoAplicado) {
+        totalPrecio *= 0.9; // Aplicar un 10% de descuento
+      }
       const [nombre, setNombre] = useState('');
   const [correo, setCorreo] = useState('');
   const [tel, setTel] = useState('');

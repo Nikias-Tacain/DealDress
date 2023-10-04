@@ -40,7 +40,7 @@
     color: #fff;
 }
 .cardProductDiv div article p{
-    font-size: 1.5rem;
+    font-size: 1.8rem;
 }
 .divProductImg{
     width: 35%;
@@ -58,7 +58,7 @@
     top: 0;
     width: 300px;
     height: 100%;
-    background-color: #333;
+    background-color: rgb(224, 65, 65);
     color: #fff;
     transition: left 0.3s ease-in-out;
 }
@@ -94,7 +94,7 @@
 .categoryTitle {
     font-weight: bold;
     text-decoration: underline;
-    font-size: 20px;
+    font-size: 30px;
     cursor: pointer;
 }
   
@@ -118,7 +118,7 @@
     border-radius: 12px;
 }
 .subcategory li:hover{
-    color: red;
+    color: black;
 }
 .refilCategories{
     font-size: 20px;

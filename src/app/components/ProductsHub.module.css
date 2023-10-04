@@ -85,6 +85,12 @@
 .sobreNosotros__info > article:hover {
     transform: translateY(6px);
 }
+.productsHub__h2{
+    font-size: 40px;
+}
+.productsHub__h3{
+    font-size: 35px;
+}
 @media screen and (max-width: 1100px) {
     .productsHub > article{
         width: 100%;
@@ -103,6 +109,12 @@
     }
     .productsHub > article > div > article{
         width: auto;
+    }
+    .productsHub__h2{
+        font-size: 40px;
+    }
+    .productsHub__h3{
+        font-size: 35px;
     }
 }
 @media screen and (max-width: 500px) {

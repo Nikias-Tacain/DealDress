@@ -10,9 +10,8 @@ export function useCarrito() {
   return useContext(CarritoContext);
 }
 
-export function CarritoProvider({ children }) {
+export function CarritoProvider({ children, valorSeleccionado }) {
   const [carrito, setCarrito] = useState([]);
-
   useEffect(() => {
     // Obtén el carrito almacenado en localStorage al cargar la página.
     const storedCarrito = localStorage.getItem('carrito');
@@ -20,13 +19,12 @@ export function CarritoProvider({ children }) {
       setCarrito(JSON.parse(storedCarrito));
     }
   }, []);
-
   useEffect(() => {
     // Almacena el carrito en localStorage cada vez que cambie.
     localStorage.setItem('carrito', JSON.stringify(carrito));
   }, [carrito]);
   const handleButtonClick = (product) => {
-    const existingProductIndex = carrito.findIndex((p) => p.id === product.id);
+    const existingProductIndex = carrito.findIndex((p) => p.id === product.id && p.valorSeleccionado === valorSeleccionado);
 
     if (existingProductIndex !== -1) {
     // Si el producto ya existe en el carrito (por ID), aumentar la cantidad

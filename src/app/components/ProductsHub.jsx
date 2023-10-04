@@ -35,10 +35,10 @@ const ProductsHub = () => {
     const urbanoProducts = products.filter(item => item.categoriaVisual === 'urbano');
     const renderProducts = () => (
         <section className={styles.productsHub}>
-            <h2>LO MAS VENDIDO</h2>
+            <h2 className={styles.productsHub__h2}>LO MAS VENDIDO</h2>
             <article>
                 <div className={styles.productsHub__div}>
-                    <h3>DEPORTIVO</h3>
+                    <h3 className={styles.productsHub__h3}>DEPORTIVO</h3>
                     <article>
                         <Link href='/tienda'>
                             <p>IR A LA TIENDA</p>
@@ -77,7 +77,7 @@ const ProductsHub = () => {
             </fieldset>
             <article>
                 <div className={styles.productsHub__div}>
-                    <h3>URBANO</h3>
+                    <h3 className={styles.productsHub__h3}>URBANO</h3>
                     <article>
                         <Link href='/tienda'>
                             <p>IR A LA TIENDA</p>

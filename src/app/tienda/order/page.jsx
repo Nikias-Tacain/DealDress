@@ -1,5 +1,7 @@
 'use client'
+import React, { useState } from 'react';
 import { useCarrito } from "../components/CarritoContext";
+import { useDescuento } from "../components/descuentoContext";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import styles from './orderPage.module.css';
@@ -7,6 +9,7 @@ import Link from "next/link";
 export default function OrderCart () {
 
     const { carrito, borrarItem, increaseQuantity, decreaseQuantity } = useCarrito();
+    const { descuentoAplicado} = useDescuento(); // Utiliza el contexto de descuento
     const handleRemoveClick = (productId) => {
         borrarItem(productId);
       };
@@ -17,9 +20,15 @@ export default function OrderCart () {
       const handleDecreaseClick = (productId) => {
         decreaseQuantity(productId);
       };
-    const totalPrecio = carrito.reduce((acumulador, producto) => {
+    
+      let totalPrecio = carrito.reduce((acumulador, producto) => {
         return acumulador + (producto.precio * producto.cantidad);
       }, 0);
+    
+      // Aplicar el descuento si está activado
+      if (descuentoAplicado) {
+        totalPrecio *= 0.9; // Aplicar un 10% de descuento
+      }
       const redirigirAWhatsAppConMensaje = () => {
         // Mensaje que deseas enviar en WhatsApp
         localStorage.clear();
