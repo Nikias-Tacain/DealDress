@@ -1,6 +1,6 @@
 'use client'
 import {React, useEffect, useState } from 'react';
-import { getFirestore } from 'firebase/firestore';
+import { getFirestore, doc, updateDoc } from 'firebase/firestore';
 import { initializeApp } from 'firebase/app';
 import { useParams } from 'next/navigation'
 import { getProductById } from '../components/productsQuery';
@@ -11,8 +11,6 @@ import { faTruckMoving } from '@fortawesome/free-solid-svg-icons';
 import ShoppingCartModal from '../components/ShoppingCart';
 import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
 import { useCarrito } from '../components/CarritoContext';
-
-
 const Product = () => {
   const firebaseConfig = {
     apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
@@ -29,19 +27,35 @@ const Product = () => {
   const [loading, setLoading] = useState(true);
   const [valorSeleccionado, setValorSeleccionado] = useState(null);
 
-  const handleButtonClickTalla = (valor) => {
+  const handleButtonClickTalla = async (valor) => {
     setValorSeleccionado(valor);
 
+    try {
+      // Obtiene una referencia al documento existente del producto
+      const productRef = doc(db, 'products', id); // Reemplaza 'tuColeccionDeProductos' con el nombre de tu colección
+
+      // Actualiza el documento con el talle seleccionado
+      await updateDoc(productRef, {
+        talleSeleccionado: valor,
+      });
+      window.location.reload();
+    } catch (error) {
+      console.error('Error al actualizar el documento: ', error);
+    }
   };
+
   const app = initializeApp(firebaseConfig);
   const db = getFirestore(app);
+
   useEffect(() => {
     const db = getFirestore();
     getProductById(db, id)
       .then((item) =>{
+        console.log(item);
         setProduct(item)
       })
   }, [id])
+
   useEffect(() =>{
     setTimeout(() =>{
       setLoading(false);
@@ -83,15 +97,14 @@ const Product = () => {
           {valorSeleccionado && (
               <p>Talla seleccionada: {valorSeleccionado}</p>
             )}
+            <p>Talle: {product?.talleSeleccionado}</p>
           <div>
             <p>ENVIOS POR <a href="#">ANDREANI</a><FontAwesomeIcon icon={faTruckMoving} /></p>
-          </div>
-          <div>
-            
           </div>
           <div className={styles.botonCarrito}>
             <p onClick={() => handleButtonClick(product)}>agregar al carrito</p>
           </div>
+          <p>*Una vez elegido el talle espere a que la pagina recargue.</p>
         </div>
       </div>
       <div className={styles.guiaTalles}>
@@ -99,7 +112,6 @@ const Product = () => {
         <div>
           <img src={product?.tablaTalles} alt='Tabla talles' />
         </div>
-      
       </div>
     </div>
   )

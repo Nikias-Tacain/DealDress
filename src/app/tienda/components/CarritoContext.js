@@ -10,7 +10,7 @@ export function useCarrito() {
   return useContext(CarritoContext);
 }
 
-export function CarritoProvider({ children, valorSeleccionado }) {
+export function CarritoProvider({ children}) {
   const [carrito, setCarrito] = useState([]);
   useEffect(() => {
     // Obtén el carrito almacenado en localStorage al cargar la página.
@@ -24,60 +24,65 @@ export function CarritoProvider({ children, valorSeleccionado }) {
     localStorage.setItem('carrito', JSON.stringify(carrito));
   }, [carrito]);
   const handleButtonClick = (product) => {
-    const existingProductIndex = carrito.findIndex((p) => p.id === product.id && p.valorSeleccionado === valorSeleccionado);
-
+    const existingProductIndex = carrito.findIndex(
+      (p) => p.id === product.id && p.talleSeleccionado === product.talleSeleccionado
+    );
+  
     if (existingProductIndex !== -1) {
-    // Si el producto ya existe en el carrito (por ID), aumentar la cantidad
-    const updatedCarrito = [...carrito];
-    updatedCarrito[existingProductIndex].cantidad += 1;
-    setCarrito(updatedCarrito);
-
-    const Toast = Swal.mixin({
+      // Si el producto ya existe en el carrito (por ID y talleSeleccionado), aumentar la cantidad
+      const updatedCarrito = [...carrito];
+      updatedCarrito[existingProductIndex].cantidad += 1;
+      setCarrito(updatedCarrito);
+  
+      const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
         showConfirmButton: false,
         timer: 3000,
         timerProgressBar: true,
         didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
         }
-      })
-      
+      });
+  
       Toast.fire({
         icon: 'info',
         title: 'El producto se encuentra agregado. Se suma su cantidad.'
-    })
-  } else {
-    // Si el producto no existe en el carrito (por ID), agregarlo como nuevo
-    const Toast = Swal.mixin({
+      });
+    } else {
+      // Si el producto no existe en el carrito (por ID y talleSeleccionado), agregarlo como nuevo
+      const Toast = Swal.mixin({
         toast: true,
         position: 'top-end',
         showConfirmButton: false,
         timer: 3000,
         timerProgressBar: true,
         didOpen: (toast) => {
-          toast.addEventListener('mouseenter', Swal.stopTimer)
-          toast.addEventListener('mouseleave', Swal.resumeTimer)
+          toast.addEventListener('mouseenter', Swal.stopTimer);
+          toast.addEventListener('mouseleave', Swal.resumeTimer);
         }
-      })
-      
+      });
+  
       Toast.fire({
         icon: 'success',
         title: 'Producto agregado al carrito.'
-    })
-    setCarrito([
-      ...carrito,
-      {
-        id: product.id,
-        image: product.image,
-        nombre: product.nombre,
-        precio: product.precio,
-        modelo: product.modelo,
-        cantidad: product.cantidad,
-      },
-    ]);
-  }
+      });
+  
+      setCarrito([
+        ...carrito,
+        {
+          id: product.id,
+          image: product.image,
+          nombre: product.nombre,
+          talleSeleccionado: product.talleSeleccionado,
+          precio: product.precio,
+          modelo: product.modelo,
+          cantidad: 1, // Inicializar cantidad en 1 para un nuevo producto
+        },
+      ]);
+    }
+  
 };
 const clearCarrito = () => {
     Swal.fire({
@@ -99,31 +104,44 @@ const clearCarrito = () => {
         }
     } )
   };
-  const borrarItem = (productId) => {
-    const updatedCarrito = carrito.filter((product) => product.id != productId);
-    setCarrito(updatedCarrito);
+  const eliminarProductoDelCarrito = (productoAEliminar) => {
+    // Filtrar el carrito para excluir el producto a eliminar
+    const carritoActualizado = carrito.filter(
+      (producto) => !(producto.id === productoAEliminar.id && producto.talleSeleccionado === productoAEliminar.talleSeleccionado)
+    );
+  
+    // Actualizar el carrito con la nueva lista de productos
+    setCarrito(carritoActualizado);
+  
     // Puedes agregar notificaciones u otras lógicas aquí
   };
-  const increaseQuantity = (productId) => {
-    const updatedCarrito = carrito.map((product) => {
-      if (product.id === productId) {
-        return { ...product, cantidad: product.cantidad + 1 };
+  
+  
+  const aumentarCantidad = (productoAAumentar) => {
+    const carritoActualizado = carrito.map((producto) => {
+      if (producto.id === productoAAumentar.id && producto.talleSeleccionado === productoAAumentar.talleSeleccionado) {
+        // Aumentar la cantidad del producto
+        producto.cantidad += 1;
       }
-      return product;
+      return producto;
     });
-    setCarrito(updatedCarrito);
+  
+    setCarrito(carritoActualizado);
   };
-  const decreaseQuantity = (productId) => {
-    const updatedCarrito = carrito.map((product) => {
-      if (product.id === productId && product.cantidad > 1) {
-        return { ...product, cantidad: product.cantidad - 1 };
+  
+  const disminuirCantidad = (productoADisminuir) => {
+    const carritoActualizado = carrito.map((producto) => {
+      if (producto.id === productoADisminuir.id && producto.talleSeleccionado === productoADisminuir.talleSeleccionado) {
+        // Reducir la cantidad del producto, asegurándose de que no sea menor que 1
+        producto.cantidad = Math.max(1, producto.cantidad - 1);
       }
-      return product;
+      return producto;
     });
-    setCarrito(updatedCarrito);
-  };
+  
+    setCarrito(carritoActualizado);
+  };  
   return (
-    <CarritoContext.Provider value={{ carrito, handleButtonClick, clearCarrito, borrarItem, increaseQuantity, decreaseQuantity }}>
+    <CarritoContext.Provider value={{ carrito, handleButtonClick, clearCarrito, eliminarProductoDelCarrito, disminuirCantidad, aumentarCantidad }}>
       {children}
     </CarritoContext.Provider>
   );

@@ -6,9 +6,10 @@ import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { useCarrito } from './CarritoContext';
 import { useDescuento } from './descuentoContext';
+import Swal from 'sweetalert2'
 import Link from 'next/link';
-const ShoppingCartModal = ({ valorSeleccionado }) => {
-  const { carrito, clearCarrito, borrarItem, increaseQuantity, decreaseQuantity } = useCarrito();
+const ShoppingCartModal = () => {
+  const { carrito, clearCarrito, eliminarProductoDelCarrito, aumentarCantidad, disminuirCantidad } = useCarrito();
   const { descuentoAplicado, toggleDescuento } = useDescuento(); // Utiliza el contexto de descuento
   const [isOpen, setIsOpen] = useState(false);
   const [codigoDescuento, setCodigoDescuento] = useState('');
@@ -17,8 +18,24 @@ const ShoppingCartModal = ({ valorSeleccionado }) => {
   };
   const aplicarDescuento = () => {
     // Verificar si el código de descuento es válido (por ejemplo, "Descuento")
-    if (codigoDescuento.toLowerCase() === 'FELIZMAMA') {
-      toggleDescuento(); // Activa o desactiva el descuento
+    if (codigoDescuento.toUpperCase() === 'DIAMAMA') {
+      const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 3000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+          toast.addEventListener('mouseenter', Swal.stopTimer)
+          toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+      })
+      
+      Toast.fire({
+        icon: 'success',
+        title: 'Descuento recibido.'
+    })
+      toggleDescuento();
     } else {
       alert('Código de descuento inválido');
     }
@@ -32,17 +49,6 @@ const ShoppingCartModal = ({ valorSeleccionado }) => {
   if (descuentoAplicado) {
     totalPrecio *= 0.9; // Aplicar un 10% de descuento
   }
-
-  const handleRemoveClick = (productId) => {
-    borrarItem(productId);
-  };
-  const handleIncreaseClick = (productId) => {
-    increaseQuantity(productId);
-  };
-
-  const handleDecreaseClick = (productId) => {
-    decreaseQuantity(productId);
-  };
   return (
     <div>
       <button className={styles.openButton} onClick={toggleModal}>
@@ -58,17 +64,17 @@ const ShoppingCartModal = ({ valorSeleccionado }) => {
                 <div key={student.id} className={styles.carritoIntProduct}>
                   <img src={student.image} alt={student.nombre} />
                   <div className={styles.carritoIntSection}>
-                    <h2>{student.nombre}({valorSeleccionado})</h2>
+                    <h2>{student.nombre}({student?.talleSeleccionado})</h2>
                     <p>$ {student.precio}</p>
                     <p>{student.modelo}</p>
                     <div className={styles.sectionControlls}>
-                      <span onClick={() => handleDecreaseClick(student.id)}>-</span>
+                      <span onClick={() => disminuirCantidad(student)}>-</span>
                       <p>{student.cantidad}</p>
-                      <span onClick={() => handleIncreaseClick(student.id)}>+</span>
+                      <span onClick={() => aumentarCantidad(student)}>+</span>
                     </div>
                   </div>
                   <div className={styles.contentButtons}>
-                    <span onClick={() => handleRemoveClick(student.id)}><FontAwesomeIcon icon={faTrashCan} /></span>
+                    <span onClick={() => eliminarProductoDelCarrito(student)}><FontAwesomeIcon icon={faTrashCan} /></span>
                   </div>
                 </div>
               ))}
@@ -81,7 +87,7 @@ const ShoppingCartModal = ({ valorSeleccionado }) => {
                   type="text"
                   value={codigoDescuento}
                   placeholder='CODIGO DESCUENTO'
-                   onChange={(e) => setCodigoDescuento(e.target.value)}
+                  onChange={(e) => setCodigoDescuento(e.target.value)}
                 />
                 <button onClick={aplicarDescuento} className={styles.button}>Enviar</button>
               </div>

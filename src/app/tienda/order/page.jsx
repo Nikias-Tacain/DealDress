@@ -8,18 +8,8 @@ import styles from './orderPage.module.css';
 import Link from "next/link";
 export default function OrderCart () {
 
-    const { carrito, borrarItem, increaseQuantity, decreaseQuantity } = useCarrito();
+    const { carrito, eliminarProductoDelCarrito, aumentarCantidad, disminuirCantidad } = useCarrito();
     const { descuentoAplicado} = useDescuento(); // Utiliza el contexto de descuento
-    const handleRemoveClick = (productId) => {
-        borrarItem(productId);
-      };
-      const handleIncreaseClick = (productId) => {
-        increaseQuantity(productId);
-      };
-    
-      const handleDecreaseClick = (productId) => {
-        decreaseQuantity(productId);
-      };
     
       let totalPrecio = carrito.reduce((acumulador, producto) => {
         return acumulador + (producto.precio * producto.cantidad);
@@ -34,7 +24,7 @@ export default function OrderCart () {
         localStorage.clear();
         const carritoTexto = `Mi carrito de compras:
         \n${carrito.map(item => {
-          return `${item.nombre}, Precio: $${item.precio}, Cantidad: ${item.cantidad}, Modelo: ${item.modelo}, Talle: `;
+          return `${item.nombre}, Precio: $${item.precio}, Cantidad: ${item.cantidad}, Modelo: ${item.modelo}, Talle: ${item.talleSeleccionado}`;
         }).join('\n')}
           
         TOTAL: $ ${totalPrecio}
@@ -67,17 +57,17 @@ export default function OrderCart () {
                 <div key={student.id} className={styles.carritoIntProduct}>
                   <img src={student.image} alt={student.nombre} />
                   <div className={styles.carritoIntSection}>
-                    <h2>{student.nombre}</h2>
+                    <h2>{student.nombre}({student?.talleSeleccionado})</h2>
                     <p>$ {student.precio}</p>
                     <p>{student.modelo}</p>
                     <div className={styles.sectionControlls}>
-                      <span onClick={() => handleIncreaseClick(student.id)}>+</span>
+                      <span onClick={() => disminuirCantidad(student)}>-</span>
                       <p>{student.cantidad}</p>
-                      <span onClick={() => handleDecreaseClick(student.id)}>-</span>
+                      <span onClick={() => aumentarCantidad(student)}>+</span>
                     </div>
                   </div>
                   <div className={styles.contentButtons}>
-                    <span onClick={() => handleRemoveClick(student.id)}><FontAwesomeIcon icon={faTrashCan} /></span>
+                    <span onClick={() => eliminarProductoDelCarrito(student)}><FontAwesomeIcon icon={faTrashCan} /></span>
                   </div>
                 </div>
               ))}

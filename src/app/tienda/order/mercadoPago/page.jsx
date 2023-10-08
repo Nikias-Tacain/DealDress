@@ -108,7 +108,7 @@ export default function MercadoPago () {
                 <div key={student.id} className={styles.divOrden}>
                   <img src={student.image} alt={student.nombre} />
                   <div >
-                    <h2>{student.nombre}</h2>
+                    <h2>{student.nombre}({student.talleSeleccionado})</h2>
                     <p>$ {student.precio}</p>
                     <p>{student.modelo}</p>
                     <div >
