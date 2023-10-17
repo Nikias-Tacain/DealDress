@@ -1,6 +1,5 @@
 'use client'
 import styles from './MainHub.module.css'
-import Link from 'next/link'
 import { getFirestore } from 'firebase/firestore';
 import React, { useState, useEffect } from 'react';
 import { getAllPhotos } from '../tienda/components/productsQuery';

@@ -7,7 +7,6 @@ import { initializeApp } from 'firebase/app';
 import styles from './CardTienda.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faEye, faRotateRight } from '@fortawesome/free-solid-svg-icons';
-import { useCarrito } from './CarritoContext';
 const firebaseConfig = {
     apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
     authDomain: "dealdress-90f47.firebaseapp.com",
@@ -18,24 +17,23 @@ const firebaseConfig = {
 };
 initializeApp(firebaseConfig);
 const ProductList = () => {
-    const { handleButtonClick } = useCarrito();
     const [products, setProducts] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [selectedCategory, setSelectedCategory] = useState();
+    const [searchTerm, setSearchTerm] = useState('');
     useEffect(() => {
         const db= getFirestore();
         getAllProducts(db)
             .then((item) =>{
                 setProducts(item)
+                setLoading(false);
             })
     },[])
-    useEffect(() =>{
-      setTimeout(() =>{
-        setLoading(false);
-      },1000)  
-    })
-    const [selectedCategory, setSelectedCategory] = useState(null);
-  const filteredProducts = selectedCategory
-    ? products.filter(product => product.categoria === selectedCategory) : products;
+    const filteredProducts = selectedCategory
+    ? products.filter((product) => product.categoria.includes(selectedCategory))
+    : products.filter((product) =>
+        product.nombre.toLowerCase().includes(searchTerm.toLowerCase())
+      );
     const renderProducts = () => (
         filteredProducts.map(item => (
             <section className={styles.cardProduct} key={item.id}>
@@ -83,6 +81,24 @@ const ProductList = () => {
     return(
        <>   
             <div className={styles.categoriesButtonClick}>
+              <div className={styles.categoriesButtonClickInput}>
+                <input
+                  type="text"
+                  placeholder="Buscar productos"
+                  value={searchTerm}
+                  style={{
+                    padding: '10px',
+                    fontSize: '16px',
+                    border: '1px solid #ccc',
+                    borderRadius: '4px',
+                    marginBottom: '10px',
+                    width: '300px',
+                  }}
+                  onChange={(e) => setSearchTerm(e.target.value)}
+                />
+              </div>
+            
+                <br></br>
                 <button className={styles.buttonCategories} onClick={togglePanel} type='button'>
                     {buttonText}
                 </button>
@@ -106,6 +122,8 @@ const ProductList = () => {
                       <div className={styles.subcategories}>
                       {activeCategory === 'Mujer' && (
                                     <div className={styles.subcategory}>
+                                        <li onClick={() => setSelectedCategory('mujer')}>TODO</li>
+                                        <li onClick={() => setSelectedCategory('sweatersMujer')}>SWEATERS</li>
                                         <li onClick={() => setSelectedCategory('sweatersMujer')}>SWEATERS</li>
                                         <li onClick={() => setSelectedCategory('buzosMujer')}>BUZOS</li>
                                         <li onClick={() => setSelectedCategory('camperasMujer')}>CAMPERAS</li>
@@ -170,6 +188,7 @@ const ProductList = () => {
                       <div className={styles.subcategories}>
                       {activeCategory === 'Hombre' && (
                                     <div className={styles.subcategory}>
+                                        <li onClick={() => setSelectedCategory('hombre')}>TODO</li>
                                         <li onClick={() => setSelectedCategory('buzosHombre')}>BUZOS</li>
                                         <li onClick={() => setSelectedCategory('camperasHombre')}>CAMPERAS</li>
                                         <li onClick={() => setSelectedCategory('sweatersHombre')}>SWEATERS</li>

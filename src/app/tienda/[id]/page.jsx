@@ -51,16 +51,10 @@ const Product = () => {
     const db = getFirestore();
     getProductById(db, id)
       .then((item) =>{
-        console.log(item);
         setProduct(item)
+        setLoading(false);
       })
   }, [id])
-
-  useEffect(() =>{
-    setTimeout(() =>{
-      setLoading(false);
-    },1000)  
-  })
   
   const renderProducts = () => (
     <div className={styles.sectionProductInfo}>
