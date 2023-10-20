@@ -124,11 +124,10 @@ const ProductList = () => {
                                     <div className={styles.subcategory}>
                                         <li onClick={() => setSelectedCategory('mujer')}>TODO</li>
                                         <li onClick={() => setSelectedCategory('sweatersMujer')}>SWEATERS</li>
-                                        <li onClick={() => setSelectedCategory('sweatersMujer')}>SWEATERS</li>
                                         <li onClick={() => setSelectedCategory('buzosMujer')}>BUZOS</li>
                                         <li onClick={() => setSelectedCategory('camperasMujer')}>CAMPERAS</li>
                                         <li onClick={() => setSelectedCategory('parkasMujer')}>PARKAS</li>
-                                        <li onClick={() => setSelectedCategory('remerasLargasMujer')}>REMERAS MANGAS LARGAS</li>
+                                        <li onClick={() => setSelectedCategory('remerasMujer')}>REMERAS</li>
                                         <li onClick={() => setSelectedCategory('jeansChupinMujer')}>JEANS CHUPIN</li>
                                         <li onClick={() => setSelectedCategory('jeansMomMujer')}>JEANS MOM</li>
                                     </div>
