@@ -26,11 +26,6 @@ const Product = () => {
   const [product, setProduct] = useState(null);
   const [loading, setLoading] = useState(true);
   const [valorSeleccionado, setValorSeleccionado] = useState(null);
-  const [selectedImage, setSelectedImage] = useState(null); // Estado para la imagen seleccionada
-
-  const handleImageClick = (image) => {
-    setSelectedImage(image);
-  };
 
   const handleButtonClickTalla = async (valor) => {
     setValorSeleccionado(valor);
@@ -76,23 +71,8 @@ const Product = () => {
       </div>
       
       <div className={styles.infoProduct}>
-        <div className={styles.imagesProductId}>
-        {product.image.map((image, index) => (
-          <img
-            key={index}
-            src={image}
-            alt={`Image-${index}`}
-            style={{ width: '100px', height: '100px', margin: '10px', cursor: 'pointer' }}
-            onClick={() => handleImageClick(image)}
-          />
-        ))}
-        </div>
         <div className={styles.infoProductDiv}>
-        {selectedImage ? (
-          <img src={selectedImage} alt="Selected Image" style={{ width: '100%', height: '100%' }} />
-        ) : (
-          <img src={product.image} alt="" />
-        )}
+          <img src={product?.image} alt={product?.nombre} />
         </div>
         <div className={styles.intInfoProduct}>
           <h1>{product?.nombre}</h1>
