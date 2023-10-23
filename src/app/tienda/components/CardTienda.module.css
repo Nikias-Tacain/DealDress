@@ -22,7 +22,7 @@
     border-radius: 100%;
     background-color: #fff;
     cursor: pointer;
-    font-size: 28px;
+    font-size: 17px;
     padding: 10px;
     border: none;
     display: flex;
@@ -30,7 +30,7 @@
 .cardProductDiv{
     display: flex;
     background-color: rgb(71, 71, 216);
-    padding: 12px;
+    padding: 10px;
     justify-content: space-around;
     border-radius: 24px;
     width: 100%;
