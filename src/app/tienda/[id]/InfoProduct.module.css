@@ -1,6 +1,7 @@
 .infoProduct{
     display: flex;
     justify-content: center;
+    flex-direction: column;
     border: 1px solid;
     width: 40%;
     margin: auto;
@@ -13,7 +14,6 @@
 }
 .infoProductDiv{
     padding: 10px;
-    border-right: 1px solid;
     width: 70%;
     margin: auto;
     overflow: hidden;
