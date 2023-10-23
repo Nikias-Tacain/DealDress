@@ -36,23 +36,26 @@ const ProductList = () => {
       );
     const renderProducts = () => (
         filteredProducts.map(item => (
-          <Link href={`/tienda/${item.id}`}>
+          
             <section className={styles.cardProduct} key={item.id}>
                 <div className={styles.divProductImg}>
+                    <Link href={`/tienda/${item.id}`}>
                         <article className={styles.imgProduct}>
                             <img src={item.image} alt={item.nombre}/>
                         </article>
+                      </Link>
                 </div>
                 <article className={styles.cardProductDiv}>
                     <div>
+                      <Link href={`/tienda/${item.id}`}>
                         <article>
                             <h2>{item.nombre}</h2>
                             <p>$ {item.precio}</p>
                         </article>
+                      </Link>
                     </div>
                 </article>
             </section>
-          </Link>
         ))
     )
     const [isPanelVisible, setPanelVisible] = useState(false);
