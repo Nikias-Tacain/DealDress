@@ -111,13 +111,40 @@ const ProductList = () => {
                         <button style={{ cursor: 'pointer', fontSize: '20px' }}>¿COMO COMPRAR?</button>
                       </Link>
                     </div>
-
+                    <li className={styles.categorySection}>
+                      <em
+                                className={styles.categoryTitle}
+                                onClick={() => toggleSubcategories('Calzado')}
+                            >
+                                CALZADO
+                      </em>
+                      <div className={styles.subcategories}>
+                      {activeCategory === 'Calzado' && (
+                                    <div className={styles.subcategory}>
+                                        <article>
+                                          <big>URBANO</big>
+                                          <li onClick={() => setSelectedCategory('botasUrbanasCaterpillar')}>CATERPILLAR</li>
+                                          <li onClick={() => setSelectedCategory('botasUrbanasLaCoste')}>LA COSTE</li>
+                                          <li onClick={() => setSelectedCategory('botasUrbanasNikeSB')}>NIKE SB</li>
+                                        </article>
+                                        <article>
+                                          <big>DEPORTIVO</big>
+                                          <li onClick={() => setSelectedCategory('botasDeportivasEverlast')}>BOTITAS EVERLAST</li>
+                                          <li onClick={() => setSelectedCategory('botinesDeportivos')}>BOTINES</li>
+                                          <li onClick={() => setSelectedCategory('botasDeportivasAsics')}>ASICS</li>
+                                          <li onClick={() => setSelectedCategory('botasDeportivasNike')}>NIKE</li>
+                                          <li onClick={() => setSelectedCategory('botasDeportivasAdidas')}>ADIDAS</li>
+                                        </article>
+                                    </div>
+                        )}
+                      </div>
+                    </li>
                     <li className={styles.categorySection}>
                       <em
                                 className={styles.categoryTitle}
                                 onClick={() => toggleSubcategories('Mujer')}
                             >
-                                MUJER
+                                URBANO - DAMA
                       </em>
                       <div className={styles.subcategories}>
                       {activeCategory === 'Mujer' && (
@@ -140,7 +167,7 @@ const ProductList = () => {
                                 className={styles.categoryTitle}
                                 onClick={() => toggleSubcategories('EntrenoEllas')}
                             >
-                                PARA ENTRENAR ELLAS
+                                DEPORTIVO - DAMA
                       </em>
                       <div className={styles.subcategories}>
                         <div className={styles.subcategory}>
@@ -182,7 +209,7 @@ const ProductList = () => {
                                 className={styles.categoryTitle}
                                 onClick={() => toggleSubcategories('Hombre')}
                             >
-                                HOMBRE
+                                URBANO - HOMBRE
                       </em>
                       <div className={styles.subcategories}>
                       {activeCategory === 'Hombre' && (
@@ -207,7 +234,7 @@ const ProductList = () => {
                                 className={styles.categoryTitle}
                                 onClick={() => toggleSubcategories('EntrenoEllos')}
                             >
-                                PARA ENTRENAR ELLOS
+                                DEPORTIVO - HOMBRE
                       </em>
                       <div className={styles.subcategories}>
                         <div className={styles.subcategory}>
@@ -219,34 +246,6 @@ const ProductList = () => {
                                     </div>
                         )}
                         </div>
-                      </div>
-                    </li>
-                    <li className={styles.categorySection}>
-                      <em
-                                className={styles.categoryTitle}
-                                onClick={() => toggleSubcategories('Calzado')}
-                            >
-                                CALZADO
-                      </em>
-                      <div className={styles.subcategories}>
-                      {activeCategory === 'Calzado' && (
-                                    <div className={styles.subcategory}>
-                                        <article>
-                                          <big>URBANO</big>
-                                          <li onClick={() => setSelectedCategory('botasUrbanasCaterpillar')}>CATERPILLAR</li>
-                                          <li onClick={() => setSelectedCategory('botasUrbanasLaCoste')}>LA COSTE</li>
-                                          <li onClick={() => setSelectedCategory('botasUrbanasNikeSB')}>NIKE SB</li>
-                                        </article>
-                                        <article>
-                                          <big>DEPORTIVO</big>
-                                          <li onClick={() => setSelectedCategory('botasDeportivasEverlast')}>BOTITAS EVERLAST</li>
-                                          <li onClick={() => setSelectedCategory('botinesDeportivos')}>BOTINES</li>
-                                          <li onClick={() => setSelectedCategory('botasDeportivasAsics')}>ASICS</li>
-                                          <li onClick={() => setSelectedCategory('botasDeportivasNike')}>NIKE</li>
-                                          <li onClick={() => setSelectedCategory('botasDeportivasAdidas')}>ADIDAS</li>
-                                        </article>
-                                    </div>
-                        )}
                       </div>
                     </li>
                   </ul>

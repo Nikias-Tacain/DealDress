@@ -14,7 +14,7 @@
 .infoProductDiv{
     padding: 10px;
     border-right: 1px solid;
-    width: 50%;
+    width: 70%;
     margin: auto;
     overflow: hidden;
 }
@@ -107,5 +107,13 @@
     }
     .guiaTalles div img{
         max-width: 100%;
+    }
+}
+@media screen and (max-width: 700px) {
+    .infoProductDiv{
+        width: 1000px;
+    }
+    .botonCarrito{
+        height: 80px;
     }
 }
