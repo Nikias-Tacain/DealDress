@@ -57,7 +57,8 @@ export default function OrderCart () {
                 <div key={student.id} className={styles.carritoIntProduct}>
                   <img src={student.image} alt={student.nombre} />
                   <div className={styles.carritoIntSection}>
-                    <h2>{student.nombre}({student?.talleSeleccionado})</h2>
+                    <h2>{student.nombre}</h2>
+                    <p>Talle: ({student?.talleSeleccionado})</p>
                     <p>$ {student.precio}</p>
                     <p>{student.modelo}</p>
                     <div className={styles.sectionControlls}>
@@ -81,10 +82,18 @@ export default function OrderCart () {
                   
                 </div>
                 <div className={styles.buttonsPago}>
-                  <button onClick={redirigirAWhatsAppConMensaje} className={styles.buyButton}>Transferencia</button>
-                  <Link href='/tienda/order/mercadoPago'>
-                    <button className={styles.buyButtonMercadoPago}>MercadoPago</button>
-                  </Link>
+                  <div>
+                    <button onClick={redirigirAWhatsAppConMensaje} className={styles.buyButton}>Transferencia</button>
+                    <p>Esta opcion solo permite transferencias.</p>
+                    <p>Tocando el boton se redirijira al WhatsApp de la empresa para gestionar su pago y pedido.</p>
+                  </div>
+                  <div>
+                    <Link href='/tienda/order/mercadoPago'>
+                      <button className={styles.buyButtonMercadoPago}>MercadoPago</button>
+                    </Link>
+                    <p>Esta opcion te redirijira a la pasarela de pagos de Mercado Pago.</p>
+                    <p>Donde podras elegir los distintos metodos de pago que ofrece la billetera.</p>
+                  </div>
                 </div>
               </div>
           </div>

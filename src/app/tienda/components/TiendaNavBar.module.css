@@ -16,9 +16,8 @@
     max-width: 100%;
     flex-direction: column;
 }
-.bannerTienda img{
+.bannerTienda div img{
     width: 100%;
-    height: auto;
 }
 .headerHubCarrouselMarquee{
     font-size: 30px;

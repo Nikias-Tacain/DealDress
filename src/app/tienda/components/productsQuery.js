@@ -2,6 +2,7 @@ import { collection, doc, getDoc, getDocs } from 'firebase/firestore';
 const PRODUCT_COLLECTION = 'products';
 const IMAGES_COLLECTION = 'imagesHome';
 const GUIACOMPRA_COLLECTION = 'guiaCompra';
+const IMAGESPORTADA_COLLECTION = 'imagesPortada';
 export const getAllProducts = (db) => {
     const colecctionRef = collection(db, PRODUCT_COLLECTION);
     return getDocs(colecctionRef)
@@ -76,5 +77,22 @@ export const getProductByIdPhotos = (db, id) =>{
                     ...snapshot.data()
                 }
             }
+        })
+}
+export const getAllImagesPortada = (db) => {
+    const colecctionRefPhotos = collection(db, IMAGESPORTADA_COLLECTION);
+    return getDocs(colecctionRefPhotos)
+        .then((snapshot) => {
+            const products = [];
+            snapshot.docs.forEach((item) => {
+                products.push({
+                    id: item.id,
+                    ...item.data()
+                })
+            })
+            return products;
+        })
+        .catch((error) => {
+            return error;
         })
 }

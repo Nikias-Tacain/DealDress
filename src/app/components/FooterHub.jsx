@@ -24,7 +24,7 @@ export default function FooterHub() {
                     <p><FontAwesomeIcon icon={faEnvelope} /> dealdress.ropa@gmail.com</p>
                 </article>
                 <article className={styles.footerMetodoPago}>
-                    <Image src="/MetododePago.webp" alt="Paga con cualquier metodo de pago" width={800} height={150}/>
+                    <Image src="/MetododePago.png" alt="Paga con cualquier metodo de pago" width={800} height={150}/>
                 </article>
             </section>
         </footer>

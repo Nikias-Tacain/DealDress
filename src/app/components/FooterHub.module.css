@@ -17,11 +17,12 @@
     width: 7%;
     margin: 20px;
 }
+.footerMetodoPago img{
+    width: 100%;
+    height: auto;
+}
 @media screen and (max-width: 930px) {
     .footerHub > section > article > a img{
         width: 7%;
-    }
-    .footerMetodoPago img{
-        width: 100%;
     }
 }

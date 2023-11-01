@@ -4,11 +4,12 @@ html{
 }
 body{
   font-size: 1rem;
-  font-family: Arial, sans-serif;
   color: #ffff;
   background-image: url('/imagenFondoHome.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-attachment: fixed;
+  background-position: center;
   font-family: 'Roboto Condensed', sans-serif;
 }
 * {
