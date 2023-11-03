@@ -4,7 +4,6 @@
     justify-content: center;
     margin-top: 7%;
     gap: 2rem;
-    color: black;
 }
 .cardProduct{
     text-align: center;
@@ -21,11 +20,11 @@
     align-items: center;
 }
 .cardProductDiv div article h2{
-    color: #fff;
+    color: #000000;
 }
 .cardProductDiv div article p{
     font-size: 1.8rem;
-    color: #fff;
+    color: #000000;
 }
 .divProductImg{
     width: 50%;
@@ -37,15 +36,17 @@
 }
 /*Button categories */ 
 /* styles.css o styles.module.css */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Roboto+Condensed:ital,wght@1,700&display=swap');
 
 .categoriesPanel {
     position: fixed;
     top: 0;
-    width: 300px;
+    width: 350px;
     height: 100%;
-    background-color: rgb(224, 65, 65);
+    background-color: rgb(138, 134, 134);
     color: #fff;
     transition: left 0.3s ease-in-out;
+    font-family: 'Montserrat', sans-serif;
 }
   
 /* styles.module.css */
@@ -69,6 +70,9 @@
   
 .categorySection {
     margin-top: 20%;
+}
+.categorySection em{
+    font-size: 25px;
 }
 .closeButton{
     cursor: pointer;
@@ -118,10 +122,13 @@
     }
 }
 @media screen and (max-width: 900px) {
-    .categoriesPanel{
-        width: 40%;
-    }
     .cardProductDiv{
         width: 100%;
+    }
+    .categoriesPanel{
+        width: 50%;
+    }
+    .categorySection em{
+        font-size: 20px;
     }
 }

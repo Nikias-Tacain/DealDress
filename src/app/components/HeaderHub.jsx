@@ -5,7 +5,7 @@ export default function HeaderHub() {
     return(
         <header className={styles.headerHub}>
             <Link href='/'>
-                <Image src="/favicon.png" alt="Logo Deal Dress" width={300} height={320}/>
+                <Image src="/iconoDealDress.png" alt="Logo Deal Dress" width={350} height={350}/>
             </Link>
         </header>
     )

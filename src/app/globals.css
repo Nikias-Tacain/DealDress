@@ -4,8 +4,9 @@ html{
 }
 body{
   font-size: 1rem;
-  color: #ffff;
-  background-image: url('/imagenFondoHome.jpg');
+  color: #020202;
+  /* background-image: url('/imagenFondoHome.jpg'); */
+  background-image: url(/fondoTienda.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-attachment: fixed;
