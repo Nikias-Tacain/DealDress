@@ -17,7 +17,6 @@
 }
 .productsHub__div{
     display: flex;
-    justify-content: space-between;
     align-items: center;
     height: 75px;
 }
@@ -90,6 +89,7 @@
 }
 .productsHub__h3{
     font-size: 35px;
+    margin: auto;
 }
 @media screen and (max-width: 1100px) {
     .productsHub > article{
