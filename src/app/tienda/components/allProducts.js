@@ -5,8 +5,6 @@ import React, { useState, useEffect } from 'react';
 import { getAllProducts } from './productsQuery';
 import { initializeApp } from 'firebase/app';
 import styles from './CardTienda.module.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faEye, faRotateRight } from '@fortawesome/free-solid-svg-icons';
 const firebaseConfig = {
     apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
     authDomain: "dealdress-90f47.firebaseapp.com",
@@ -97,54 +95,56 @@ const ProductList = () => {
               </div>
             
                 <br></br>
+                <div className={styles.categoriesPanel}>
                   <ul className={styles.categoryList}>
+                    <div className={styles.divisor}>
                     <li className={styles.categorySection}>
                       <div className={styles.subcategories}>
                                     <div className={styles.subcategory}>
-                                        <li onClick={() => setSelectedCategory('mujerUrbano')}>MUJER - URBANO</li>
+                                        <li onClick={() => setSelectedCategory('mujerUrbano')}>MUJER URBANO</li>
                                     </div>
                       </div>
                     </li>
                     <li className={styles.categorySection}>
                       <div className={styles.subcategories}>
                                     <div className={styles.subcategory}>
-                                        <li onClick={() => setSelectedCategory('hombreUrbano')}>HOMBRE - URBANO</li>
+                                        <li onClick={() => setSelectedCategory('hombreUrbano')}>HOMBRE URBANO</li>
                                     </div>
                       </div>
                     </li>
+                    </div>
                     <li className={styles.categorySection}>
                       <li onClick={() => toggleSubcategories('deportivo')} className={styles.categoryTitle}>DEPORTIVO  ↓</li>
-                      <div className={styles.subcategories}>
-                        <div className={styles.subcategory}>
+                      <div className={styles.subcategoriesDeportivo}>
                         {activeCategory === 'deportivo' && (
-                                    <div className={styles.subcategory}>
-                                        <p>HOMBRE</p>
-                                        <li onClick={() => setSelectedCategory('hombre')}>SHORT</li>
-                                        <li onClick={() => setSelectedCategory('mujer')}>DEPORTE DE CONTACTO</li>
-                                        <li onClick={() => setSelectedCategory('mujer')}>FITTNES</li>
-                                        <li onClick={() => setSelectedCategory('mujer')}>REMERAS Y CAMPERAS</li>
-                                        <li onClick={() => setSelectedCategory('mujer')}>PANTALONES</li>
-                                        <p>MUJER</p>
-                                        <li onClick={() => setSelectedCategory('hombre')}>TOP</li>
-                                        <li onClick={() => setSelectedCategory('mujer')}>CALZAS</li>
-                                        <li onClick={() => setSelectedCategory('mujer')}>REMERAS</li>
-                                        <li onClick={() => setSelectedCategory('mujer')}>BUZOS Y CAMPERAS</li>
+                                    <div className={styles.subcategoryDeportivo}>
+                                        <p>HOMBRE - DEPORTIVO</p>
+                                        <li onClick={() => setSelectedCategory('shortDeportivoHombre')}>SHORT</li>
+                                        <li onClick={() => setSelectedCategory('contactoDeporteHombre')}>DEPORTE DE CONTACTO</li>
+                                        <li onClick={() => setSelectedCategory('fittnesDeportivoHombres')}>FITTNES</li>
+                                        <li onClick={() => setSelectedCategory('remerasCamperasDeportivoHombre')}>REMERAS Y CAMPERAS</li>
+                                        <li onClick={() => setSelectedCategory('pantalonesDeportivoHombre')}>PANTALONES</li>
+                                        <p>MUJER - DEPORTIVO</p>
+                                        <li onClick={() => setSelectedCategory('topDeportivoMujer')}>TOP</li>
+                                        <li onClick={() => setSelectedCategory('calzasDeportivasMujer')}>CALZAS</li>
+                                        <li onClick={() => setSelectedCategory('remerasDeportivasMujer')}>REMERAS</li>
+                                        <li onClick={() => setSelectedCategory('buzosCamperasDeportivoMujer')}>BUZOS Y CAMPERAS</li>
                                     </div>
                         )}
                         </div>
-                      </div>
                     </li>
                     <li className={styles.categorySection}>
                       <div className={styles.subcategories}>
                                     <div className={styles.subcategory}>
-                                        <li onClick={() => setSelectedCategory('hombreUrbano')}>CALZADO</li>
+                                        <li onClick={() => setSelectedCategory('calzado')}>CALZADO</li>
                                     </div>
                       </div>
                     </li>
+                    <div className={styles.divisor}>
                     <li className={styles.categorySection}>
                       <div className={styles.subcategories}>
                                     <div className={styles.subcategory}>
-                                        <li onClick={() => setSelectedCategory('hombreUrbano')}>OTROS</li>
+                                        <li onClick={() => setSelectedCategory('otros')}>OTROS</li>
                                     </div>
                       </div>
                     </li>
@@ -152,13 +152,15 @@ const ProductList = () => {
                       <div className={styles.subcategories}>
                                     <div className={styles.subcategory}>
                                         <article>
-                                          <li onClick={() => setSelectedCategory('botasUrbanasCaterpillar')}>OFERTAS</li>
+                                          <li onClick={() => setSelectedCategory('ofertasTienda')}>OFERTAS</li>
                                         </article>
                                     </div>
                       </div>
                     </li>
+                    </div>
                   </ul>
                 </div>
+              </div>
             <div className={styles.card}>
                 {loading ? <h2>Cargando productos...</h2> : renderProducts()}
             </div>

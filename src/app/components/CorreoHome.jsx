@@ -4,6 +4,8 @@ import React, { useState} from 'react';
 import { initializeApp } from 'firebase/app';
 import styles from './Correo.module.css';
 import Swal from 'sweetalert2'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faBell } from '@fortawesome/free-solid-svg-icons';
 const CorreoHome = () => {
   const firebaseConfig = {
     apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
@@ -56,7 +58,7 @@ const CorreoHome = () => {
         <label htmlFor="">Suscribete a nuestro newsletter</label>
         <div>
           <input type="email" value={email} onChange={handleEmailChange} className={styles.subscribeInput} name="" id="" placeholder='nombre@ejemplo.com'/>
-          <button className={styles.subscribeButton} onClick={handleSaveEmail}>Suscribete</button>
+          <button className={styles.subscribeButton} onClick={handleSaveEmail}>Suscribete <FontAwesomeIcon icon={faBell}/></button>
         </div>
       </article>
     </section>

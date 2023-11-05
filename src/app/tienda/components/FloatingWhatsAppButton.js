@@ -9,7 +9,7 @@ const FloatingWhatsAppButton = () => {
 
   return (
     <a href={whatsappLink} target="_blank" rel="noopener noreferrer" className={styles.floatingWhatsAppButton}>
-      <Image src="/whatsapp.svg" alt="WhatsApp" className={styles.botonWhatsapp} width={1000} height={300}/>
+      <Image src="/whatsappLogo.svg" alt="WhatsApp" className={styles.botonWhatsapp} width={1000} height={300}/>
     </a>
   );
 };

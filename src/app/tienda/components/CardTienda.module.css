@@ -2,7 +2,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    margin-top: 7%;
+    margin-top: 4%;
     gap: 2rem;
 }
 .cardProduct{
@@ -38,27 +38,40 @@
 /* styles.css o styles.module.css */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@1,200&family=Roboto+Condensed:ital,wght@1,700&display=swap');
 
+.categoriesPanel {
+    margin-top: 5%;
+    width: 100%;
+    height: 100px;
+    background-color: white;
+    color: #000000;
+    transition: top 0.3s ease-in-out;
+    font-family: 'Montserrat', sans-serif;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    border: 1px solid;
+    text-align: center;
+}
 .categoryList {
     list-style: none;
     padding: 0;
     margin: 0;
     display: flex;
-    align-items: center;
     justify-content: space-around;
+    width: 100%;
 }
-.closeButton{
-    cursor: pointer;
-    font-size: 30px;
-    border-radius: 7px;
+.categorySection{
+    border-left: 1px solid;
+    border-right: 1px solid;
+}
+.categorySection em{
+    font-size: 25px;
 }
 .categoryTitle {
     cursor: pointer;
-    border: 1px solid red;
     padding: 12px;
-    border-radius: 12px;
     font-size: 25px;
 }
-  
 .subcategories {
     display: flex;
     flex-direction: row;
@@ -68,31 +81,74 @@
 }
 .subcategory li{
     cursor: pointer;
-    border: 1px solid red;
     padding: 12px;
-    border-radius: 12px;
     font-size: 25px;
 }
-.subcategory li:hover{
-    color: black;
+.subcategoryDeportivo{
+    position: absolute;
+    background-color: white;
+    text-align: center;
+    margin-top: 25px;
+}
+.subcategoryDeportivo li{
+    cursor: pointer;
+    padding: 12px;
+    font-size: 25px;
+    color: red;
+}
+.subcategoryDeportivo p{
+    font-size: 20px;
+    text-decoration:underline;
 }
 .categoriesButtonClickInput{
     display: flex;
     justify-content: center;
 }
+.divisor{
+    display: flex;
+}
 @media screen and (max-width: 1600px) {
     .cardProductDiv{
         width: 100%;
+    }
+    .subcategory li{
+        font-size: 20px;
+    }
+    .categoryTitle {
+        font-size: 20px;
+    }
+    .subcategoryDeportivo{
+        margin-top: 27px;
     }
 }
 @media screen and (max-width: 900px) {
     .cardProductDiv{
         width: 100%;
     }
-    .categoriesPanel{
-        width: 50%;
+    .subcategory li{
+        font-size: 17px;
     }
-    .categorySection em{
-        font-size: 20px;
+    .categoryTitle {
+        font-size: 17px;
+    }
+    .subcategoryDeportivo{
+        margin-top: 29px;
+    }
+}
+@media screen and (max-width: 850px) {
+    .divisor{
+        display: flex;
+        flex-direction: column;
+    }
+    .subcategoryDeportivo{
+        margin-top: 50px;
+    }
+}
+@media screen and (max-width: 630px) {
+    .categoriesPanel{
+        height: 150px;
+    }
+    .subcategoryDeportivo{
+        margin-top: 80px;
     }
 }
