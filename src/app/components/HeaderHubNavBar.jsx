@@ -5,11 +5,6 @@ export default function HeaderHubNavBar() {
         <nav>
             <ul className={styles.headerHubNavBarList}>
                 <li>
-                    <Link href='/#quienesSomos'>
-                        <p>MAS VENDIDOS</p>
-                    </Link>
-                </li>
-                <li>
                     <Link href='/tienda'>
                         <p>TIENDA</p>
                     </Link>

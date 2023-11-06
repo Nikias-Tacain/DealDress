@@ -6,6 +6,9 @@
     font-size: 35px;
     border-top: solid 1px;
 }
+.correoSection h2{
+    font-size: 45px;
+}
 .subscribeButton{
     background-color: rgb(255, 0, 0);
     color: #fff;

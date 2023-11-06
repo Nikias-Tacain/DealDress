@@ -35,7 +35,20 @@ const ProductsHub = () => {
     const urbanoProducts = products.filter(item => item.categoriaVisual === 'urbano');
     const renderProducts = () => (
         <section className={styles.productsHub}>
-            <h2 className={styles.productsHub__h2}>LO MAS VENDIDO</h2>
+            <fieldset className={styles.sobreNosotros__info}>
+                <legend>Deal Dress Tienda Online</legend>
+                {productsSlongan.map((item =>(
+                    <section key={item.id}>
+                        <p key={item.id}>{item.textHome}</p>
+                        <p key={item.id}>{item.textHome2}</p>
+                    </section>
+                )))}
+                <article>
+                    <Link href='/tienda'>
+                        <p>INGRESAR A LA TIENDA</p>
+                    </Link>
+                </article>
+            </fieldset>
             <article>
                 <div className={styles.productsHub__div}>
                     <h3 className={styles.productsHub__h3}>DEPORTIVO</h3>
@@ -56,20 +69,6 @@ const ProductsHub = () => {
                     ))}
                 </div>
             </article>
-            <fieldset className={styles.sobreNosotros__info}>
-                <legend>Deal Dress Tienda Online</legend>
-                {productsSlongan.map((item =>(
-                    <section key={item.id}>
-                        <p key={item.id}>{item.textHome}</p>
-                        <p key={item.id}>{item.textHome2}</p>
-                    </section>
-                )))}
-                <article>
-                    <Link href='/tienda'>
-                        <p>INGRESAR A LA TIENDA</p>
-                    </Link>
-                </article>
-            </fieldset>
             <article>
                 <div className={styles.productsHub__div}>
                     <h3 className={styles.productsHub__h3}>URBANO</h3>

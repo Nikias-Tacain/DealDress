@@ -5,6 +5,8 @@ import React, { useState, useEffect } from 'react';
 import { getAllProducts } from './productsQuery';
 import { initializeApp } from 'firebase/app';
 import styles from './CardTienda.module.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
 const firebaseConfig = {
     apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
     authDomain: "dealdress-90f47.firebaseapp.com",
@@ -56,28 +58,16 @@ const ProductList = () => {
             </section>
         ))
     )
-    const [isPanelVisible, setPanelVisible] = useState(false);
-    const [showPanel, setShowPanel] = useState(false);
-    const [buttonText, setButtonText] = useState('MOSTRAR CATEGORIAS');
     const [activeCategory, setActiveCategory] = useState(null);
 
-    const togglePanel = () => {
-        setPanelVisible(!isPanelVisible);
-        setShowPanel(!showPanel);
-        setButtonText(showPanel ? 'MOSTRAR CATEGORIAS' : 'OCULTAR CATEGORIAS');
-    };
     const toggleSubcategories = (category) => {
       setActiveCategory(category === activeCategory ? null : category);
-    };
-    const closePanel = () => {
-      setPanelVisible(false);
-      setShowPanel(false);
-      setButtonText('MOSTRAR CATEGORIAS');
     };
     return(
        <>   
             <div className={styles.categoriesButtonClick}>
               <div className={styles.categoriesButtonClickInput}>
+                <label><FontAwesomeIcon icon={faMagnifyingGlass}/></label>
                 <input
                   type="text"
                   placeholder="Buscar productos"
@@ -152,7 +142,7 @@ const ProductList = () => {
                       <div className={styles.subcategories}>
                                     <div className={styles.subcategory}>
                                         <article>
-                                          <li onClick={() => setSelectedCategory('ofertasTienda')}>OFERTAS</li>
+                                          <li onClick={() => setSelectedCategory('promosTienda')}>PROMOS</li>
                                         </article>
                                     </div>
                       </div>
