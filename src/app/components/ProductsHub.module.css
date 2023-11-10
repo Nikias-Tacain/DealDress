@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Agbalumo&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 .productsHub{
     display: flex;
     flex-direction: column;
@@ -93,12 +93,13 @@
 .productsHub__h3{
     font-size: 47px;
     margin: auto;
-    font-family: 'Agbalumo';
+    font-family: 'Permanent Maker';
     font-weight: 400;
-    background-color: rgb(204, 43, 43);
+    background-image: url(/fondoLetra.jpg);
     border-radius: 30px;
-    width: 25%;
+    width: 50%;
     text-align: center;
+    color: #ffff;
 }
 @media screen and (max-width: 1100px) {
     .productsHub > article{

@@ -19,7 +19,6 @@ export default function FooterHub() {
                 </article>
                 <article>
                     <p>Contacto:</p>
-                    <p><FontAwesomeIcon icon={faPhone}/> 3415075439</p>
                     <p><FontAwesomeIcon icon={faHouse} /> Donado 1500</p>
                     <p><FontAwesomeIcon icon={faEnvelope} /> dealdress.ropa@gmail.com</p>
                 </article>

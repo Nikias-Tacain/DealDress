@@ -7,6 +7,7 @@ import { initializeApp } from 'firebase/app';
 import styles from './CardTienda.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import CorreoHome from '@/app/components/CorreoHome';
 const firebaseConfig = {
     apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
     authDomain: "dealdress-90f47.firebaseapp.com",
@@ -83,7 +84,7 @@ const ProductList = () => {
                   onChange={(e) => setSearchTerm(e.target.value)}
                 />
               </div>
-            
+                <CorreoHome />
                 <br></br>
                 <div className={styles.categoriesPanel}>
                   <ul className={styles.categoryList}>
