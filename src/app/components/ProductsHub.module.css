@@ -48,17 +48,19 @@
     border: 1px solid black;
     border-radius: 12px;
 }
-.productsHub > article > div > article{
+.buttonTienda{
+    margin: auto;
     font-size: 1.5rem;
     height: 60px;
     width: 200px;
     border-radius: 20px;
-    background-color: rgb(231, 50, 50);
+    background-image: url(/fondoLetra.jpg);
     color: #fff;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: center;
 }
 .productsHub > article > div > article:hover{
     transform: translateY(6px);
@@ -100,6 +102,21 @@
     width: 50%;
     text-align: center;
     color: #ffff;
+}
+.metodosPago{
+    margin-top: 12px;
+    border-top: 1px solid;
+    text-align: center;
+}
+.metodosPago h2{
+    font-size: 30px;
+}
+.metodosPago div{
+    margin-top: 20px;
+}
+.metodosPago div p{
+    font-size: 20px;
+    padding: 5px;
 }
 @media screen and (max-width: 1100px) {
     .productsHub > article{

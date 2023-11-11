@@ -22,7 +22,12 @@
     height: auto;
 }
 .nosEncontras{
-    font-size: 25px;
+    font-size: 30px;
+    text-decoration: underline;
+}
+.nosEncontrasContacto{
+    font-size: 35px;
+    text-decoration: underline;
 }
 @media screen and (max-width: 930px) {
     .footerHub > section > article > a img{

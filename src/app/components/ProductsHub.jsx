@@ -43,11 +43,6 @@ const ProductsHub = () => {
                         <p key={item.id}>{item.textHome2}</p>
                     </section>
                 )))}
-                <article>
-                    <Link href='/tienda'>
-                        <p>INGRESAR A LA TIENDA</p>
-                    </Link>
-                </article>
             </fieldset>
             <article>
                 <div className={styles.productsHub__div}>

@@ -18,7 +18,7 @@ export default function FooterHub() {
                     <a className={styles.linkSocialMedia} href="https://api.whatsapp.com/send/?phone=5493415075439&text&type=phone_number&app_absent=0" target='_blank'><Image src="/whatsapp.svg" alt="Estamos en WhatsApp" width={200} height={60}/></a>
                 </article>
                 <article>
-                    <p>Contactanos:</p>
+                    <p className={styles.nosEncontrasContacto}>Contactanos:</p>
                     <p><FontAwesomeIcon icon={faHouse} /> Donado 1500</p>
                     <p><FontAwesomeIcon icon={faEnvelope} /> dealdress.ropa@gmail.com</p>
                 </article>
