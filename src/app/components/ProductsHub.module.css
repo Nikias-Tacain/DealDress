@@ -74,7 +74,7 @@
     height: 70px;
     width: 300px;
     border-radius: 20px;
-    background-color: red;
+    background-image: url(/fondoLetra.jpg);
     color: #fff;
     border: none;
     display: flex;

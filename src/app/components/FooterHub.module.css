@@ -21,6 +21,9 @@
     width: 100%;
     height: auto;
 }
+.nosEncontras{
+    font-size: 25px;
+}
 @media screen and (max-width: 930px) {
     .footerHub > section > article > a img{
         width: 12%;

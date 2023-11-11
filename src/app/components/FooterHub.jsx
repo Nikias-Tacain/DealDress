@@ -11,14 +11,14 @@ export default function FooterHub() {
                     <span>©COPYRIGHT DealDress™ - 2023</span>
                 </article>
                 <article>
-                    <p>NOS PODES ENCONTRAR EN:</p>
+                    <p className={styles.nosEncontras}>NOS PODES ENCONTRAR EN:</p>
                     <a className={styles.linkSocialMedia} href="https://www.instagram.com/dealdress.tiendaonline/" target='_blank'><Image src="/instagram.svg" alt="Estamos en Instagram" width={200} height={60}/></a>
                     <a className={styles.linkSocialMedia} href="https://www.tiktok.com/@dealdressropa" target='_blank'><Image src="/tiktok.svg" alt="Estamos en TikTok" width={200} height={60}/></a>
                     <a className={styles.linkSocialMedia} href="https://www.facebook.com/people/dealdresstiendaonline/100063642266774/" target='_blank'><Image src="/facebook.svg" alt="Estamos en Facebook" width={200} height={60}/></a>
                     <a className={styles.linkSocialMedia} href="https://api.whatsapp.com/send/?phone=5493415075439&text&type=phone_number&app_absent=0" target='_blank'><Image src="/whatsapp.svg" alt="Estamos en WhatsApp" width={200} height={60}/></a>
                 </article>
                 <article>
-                    <p>Contacto:</p>
+                    <p>Contactanos:</p>
                     <p><FontAwesomeIcon icon={faHouse} /> Donado 1500</p>
                     <p><FontAwesomeIcon icon={faEnvelope} /> dealdress.ropa@gmail.com</p>
                 </article>
