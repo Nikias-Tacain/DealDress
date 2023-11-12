@@ -61,6 +61,7 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    margin-bottom: 30PX;
 }
 .productsHub > article > div > article:hover{
     transform: translateY(6px);
@@ -109,7 +110,9 @@
     text-align: center;
 }
 .metodosPago h2{
+    color: #093878;
     font-size: 30px;
+    text-decoration: underline;
 }
 .metodosPago div{
     margin-top: 20px;

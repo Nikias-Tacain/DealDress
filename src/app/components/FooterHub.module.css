@@ -22,12 +22,17 @@
     height: auto;
 }
 .nosEncontras{
+    color: #093878;
     font-size: 30px;
     text-decoration: underline;
 }
 .nosEncontrasContacto{
+    color: #093878;
     font-size: 35px;
     text-decoration: underline;
+}
+.datosPersonales{
+    font-size: 20px;
 }
 @media screen and (max-width: 930px) {
     .footerHub > section > article > a img{

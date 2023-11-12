@@ -8,9 +8,6 @@ export default function FooterHub() {
         <footer className={styles.footerHub}>
             <section>
                 <article>
-                    <span>©COPYRIGHT DealDress™ - 2023</span>
-                </article>
-                <article>
                     <p className={styles.nosEncontras}>NOS PODES ENCONTRAR EN:</p>
                     <a className={styles.linkSocialMedia} href="https://www.instagram.com/dealdress.tiendaonline/" target='_blank'><Image src="/instagram.svg" alt="Estamos en Instagram" width={200} height={60}/></a>
                     <a className={styles.linkSocialMedia} href="https://www.tiktok.com/@dealdressropa" target='_blank'><Image src="/tiktok.svg" alt="Estamos en TikTok" width={200} height={60}/></a>
@@ -19,8 +16,11 @@ export default function FooterHub() {
                 </article>
                 <article>
                     <p className={styles.nosEncontrasContacto}>Contactanos:</p>
-                    <p><FontAwesomeIcon icon={faHouse} /> Donado 1500</p>
-                    <p><FontAwesomeIcon icon={faEnvelope} /> dealdress.ropa@gmail.com</p>
+                    <p className={styles.datosPersonales}><FontAwesomeIcon icon={faHouse} /> Donado 1500</p>
+                    <p className={styles.datosPersonales}><FontAwesomeIcon icon={faEnvelope} /> dealdress.ropa@gmail.com</p>
+                </article>
+                <article>
+                    <span>©COPYRIGHT DealDress™ - 2023</span>
                 </article>
             </section>
         </footer>

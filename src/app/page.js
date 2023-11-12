@@ -13,7 +13,7 @@ export default function page() {
         <>
             <article className={styles.buttonTienda}>
                 <Link href='/tienda'>
-                    <p>INGRESAR A LA TIENDA</p>
+                    <p>IR LA TIENDA</p>
                 </Link>
             </article>
             <HeaderHubCarrousel />
