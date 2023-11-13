@@ -3,6 +3,15 @@
   border-radius: 12px;
   padding: 10px 20px;
   cursor: pointer;
+  width: 120px;
+  display: flex;
+  align-items: center;
+  background-image: url(/fondoLetra.jpg);
+  color: #fff;
+  font-size: 30px;
+}
+.openButton img{
+  width: 150%;
 }
 
 .modalOverlay {

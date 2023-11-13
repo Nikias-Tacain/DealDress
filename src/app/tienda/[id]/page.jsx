@@ -8,7 +8,6 @@ import Link from 'next/link';
 import styles from './InfoProduct.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTruckMoving } from '@fortawesome/free-solid-svg-icons';
-import ShoppingCartModal from '../components/ShoppingCart';
 import FloatingWhatsAppButton from '../components/FloatingWhatsAppButton';
 import { useCarrito } from '../components/CarritoContext';
 const Product = () => {
@@ -62,10 +61,6 @@ const Product = () => {
   
   const renderProducts = () => (
     <div className={styles.sectionProductInfo}>
-      <div className={styles.sectionProductInfoCarrito}>
-        <ShoppingCartModal />
-      </div>
-
       <div className={styles.historyProductInfo}>
         <Link href='/tienda'>
           <span>TIENDA</span>

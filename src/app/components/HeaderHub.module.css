@@ -47,11 +47,36 @@
     cursor: pointer;
     padding: 0 10px;
 }
-  
+.barList{
+    color: #fff;
+    display: block;
+    border: 1px solid;
+    border-radius: 50px;
+    padding: 12px;
+    cursor: pointer;
+    width: 100%;
+}
+.varHeaderDiv{
+    max-width: 4%;
+}
+.varHeader{
+    background-image: url(/fondoLetra.jpg);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+@media screen and (max-width: 1250px) {
+    .varHeaderDiv{
+        max-width: 7%;
+    }
+}
 @media screen and (max-width: 900px) {
     .headerHubCarrouselMarquee{
         width: 100%;
         margin: auto;
+    }
+    .varHeaderDiv{
+        max-width: 10%;
     }
 }
 @media screen and (max-width: 570px) {

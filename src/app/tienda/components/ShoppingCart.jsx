@@ -52,7 +52,7 @@ const ShoppingCartModal = () => {
   return (
     <div>
       <button className={styles.openButton} onClick={toggleModal}>
-        <FontAwesomeIcon icon={faCartShopping} /> {carrito.length}
+        <img src='/imgCarritoCompras.png'/> {carrito.length}
       </button>
       {isOpen && (
         <div className={styles.modalOverlay}>
