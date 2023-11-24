@@ -65,6 +65,50 @@
     align-items: center;
     justify-content: space-between;
 }
+.categoriasDeslizantes{
+    background-image: url(/fondoLetra.jpg);
+    display: flex;
+    justify-content: center;
+    height: 80px;
+}
+.categoriasDeslizantesDeportivo{
+    background-image: url(/fondoLetra.jpg);
+    display: flex;
+    justify-content: center;
+    height: 80px;
+}
+.categoriasDeslizantes div{
+    display: flex;
+    justify-content: space-around;
+    min-width: 100%;
+    padding: 12px;
+}
+.categoriasDeslizantesDeportivo div{
+    display: flex;
+    justify-content: space-around;
+    min-width: 80%;
+    padding: 12px;
+}
+.categoriasDeslizantes button{
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 12px;
+    background-image: url(/fondoLetra.jpg);
+    color: #fff;
+}
+.categoriasDeslizantesDeportivo button{
+    cursor: pointer;
+    border-radius: 20px;
+    padding: 12px;
+    background-image: url(/fondoLetra.jpg);
+    color: #fff;
+}
+.categoriasDeslizantes button:hover{
+    margin-top: 3px;
+}
+.categoriasDeslizantesDeportivo button:hover{
+    margin-top: 3px;
+}
 @media screen and (max-width: 1250px) {
     .varHeaderDiv{
         max-width: 7%;
