@@ -30,31 +30,37 @@ const HeaderHub = () => {
 <div className={styles.categoriasDeslizantes}>
   <div>
   <Link href={'/tienda'}>
-        <button>TODOS</button>
+        <p>TODOS</p>
     </Link>
     <Link href={'/mujerUrbano'}>
-        <button>MUJER - URBANO</button>
+        <p>MUJER - URBANO</p>
     </Link>
     <Link href={'/hombreUrbano'}>
-        <button>HOMBRE - URBANO</button>
+        <p>HOMBRE - URBANO</p>
     </Link>
-    <button onClick={toggleCategoriasDeportivo}>DEPORTIVO ↓</button>
+    <p onClick={toggleCategoriasDeportivo}>DEPORTIVO ↓</p>
     {mostrarCategoriasDeportivas && (
 <div className={styles.categoriasDeslizantesDeportivo}>
   <div>
-    <button>HOMBRE</button>
-    <button>MUJER</button>
+    <p>HOMBRE</p>
+    <p>MUJER</p>
   </div>
 </div>
 )}
     <Link href={'/calzado'}>
-        <button>CALZADO</button>
+        <p>CALZADO</p>
     </Link>
     <Link href={'/otros'}>
-        <button>OTROS</button>
+        <p>OTROS</p>
     </Link>
     <Link href={'/ofertas'}>
-        <button>OFERTAS</button>
+        <p>OFERTAS</p>
+    </Link>
+    <Link href={'/#metodosPagoDisplay'}>
+        <p>METODOS DE PAGO</p>
+    </Link>
+    <Link href={'/#politicaCambio'}>
+        <p>POLÍTICA  DE CAMBIO</p>
     </Link>
   </div>
 </div>
