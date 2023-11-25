@@ -38,9 +38,15 @@ const HeaderHub = () => {
     <Link href={'/hombreUrbano'}>
         <button>HOMBRE - URBANO</button>
     </Link>
-    <Link href={'/tienda/#'}>
-        <button onClick={toggleCategoriasDeportivo}>DEPORTIVO ↓</button>
-    </Link>
+    <button onClick={toggleCategoriasDeportivo}>DEPORTIVO ↓</button>
+    {mostrarCategoriasDeportivas && (
+<div className={styles.categoriasDeslizantesDeportivo}>
+  <div>
+    <button>HOMBRE</button>
+    <button>MUJER</button>
+  </div>
+</div>
+)}
     <Link href={'/calzado'}>
         <button>CALZADO</button>
     </Link>
@@ -50,14 +56,6 @@ const HeaderHub = () => {
     <Link href={'/ofertas'}>
         <button>OFERTAS</button>
     </Link>
-  </div>
-</div>
-)}
-{mostrarCategoriasDeportivas && (
-<div className={styles.categoriasDeslizantesDeportivo}>
-  <div>
-    <button>HOMBRE</button>
-    <button>MUJER</button>
   </div>
 </div>
 )}

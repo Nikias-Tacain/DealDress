@@ -66,28 +66,28 @@
     justify-content: space-between;
 }
 .categoriasDeslizantes{
-    background-image: url(/fondoLetra.jpg);
     display: flex;
-    justify-content: center;
-    height: 80px;
+    justify-content: flex-start;
+    height: 750px;
+    width: 30%;
 }
 .categoriasDeslizantesDeportivo{
-    background-image: url(/fondoLetra.jpg);
     display: flex;
     justify-content: center;
-    height: 80px;
 }
 .categoriasDeslizantes div{
     display: flex;
     justify-content: space-around;
-    min-width: 100%;
     padding: 12px;
+    flex-direction: column;
+    align-items: center;
 }
 .categoriasDeslizantesDeportivo div{
     display: flex;
     justify-content: space-around;
     min-width: 80%;
     padding: 12px;
+    margin-left: 30px;
 }
 .categoriasDeslizantes button{
     cursor: pointer;
@@ -102,12 +102,6 @@
     padding: 12px;
     background-image: url(/fondoLetra.jpg);
     color: #fff;
-}
-.categoriasDeslizantes button:hover{
-    margin-top: 3px;
-}
-.categoriasDeslizantesDeportivo button:hover{
-    margin-top: 3px;
 }
 @media screen and (max-width: 1250px) {
     .varHeaderDiv{
