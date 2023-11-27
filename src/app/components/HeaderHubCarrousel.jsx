@@ -29,10 +29,10 @@ export default function HeaderHubCarrousel() {
                                 <img src={item.imagePrincipal} alt='' />
                             </div>
             )))}
-            <div className={styles.headerHubCarrouselMarquee}>
-                <marquee behavior="scroll" direction="left">
-                    ENVIAMOS A TODO EL PAIS A DOMICILIO CON ANDREANI !!! 🚛🚛🚛 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                </marquee>
+            <div className={styles.marquee}>
+                <span>
+                    ENVIAMOS A TODO EL PAIS A DOMICILIO CON ANDREANI !!! 🚛🚛🚛
+                </span>
             </div>
         </section>
     )

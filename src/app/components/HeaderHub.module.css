@@ -23,15 +23,26 @@
 .headerHubNavBarList > li:hover{
     transform: translateY(6px);
 }
-.headerHubCarrouselMarquee{
-    padding-top: 2%;
-    font-size: 30px;
-    margin-left: 10%;
+.marquee{
+    width: 100%;
+    white-space: nowrap;
+    align-items: center;
+    text-align: center;
+    padding: 12px;
 }
-.headerHubCarrouselMarquee marquee{
-    width: 89%;
+.marquee span {
+    display: inline-block;
+    animation: marquee 10s linear infinite;
+    font-size: 1.30rem;
 }
-
+@keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+}
 .carrouselImg{
     display: flex;
     justify-content: center;
@@ -72,6 +83,7 @@
     width: 15%;
     background-color: #fff;
     position: absolute;
+    z-index: 100;
 }
 .categoriasDeslizantesDeportivo{
     display: flex;
@@ -90,9 +102,13 @@
 .categoriasDeslizantesDeportivo div{
     display: flex;
     justify-content: space-around;
-    min-width: 80%;
-    padding: 12px;
     margin-left: 30px;
+}
+.categoriasDeslizantesDeportivo div p {
+    padding: 12px;
+}
+.categoriaDesplizanteDeportivoHombre p{
+    margin-left: 80px;
 }
 @media screen and (max-width: 1250px) {
     .varHeaderDiv{
