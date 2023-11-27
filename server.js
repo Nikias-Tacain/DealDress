@@ -24,9 +24,9 @@ app.post("/create_preference", (req, res) =>{
           },
         ],
         back_urls: {
-          success: 'https://deal-dress.vercel.app/',
-          failure: 'https://deal-dress.vercel.app/tienda',
-          pending: 'https://deal-dress.vercel.app/tienda',
+          success: 'https://dealdress.vercel.app/',
+          failure: 'https://dealdress.vercel.app/tienda',
+          pending: 'https://dealdress.vercel.app/tienda',
         },
         auto_return: 'approved', // Configura uno de los valores permitidos
       };
