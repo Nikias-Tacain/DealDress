@@ -7,10 +7,16 @@ import FloatingWhatsAppButton from './tienda/components/FloatingWhatsAppButton';
 import Link from 'next/link';
 import styles from './components/ProductsHub.module.css'
 import MetodosPago from './components/MetodosPago';
+import Image from 'next/image';
 config.autoAddCss = false;
 export default function page() {
     return(
         <>
+                    <header className={styles.headerHub}>
+            <Link href='/'>
+                <Image src="/iconoDealDress.png" alt="Logo Deal Dress" width={350} height={350}/>
+            </Link>
+        </header>
             <article className={styles.buttonTienda}>
                 <Link href='/tienda'>
                     <p>IR LA TIENDA</p>

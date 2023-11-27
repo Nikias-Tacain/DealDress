@@ -4,6 +4,8 @@ import { getFirestore } from 'firebase/firestore';
 import React, { useState, useEffect } from 'react';
 import { getAllImagesPortada } from './productsQuery';
 import { initializeApp } from 'firebase/app';
+import Link from 'next/link';
+import Image from 'next/image';
 const firebaseConfig = {
     apiKey: "AIzaSyDRZu2-vVF7E_5jAjTS8la9tqlapofky-4",
     authDomain: "dealdress-90f47.firebaseapp.com",
@@ -24,6 +26,11 @@ export default function CarrouselImgs() {
     },[])
     return(
         <section className={styles.bannerTienda}>
+                    <header className={styles.headerHub}>
+            <Link href='/'>
+                <Image src="/iconoDealDress.png" alt="Logo Deal Dress" width={350} height={350}/>
+            </Link>
+        </header>
             {products.map((item =>(
                             <div key={item.id}>
                                 <img src={item.image} alt='' />

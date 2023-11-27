@@ -7,6 +7,7 @@ import { db } from '@/app/firebase/config';
 import styles from './CardTienda.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons';
+import CarrouselImgs from './CarrouselImgs';
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
@@ -76,6 +77,7 @@ const ProductList = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
+        <CarrouselImgs />
         <CorreoHome />
         <br />
       </section>
