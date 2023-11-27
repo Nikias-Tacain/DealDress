@@ -104,8 +104,15 @@
 .categoriasDeslizantesDeportivo div p {
     padding: 12px;
 }
-.categoriaDesplizanteDeportivoHombre p{
-    margin-left: 80px;
+.headerHubCarrouselMarquee{
+    font-size: 30px;
+    width: 100%;
+}
+.categoriaDesplizanteDeportivoHombre{
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    height: 300px;
 }
 @media screen and (max-width: 1600px) {
     .categoriasDeslizantes{

@@ -53,19 +53,19 @@ const HeaderHub = () => {
     {mostrarCategoriasDeportivasHombre && (
         <div className={styles.categoriaDesplizanteDeportivoHombre}>
             <Link href={'/shortHombre'}>
-                <p>SHORT</p>
+                <span>SHORT</span>
             </Link>
             <Link href={'/contactoDeporte'}>
-                <p>DEPORTE DE CONTACTO</p>
+                <span>DEPORTE DE CONTACTO</span>
             </Link>
             <Link href={'/fittnesHombre'}>
-                <p>FITTNES</p>
+                <span>FITTNES</span>
             </Link>
             <Link href={'/remerasCamperasHombre'}>
-                <p>REMERAS Y CAMPERAS</p>
+                <span>REMERAS Y CAMPERAS</span>
             </Link>
             <Link href={'/pantalonesDeportivoHombre'}>
-                <p>PANTALONES</p>
+                <span>PANTALONES</span>
             </Link>
         </div>
 )}
@@ -73,16 +73,16 @@ const HeaderHub = () => {
     {mostrarCategoriasDeportivasMujer && (
         <div className={styles.categoriaDesplizanteDeportivoHombre}>
             <Link href={'/topMujer'}>
-                <p>TOP</p>
+                <span>TOP</span>
             </Link>
             <Link href={'/calzasMujer'}>
-                <p>CALZAS</p>
+                <span>CALZAS</span>
             </Link>
             <Link href={'/remerasMujer'}>
-                <p>REMERAS</p>
+                <span>REMERAS</span>
             </Link>
             <Link href={'/buzosCamperasMujer'}>
-                <p>BUZOS Y CAMPERAS</p>
+                <span>BUZOS Y CAMPERAS</span>
             </Link>
         </div>
 )}

@@ -11,6 +11,7 @@ export default function MetodosPago() {
         <p>⚫ Rapi Pago / Pago Facil</p>
         <p>⚫ Mercado Pago</p>
         <p>⚫ Transferencia</p>
+        <p>⚫ Efectivo</p>
       </div>
     </div>
     <div id='politicaCambio' className={styles.metodosPago}>

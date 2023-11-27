@@ -72,7 +72,7 @@ const ProductList = () => {
               border: '1px solid #ccc',
               borderRadius: '4px',
               marginBottom: '10px',
-              width: '300px',
+              width: '450px',
             }}
             onChange={(e) => setSearchTerm(e.target.value)}
           />
