@@ -9,6 +9,8 @@ const HeaderHub = () => {
     const [mostrarCategoriasDeportivas, setMostrarCategoriasDeportivas] = useState(false);
     const [mostrarCategoriasDeportivasHombre, setMostrarCategoriasDeportivasHombre] = useState(false);
     const [mostrarCategoriasDeportivasMujer, setMostrarCategoriasDeportivasMujer] = useState(false);
+    const [mostrarCategoriasMetodoPago, setMostrarCategoriasMetodoPago] = useState(false);
+    const [mostrarCategoriasPoliticaCambio, setMostrarCategoriasPoliticaCambio] = useState(false);
 
     const toggleCategorias = () => {
         setMostrarCategorias(!mostrarCategorias);
@@ -22,6 +24,12 @@ const HeaderHub = () => {
     }
     const toggleCategoriasDeportivoMujer =() =>{
         setMostrarCategoriasDeportivasMujer(!mostrarCategoriasDeportivasMujer);
+    }
+    const toggleCategoriasMetodosPago =() =>{
+        setMostrarCategoriasMetodoPago(!mostrarCategoriasMetodoPago);
+    }
+    const toggleCategoriasPoliticaCambio =() =>{
+        setMostrarCategoriasPoliticaCambio(!mostrarCategoriasPoliticaCambio);
     }
   return (
     <section>
@@ -56,10 +64,10 @@ const HeaderHub = () => {
                 <span>SHORT</span>
             </Link>
             <Link href={'/contactoDeporte'}>
-                <span>DEPORTE DE CONTACTO</span>
+                <span>DEPORTES DE CONTACTO</span>
             </Link>
             <Link href={'/fittnesHombre'}>
-                <span>FITTNES</span>
+                <span>FITNESS</span>
             </Link>
             <Link href={'/remerasCamperasHombre'}>
                 <span>REMERAS Y CAMPERAS</span>
@@ -98,12 +106,25 @@ const HeaderHub = () => {
     <Link href={'/ofertas'}>
         <p>OFERTAS</p>
     </Link>
-    <Link href={'/#metodosPagoDisplay'}>
-        <p>METODOS DE PAGO</p>
-    </Link>
-    <Link href={'/#politicaCambio'}>
-        <p>POLÍTICA  DE CAMBIO</p>
-    </Link>
+    <p onClick={toggleCategoriasMetodosPago}>METODOS DE PAGO ↓</p>
+    {mostrarCategoriasMetodoPago && (
+            <div className={styles.categoriaDesplizanteDeportivoHombre}>
+             <span>⚫ Efectivo</span>
+             <span>⚫ Tarjetas de debito</span>
+             <span>⚫ Tarjetas de credito</span>
+             <span>⚫ RapiPago / PagoFacil</span>
+             <span>⚫ Mercado Pago</span>
+             <span>⚫ Transferencia</span>
+           </div>
+)}
+    <p onClick={toggleCategoriasPoliticaCambio}>POLÍTICA  DE CAMBIO ↓</p>
+    {mostrarCategoriasPoliticaCambio && (
+                <div className={styles.categoriaDesplizanteDeportivoHombre}>
+                  <span>⚫ Una vez recibido  tu pedido 72hs para realizar el cambio</span>
+                  <span>⚫ Se cambia articulo por artículo</span>
+                  <span>⚫ Solo debes abonar el correo</span>
+                </div>
+)}
   </div>
 </div>
 )}

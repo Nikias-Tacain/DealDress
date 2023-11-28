@@ -16,7 +16,7 @@ export default function FooterHub() {
                 </article>
                 <article>
                     <p className={styles.nosEncontrasContacto}>Contactanos:</p>
-                    <p className={styles.datosPersonales}><FontAwesomeIcon icon={faHouse} /> Donado 1500</p>
+                    <p className={styles.datosPersonales}><FontAwesomeIcon icon={faHouse} /> Donado 1500 - Rosario</p>
                     <p className={styles.datosPersonales}><FontAwesomeIcon icon={faEnvelope} /> dealdress.ropa@gmail.com</p>
                 </article>
                 <article>

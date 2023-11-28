@@ -6,12 +6,12 @@ export default function MetodosPago() {
 <div id='metodosPagoDisplay' className={styles.metodosPago}>
       <h2>Medios de pago</h2>
       <div>
+        <p>⚫ Efectivo</p>
         <p>⚫ Tarjetas de debito</p>
         <p>⚫ Tarjetas de credito</p>
-        <p>⚫ Rapi Pago / Pago Facil</p>
+        <p>⚫ RapiPago / PagoFacil</p>
         <p>⚫ Mercado Pago</p>
         <p>⚫ Transferencia</p>
-        <p>⚫ Efectivo</p>
       </div>
     </div>
     <div id='politicaCambio' className={styles.metodosPago}>

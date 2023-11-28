@@ -31,7 +31,7 @@ export default function HeaderHubCarrousel() {
             )))}
             <div className={styles.headerHubCarrouselMarquee}>
                 <marquee behavior="scroll" direction="left">
-                    PEDIDOS MAYORISTAS - CONTACTAR POR WHATSAPP &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    ENVIAMOS A TODO EL PAIS A DOMICILIO CON ANDREANI 🚚🚚🚚
                 </marquee>
             </div>
         </section>
