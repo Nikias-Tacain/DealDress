@@ -21,28 +21,31 @@ export default function MercadoPago () {
   initializeApp(firebaseConfig);
     const [preferenceId, setPreferenceId] = useState();
     const { carrito } = useCarrito();
-    initMercadoPago('APP_USR-5e06b7fc-5e06-4627-b504-fa7f833a133b');
+    initMercadoPago('APP_USR-966eb853-1903-42bc-99d6-9fea2820fd35');
     const createPreference = async () => {
-        try{
-          const response = await axios.post("http://localhost:3000/tienda/order/mercadoPago", {
-            description: "Carrito de compras",
-            price: totalPrecio,
-            quantity: 1,
-          });                   
+      try {
+          const response = await axios.post("http://localhost:8080/create_preference", {
+              description: "Carrito de compras",
+              price: totalPrecio,
+              quantity: 1,
+          });
           const { id } = response.data;
           return id;
-        }catch (error) {
-          console.log(error);
-        }
-      };
+      } catch (error) {
+          console.error("Error al crear preferencia de pago:", error);
+          // Puedes manejar el error aquí, por ejemplo, mostrando un mensaje al usuario.
+          return null;
+      }
+  };
+  
       let totalPrecio = carrito.reduce((acumulador, producto) => {
-        return acumulador + (producto.precio * producto.cantidad);
+        return acumulador + producto.precio * producto.cantidad;
       }, 0);
-    
+      
       // Aplicar el descuento si está activado
       if (descuentoAplicado) {
         totalPrecio *= 0.9; // Aplicar un 10% de descuento
-      }
+      }      
       const [nombre, setNombre] = useState('');
   const [correo, setCorreo] = useState('');
   const [tel, setTel] = useState('');
@@ -94,6 +97,7 @@ export default function MercadoPago () {
       if (id) {
         setPreferenceId(id);
       }
+      
     } catch (error) {
       console.error('Error al guardar los datos: ', error);
     }

@@ -2,7 +2,6 @@
 import React, { useState } from 'react';
 import styles from './ShoppingCartModal.module.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faCartShopping } from '@fortawesome/free-solid-svg-icons';
 import { faTrashCan } from '@fortawesome/free-solid-svg-icons';
 import { useCarrito } from './CarritoContext';
 import { useDescuento } from './descuentoContext';
