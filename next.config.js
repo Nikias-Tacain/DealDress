@@ -1,3 +1,9 @@
 /** @type {import('next').NextConfig} */
-module.exports = {
-};
+module.exports = 
+    [
+        {
+          "origin": ["https://dealdress.vercel.app/"],
+          "method": ["GET"]
+        }
+    ]
+      
