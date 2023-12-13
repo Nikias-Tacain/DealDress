@@ -24,7 +24,7 @@ export default function MercadoPago () {
     initMercadoPago('APP_USR-966eb853-1903-42bc-99d6-9fea2820fd35');
     const createPreference = async () => {
       try {
-          const response = await axios.post("http://localhost:8080/create_preference", {
+          const response = await axios.post("https://dealdress.vercel.app/create_preference", {
               description: "Carrito de compras",
               price: totalPrecio,
               quantity: 1,
