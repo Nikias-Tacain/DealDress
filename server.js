@@ -6,7 +6,11 @@ const mercadopago = require("mercadopago");
 const PORT = process.env.PORT || 8080;  // Utiliza el puerto proporcionado por Vercel o el puerto 8080 si no está disponible
 
 app.use(express.json());
-app.use(cors());
+app.use(cors({
+  origin: 'https://dealdress.vercel.app/',
+  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
+  credentials: true,
+}));
 
 mercadopago.configure({
   access_token: "APP_USR-7076552330700962-120407-7469bb43b51508716a6d9f39200f8255-1466887909",
