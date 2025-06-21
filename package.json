@@ -8,7 +8,8 @@
     "start:front": "next start",
     "lint": "next lint",
     "dev:back": "nodemon server.js",
-    "start:back": "node server.js"
+    "start:back": "node server.js",
+    "start": "node server.js"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
