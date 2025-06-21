@@ -1,59 +1,63 @@
+require("dotenv").config();
 const express = require("express");
-const app = express();
-const cors = require('cors');
+const cors = require("cors");
 const mercadopago = require("mercadopago");
 
-const PORT = process.env.PORT || 8080;  // Utiliza el puerto proporcionado por Vercel o el puerto 8080 si no está disponible
+const app = express();
+const PORT = process.env.PORT || 8080;
 
+
+// === Middleware ===
 app.use(express.json());
+
+// ✅ CORS dinámico para desarrollo y producción
+const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
+console.log("Usando FRONTEND_URL:", FRONTEND_URL);
 app.use(cors({
-  origin: 'https://dealdress.vercel.app/',
-  methods: 'GET,HEAD,PUT,PATCH,POST,DELETE',
-  credentials: true,
+  origin: FRONTEND_URL,
+  methods: ["GET", "POST"],
+  credentials: true
 }));
 
+// ✅ Configurar MercadoPago con variable de entorno
 mercadopago.configure({
-  access_token: "APP_USR-7076552330700962-120407-7469bb43b51508716a6d9f39200f8255-1466887909",
+  access_token: process.env.MP_ACCESS_TOKEN,
 });
 
-app.get("/", function (req, res) {
-    res.send("El server funciona")
-})
+// === Ruta raíz de prueba ===
+app.get("/", (req, res) => {
+  res.send("Servidor funcionando correctamente ✅");
+});
 
+// === Crear preferencia de pago ===
 app.post("/create_preference", async (req, res) => {
-    try {
-      const preference = {
-        items: [
-            {
-                title: req.body.description,
-                quantity: Number(req.body.quantity),
-                unit_price: Number(req.body.price),
-            },
-        ],
-        back_urls: {
-            success: 'http://localhost:3000/',
-            failure: 'http://localhost:3000/tienda',
-            pending: 'http://localhost:3000/tienda',
-        },
-        auto_return: 'approved', // Configura uno de los valores permitidos
-      };
-        const response = await mercadopago.preferences.create(preference);
-        res.json({
-            id: response.body.id,
-        });
-    } catch (error) {
-        console.error("Error al crear preferencia de pago:", error);
-        res.status(500).json({ error: "Error al procesar la solicitud" });
-    }
+  console.log("Body recibido:", req.body);
+
+  const { items } = req.body;
+
+  const preference = {
+    items,
+    back_urls: {
+      success: `${process.env.FRONTEND_URL}/tienda/order/success`,
+      failure: `${process.env.FRONTEND_URL}/tienda/order/failure`,
+      pending: `${process.env.FRONTEND_URL}/tienda/order/failure`,
+    },
+    auto_return: 'approved',
+  };
+
+  try {
+    const response = await mercadopago.preferences.create(preference);
+    console.log("✅ Preferencia creada:", response.body);
+    res.json({ id: response.body.id });
+  } catch (error) {
+    console.error("❌ Error al crear preferencia:", error);
+    res.status(500).json({ error: error.message, details: error.response?.body || null });
+  }
 });
 
+
+
+// === Iniciar servidor ===
 app.listen(PORT, () => {
-    console.log(`Server abierto en puerto ${PORT}`);
+  console.log(`🟢 Servidor corriendo en puerto ${PORT}`);
 });
-
-
-
-
-
-
-

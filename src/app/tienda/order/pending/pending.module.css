@@ -1,0 +1,34 @@
+.wrapper {
+  text-align: center;
+  padding: 4rem 2rem;
+  background-color: #fff8e1;
+  border-radius: 16px;
+  max-width: 600px;
+  margin: 2rem auto;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  color: #f57f17;
+  margin-bottom: 1rem;
+}
+
+p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+.boton {
+  background-color: #fbc02d;
+  border: none;
+  color: #333;
+  padding: 0.8rem 1.5rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.boton:hover {
+  background-color: #f9a825;
+}

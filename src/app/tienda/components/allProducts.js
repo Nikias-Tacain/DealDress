@@ -1,6 +1,6 @@
 'use client'
 import React, { useState, useEffect } from 'react';
-import { collection, getDocs, query, where } from 'firebase/firestore';
+import { collection, getDocs } from 'firebase/firestore';
 import Link from 'next/link';
 import CorreoHome from '@/app/components/CorreoHome';
 import { db } from '@/app/firebase/config';
@@ -26,11 +26,11 @@ const ProductList = () => {
     });
   }, []);
 
-  const filteredProducts = selectedCategory
-    ? products.filter((product) => product.categoria.includes(selectedCategory))
-    : products.filter((product) =>
-        product.nombre.toLowerCase().includes(searchTerm.toLowerCase())
-      );
+  const filteredProducts = products.filter((product) => {
+    const matchesCategory = selectedCategory ? product.categoria.includes(selectedCategory) : true;
+    const matchesSearch = product.nombre.toLowerCase().includes(searchTerm.toLowerCase());
+    return matchesCategory && matchesSearch;
+  });
 
   const renderProducts = () =>
     filteredProducts.map((item) => (
@@ -38,7 +38,7 @@ const ProductList = () => {
         <div className={styles.divProductImg}>
           <Link href={`/tienda/${item.id}`}>
             <article className={styles.imgProduct}>
-              <img src={item.image} alt={item.nombre} />
+              <img src={item.image || '/placeholder.png'} alt={item.nombre} />
             </article>
           </Link>
         </div>
