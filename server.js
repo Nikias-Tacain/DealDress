@@ -40,7 +40,7 @@ app.post("/create_preference", async (req, res) => {
     back_urls: {
       success: `${process.env.FRONTEND_URL}/tienda/order/success`,
       failure: `${process.env.FRONTEND_URL}/tienda/order/failure`,
-      pending: `${process.env.FRONTEND_URL}/tienda/order/failure`,
+      pending: `${process.env.FRONTEND_URL}/tienda/order/pending`,
     },
     auto_return: 'approved',
   };
