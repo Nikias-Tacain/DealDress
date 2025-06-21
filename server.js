@@ -56,6 +56,14 @@ app.post("/create_preference", async (req, res) => {
 });
 
 
+process.on('SIGTERM', () => {
+  console.log('Recibí SIGTERM, cerrando servidor...');
+  process.exit(0);
+});
+
+process.on('uncaughtException', (err) => {
+  console.error('Excepción no atrapada:', err);
+});
 
 // === Iniciar servidor ===
 app.listen(PORT, () => {
