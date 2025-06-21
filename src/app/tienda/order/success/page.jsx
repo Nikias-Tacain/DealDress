@@ -1,6 +1,6 @@
 'use client';
 import { useEffect } from 'react';
-import { useCarrito } from "@/components/CarritoContext";
+import { useCarrito } from "../../components/CarritoContext";
 import Link from "next/link";
 import styles from './success.module.css'; // Crea este archivo si querés estilos
 
