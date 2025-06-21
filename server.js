@@ -14,8 +14,8 @@ app.use(express.json());
 const FRONTEND_URL = process.env.FRONTEND_URL || "http://localhost:3000";
 console.log("Usando FRONTEND_URL:", FRONTEND_URL);
 app.use(cors({
-  origin: FRONTEND_URL,
-  methods: ["GET", "POST"],
+  origin: [FRONTEND_URL, "https://dealdress.vercel.app"],
+  methods: ["GET", "POST", "OPTIONS"], // 👈 Asegurate de incluir OPTIONS
   credentials: true
 }));
 

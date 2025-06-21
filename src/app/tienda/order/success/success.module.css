@@ -1,5 +1,30 @@
 .successWrapper {
   text-align: center;
-  margin-top: 4rem;
-  color: #2e7d32;
+  padding: 3rem;
 }
+
+.title {
+  font-size: 2rem;
+  color: #38a169;
+  margin-bottom: 1rem;
+}
+
+.message {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.details {
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+.button {
+  background-color: #38a169;
+  color: white;
+  padding: 0.7rem 1.5rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
