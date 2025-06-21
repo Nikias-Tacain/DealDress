@@ -1,6 +1,6 @@
 'use client';
 import { useEffect } from 'react';
-import { useCarrito } from '@/components/CarritoContext';
+import { useCarrito } from '../../components/CarritoContext';
 import { useRouter } from 'next/navigation';
 import styles from './success.module.css';
 

@@ -8,17 +8,17 @@
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
+.wrapper h1 {
   color: #f57f17;
   margin-bottom: 1rem;
 }
 
-p {
+.wrapper p {
   font-size: 1.1rem;
   margin-bottom: 1rem;
 }
 
-.boton {
+.wrapper boton {
   background-color: #fbc02d;
   border: none;
   color: #333;
@@ -29,6 +29,6 @@ p {
   transition: background-color 0.3s ease;
 }
 
-.boton:hover {
+.wrapper boton:hover {
   background-color: #f9a825;
 }
