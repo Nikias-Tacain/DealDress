@@ -28,11 +28,12 @@ export default function MercadoPagoPage() {
         const totalPrecio = carrito.reduce((acum, prod) => acum + prod.precio * prod.cantidad, 0);
         const totalConDescuento = descuentoAplicado ? totalPrecio * 0.9 : totalPrecio;
 
-        const items = [{
-          title: 'Compra en DealDress',
-          quantity: 1,
-          unit_price: Number(totalConDescuento.toFixed(2))
-        }];
+        const items = carrito.map(prod => ({
+          title: prod.nombre,
+          quantity: prod.cantidad,
+          unit_price: Number(prod.precio.toFixed(2))
+        }));
+
 
         const res = await axios.post(`${backendURL}/create_preference`, { items });
 

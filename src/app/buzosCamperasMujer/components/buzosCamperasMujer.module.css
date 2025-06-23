@@ -1,45 +1,86 @@
-.categoriesButtonClickInput{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 30px;
+.categoriesButtonClickInput {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 30px;
+  margin-bottom: 1rem; /* para separar del input */
 }
-.categoriesButtonClickInput label{
-    margin-right: 20px;
+
+.categoriesButtonClickInput label {
+  margin-right: 20px;
 }
-.card{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 4%;
-    gap: 2rem;
+
+/* Estilo para el input de búsqueda */
+.searchInput {
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+  width: 300px;
+  max-width: 90vw;
+  outline-offset: 2px;
 }
-.cardProduct{
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    width: 500px;
-    height: 470px;
+
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 4%;
+  gap: 2rem;
 }
-.cardProductDiv{
-    display: flex;
-    justify-content: space-around;
-    width: 100%;
-    align-items: center;
+
+.cardProduct {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 500px;
+  height: 470px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1); /* agregar sombra sutil */
+  border-radius: 8px;
+  background-color: #fff; /* fondo blanco para que destaque */
+  padding: 1rem;
+  transition: transform 0.2s ease-in-out;
 }
-.cardProductDiv div article h2{
-    color: #000000;
+
+.cardProduct:hover {
+  transform: scale(1.02);
 }
-.cardProductDiv div article p{
-    font-size: 1.8rem;
-    color: #000000;
+
+.cardProductDiv {
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+  align-items: center;
 }
-.divProductImg{
-    width: 50%;
-    margin: auto;
+
+.cardProductDiv div article h2,
+.cardProductDiv div article p {
+  color: #000;
+  margin: 0;
 }
-.imgProduct img{
-    width: 100%;
-    height: 300px;
+
+.cardProductDiv div article p {
+  font-size: 1.8rem;
+}
+
+.divProductImg {
+  width: 50%;
+  margin: auto;
+}
+
+.imgProduct img,
+.imgProduct :global(img) {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+.noResults {
+  font-size: 1.5rem;
+  color: #555;
+  text-align: center;
+  width: 100%;
+  margin-top: 2rem;
 }
