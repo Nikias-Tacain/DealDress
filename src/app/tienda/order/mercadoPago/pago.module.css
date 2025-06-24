@@ -8,6 +8,12 @@
   text-align: center;
   box-shadow: 0 0 10px rgba(0,0,0,0.1);
 }
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -19,9 +25,11 @@
 .form input {
   padding: 10px;
   font-size: 16px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
 }
 
-button {
+.boton {
   background-color: black;
   color: white;
   padding: 12px;
@@ -29,4 +37,9 @@ button {
   border: none;
   cursor: pointer;
   border-radius: 5px;
+  transition: background-color 0.2s ease-in-out;
+}
+
+.boton:hover {
+  background-color: #333;
 }

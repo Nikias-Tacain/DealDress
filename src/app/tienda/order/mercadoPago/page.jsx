@@ -24,7 +24,7 @@ export default function MercadoPagoPage() {
     });
   }, []);
 
-  // Crear preferencia después de completar el formulario
+  // Crear preferencia de pago una vez completado el formulario
   useEffect(() => {
     if (carrito.length === 0 || !formCompleto) return;
 
@@ -97,7 +97,7 @@ export default function MercadoPagoPage() {
             value={formData.direccion}
             required
           />
-          <button type="submit">Continuar al pago</button>
+          <button type="submit" className={styles.boton}>Continuar al pago</button>
         </form>
       ) : preferenceId ? (
         <Wallet initialization={{ preferenceId }} />
