@@ -13,9 +13,10 @@ export default function SuccessPage() {
     const guardarPedido = async () => {
       try {
         const formData = JSON.parse(localStorage.getItem('formData'));
+        const carritoGuardado = JSON.parse(localStorage.getItem('carrito'));
 
-        if (!formData) {
-          console.warn("❌ No hay datos del cliente en localStorage");
+        if (!formData || !carritoGuardado || carritoGuardado.length === 0) {
+          console.warn("❌ Faltan datos del cliente o carrito en localStorage");
           return;
         }
 
@@ -24,15 +25,18 @@ export default function SuccessPage() {
             nombre: formData.nombre,
             correo: formData.correo,
             direccion: formData.direccion,
+            telefonoCompleto: `+${formData.codigoPais} (${formData.codigoArea}) ${formData.telefono}`,
           },
-          productos: carrito,
+          productos: carritoGuardado,
           fecha: Timestamp.now(),
         };
+
 
         await addDoc(collection(db, 'ordenes'), pedido);
         console.log("✅ Pedido guardado en Firebase");
 
-        localStorage.removeItem('formData'); // Limpiar después de guardar
+        localStorage.removeItem('formData');
+        localStorage.removeItem('carrito');
         clearCarrito();
       } catch (err) {
         console.error("❌ Error al guardar el pedido:", err);
