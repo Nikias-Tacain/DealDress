@@ -1,3 +1,4 @@
+'use client'
 import { useEffect, useState } from 'react';
 import { initMercadoPago, Wallet } from '@mercadopago/sdk-react';
 import axios from 'axios';
