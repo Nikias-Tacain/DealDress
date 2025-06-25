@@ -20,7 +20,20 @@ export default function SuccessPage() {
           return;
         }
 
+        // Calcular total
+        const total = carritoGuardado.reduce((acc, prod) => acc + prod.precio * prod.cantidad, 0);
+
+        // Generar número de orden con ceros (ej: "#000123")
+        const generarNumeroDeOrden = () => {
+          const numero = Math.floor(1 + Math.random() * 999999); // entre 1 y 999999
+          return `#${numero.toString().padStart(6, '0')}`;
+        };
+
+        const numeroDeOrden = generarNumeroDeOrden();
+
+        // Crear pedido
         const pedido = {
+          numeroDeOrden,
           cliente: {
             nombre: formData.nombre,
             correo: formData.correo,
@@ -28,9 +41,9 @@ export default function SuccessPage() {
             telefonoCompleto: `+${formData.codigoPais} (${formData.codigoArea}) ${formData.telefono}`,
           },
           productos: carritoGuardado,
+          total,
           fecha: Timestamp.now(),
         };
-
 
         await addDoc(collection(db, 'ordenes'), pedido);
         console.log("✅ Pedido guardado en Firebase");
