@@ -1,4 +1,4 @@
-'use client'
+'use client';
 import React, { createContext, useContext, useState, useEffect, useCallback } from 'react';
 import Swal from 'sweetalert2';
 
@@ -8,7 +8,7 @@ export function useCarrito() {
   return useContext(CarritoContext);
 }
 
-// Función para crear Toast reutilizable
+// Toast reusable
 const createToast = (icon, title) => {
   Swal.fire({
     toast: true,
@@ -28,7 +28,7 @@ const createToast = (icon, title) => {
 export function CarritoProvider({ children }) {
   const [carrito, setCarrito] = useState([]);
 
-  // Cargar carrito de localStorage al iniciar
+  // LocalStorage - cargar al iniciar
   useEffect(() => {
     const storedCarrito = localStorage.getItem('carrito');
     if (storedCarrito) {
@@ -36,50 +36,44 @@ export function CarritoProvider({ children }) {
     }
   }, []);
 
-  // Guardar carrito en localStorage cuando cambia
+  // LocalStorage - guardar al modificar
   useEffect(() => {
     localStorage.setItem('carrito', JSON.stringify(carrito));
   }, [carrito]);
 
-  // Agregar producto al carrito o aumentar cantidad si ya existe (según id y talle)
-  const handleButtonClick = useCallback(
-    (product) => {
-      setCarrito((prevCarrito) => {
-        const index = prevCarrito.findIndex(
-          (p) => p.id === product.id && p.talleSeleccionado === product.talleSeleccionado
-        );
+  const handleButtonClick = useCallback((product) => {
+    setCarrito((prevCarrito) => {
+      const index = prevCarrito.findIndex(
+        (p) => p.id === product.id && p.talleSeleccionado === product.talleSeleccionado
+      );
 
-        if (index !== -1) {
-          // Producto existe: aumentar cantidad
-          const updated = [...prevCarrito];
-          updated[index] = {
-            ...updated[index],
-            cantidad: updated[index].cantidad + 1,
-          };
-          createToast('info', 'El producto se encuentra agregado. Se suma su cantidad.');
-          return updated;
-        } else {
-          // Producto nuevo: agregar al carrito
-          createToast('success', 'Producto agregado al carrito.');
-          return [
-            ...prevCarrito,
-            {
-              id: product.id,
-              image: product.image,
-              nombre: product.nombre,
-              talleSeleccionado: product.talleSeleccionado,
-              precio: product.precio,
-              modelo: product.modelo,
-              cantidad: 1,
-            },
-          ];
-        }
-      });
-    },
-    []
-  );
+      if (index !== -1) {
+        const updated = [...prevCarrito];
+        updated[index] = {
+          ...updated[index],
+          cantidad: updated[index].cantidad + 1,
+        };
+        createToast('info', 'El producto se encuentra agregado. Se suma su cantidad.');
+        return updated;
+      } else {
+        createToast('success', 'Producto agregado al carrito.');
+        return [
+          ...prevCarrito,
+          {
+            id: product.id,
+            image: product.image,
+            nombre: product.nombre,
+            talleSeleccionado: product.talleSeleccionado,
+            precio: product.precio,
+            modelo: product.modelo,
+            cantidad: 1,
+          },
+        ];
+      }
+    });
+  }, []);
 
-  // Vaciar carrito con confirmación
+  // ✅ Borrar con confirmación
   const clearCarrito = useCallback(() => {
     Swal.fire({
       title: '¿Estás seguro?',
@@ -97,7 +91,11 @@ export function CarritoProvider({ children }) {
     });
   }, []);
 
-  // Eliminar producto específico del carrito
+  // ✅ Borrar sin confirmación (usado en /success)
+  const clearCarritoSinConfirmacion = useCallback(() => {
+    setCarrito([]);
+  }, []);
+
   const eliminarProductoDelCarrito = useCallback((productoAEliminar) => {
     setCarrito((prevCarrito) =>
       prevCarrito.filter(
@@ -107,7 +105,6 @@ export function CarritoProvider({ children }) {
     );
   }, []);
 
-  // Aumentar cantidad de un producto
   const aumentarCantidad = useCallback((productoAAumentar) => {
     setCarrito((prevCarrito) =>
       prevCarrito.map((p) =>
@@ -118,7 +115,6 @@ export function CarritoProvider({ children }) {
     );
   }, []);
 
-  // Disminuir cantidad sin bajar de 1
   const disminuirCantidad = useCallback((productoADisminuir) => {
     setCarrito((prevCarrito) =>
       prevCarrito.map((p) => {
@@ -136,6 +132,7 @@ export function CarritoProvider({ children }) {
         carrito,
         handleButtonClick,
         clearCarrito,
+        clearCarritoSinConfirmacion,
         eliminarProductoDelCarrito,
         aumentarCantidad,
         disminuirCantidad,

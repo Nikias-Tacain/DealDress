@@ -96,7 +96,7 @@ const ShoppingCartModal = () => {
               <button className={styles.buttonBorrarCarrito} style={{ display: carrito.length === 0 ? 'none' : 'block'}} onClick={clearCarrito}><FontAwesomeIcon icon={faTrashCan} /></button>
               <button className={styles.closeButton} onClick={toggleModal}>Cerrar</button>
               <Link href='/tienda/order'>
-                <button className={styles.buyButton} style={{ display: carrito.length === 0 ? 'none' : 'block'}}>Confirmar</button>
+                <button className={styles.buyButton} style={{ display: carrito.length === 0 ? 'none' : 'block'}} onClick={toggleModal}>Confirmar</button>
               </Link>
             </div>
           </div>
