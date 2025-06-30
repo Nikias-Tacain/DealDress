@@ -58,6 +58,9 @@ const ProductList = () => {
   return (
     <>
       <section className={styles.categoriesButtonClick}>
+        <CarrouselImgs />
+        <CorreoHome />
+        <br />
         <div className={styles.categoriesButtonClickInput}>
           <label>
             <FontAwesomeIcon icon={faMagnifyingGlass} />
@@ -77,9 +80,6 @@ const ProductList = () => {
             onChange={(e) => setSearchTerm(e.target.value)}
           />
         </div>
-        <CarrouselImgs />
-        <CorreoHome />
-        <br />
       </section>
 
       <div className={styles.card}>{renderProducts()}</div>
